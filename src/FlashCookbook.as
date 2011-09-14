@@ -41,7 +41,8 @@ package
 			var cntrls:ChromeControls = new ChromeControls();
 			addChild(cntrls);
 			cntrls.scaleX = cntrls.scaleY = 0.6;
-			cntrls.x = bg.x + bg.width - cntrls.width;
+			cntrls.x = bg.x + bg.width - cntrls.width - 10;
+			cntrls.y = bg.y + 5;
 			cntrls.closeButton.addEventListener(MouseEvent.CLICK,onCloseClick);
 			cntrls.minimizeButton.addEventListener(MouseEvent.CLICK,onMinClick);
 			
