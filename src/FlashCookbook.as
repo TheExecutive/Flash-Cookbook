@@ -3,6 +3,7 @@ package
 	import com.fullsail.dfp.ui.Background;
 	import com.fullsail.dfp.ui.ChromeControls;
 	import com.fullsail.dfp.ui.CodeListView;
+	import com.fullsail.dfp.ui.SearchBox;
 	
 	import flash.display.Sprite;
 	import flash.events.MouseEvent;
@@ -55,7 +56,8 @@ package
 			
 			
 			//init search
-			
+			var sb:SearchBox = new SearchBox();
+			addChild(sb);
 			//init buttons
 			
 			//init basebar
