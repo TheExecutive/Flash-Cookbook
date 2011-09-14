@@ -1,6 +1,7 @@
 package
 {
 	import com.fullsail.dfp.ui.Background;
+	import com.fullsail.dfp.ui.ChromeControls;
 	
 	import flash.display.Sprite;
 	import flash.events.MouseEvent;
@@ -34,6 +35,10 @@ package
 			var bg:Background = new Background();
 			addChild(bg);
 			bg.addEventListener(MouseEvent.MOUSE_DOWN,onMouseDown);
+			
+			//init page controls
+			var cntrls:ChromeControls = new ChromeControls();
+			addChild(cntrls);
 			
 			//init main view
 			
