@@ -6,7 +6,7 @@ package
 	import flash.display.Sprite;
 	import flash.events.MouseEvent;
 	
-	[SWF(width="800", height="650", frameRate="60")]
+	[SWF(width="800", height="435", frameRate="60")]
 	public class FlashCookbook extends Sprite
 	{
 		
@@ -41,8 +41,8 @@ package
 			var cntrls:ChromeControls = new ChromeControls();
 			addChild(cntrls);
 			cntrls.scaleX = cntrls.scaleY = 0.6;
-			cntrls.x = bg.x + bg.width - cntrls.width - 15;
-			cntrls.y = bg.y + 10;
+			cntrls.x = bg.x + bg.width - cntrls.width - 10;
+			cntrls.y = bg.y + 5;
 			cntrls.closeButton.addEventListener(MouseEvent.CLICK,onCloseClick);
 			cntrls.minimizeButton.addEventListener(MouseEvent.CLICK,onMinClick);
 			
