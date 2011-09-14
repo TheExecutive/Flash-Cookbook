@@ -15,7 +15,7 @@
 
 	<!-- A universally unique application identifier. Must be unique across all AIR applications.
 	Using a reverse DNS-style name as the id is recommended. (Eg. com.example.ExampleApplication.) Required. -->
-	<id>FlashCookbook</id>
+	<id>com.fullsail.dfp.FlashCookbook</id>
 
 	<!-- Used as the filename for the application. Required. -->
 	<filename>FlashCookbook</filename>
@@ -52,10 +52,10 @@
 		<!-- <title></title> -->
 
 		<!-- The type of system chrome to use (either "standard" or "none"). Optional. Default standard. -->
-		<!-- <systemChrome></systemChrome> -->
+		<systemChrome>none</systemChrome>
 
 		<!-- Whether the window is transparent. Only applicable when systemChrome is none. Optional. Default false. -->
-		<!-- <transparent></transparent> -->
+		<transparent>true</transparent>
 
 		<!-- Whether the window is initially visible. Optional. Default false. -->
 		<!-- <visible></visible> -->
