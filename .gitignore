@@ -1,9 +1,4 @@
 .DS_Store
 .actionScriptProperties
 .project
-bin-debug/*
-bin-debug/FlashCookbook.swf
-
-bin-debug/FlashCookbook.swf
-
-bin-debug/FlashCookbook-app.xml
+bin-debug
