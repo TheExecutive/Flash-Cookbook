@@ -7,6 +7,11 @@ package com.fullsail.dfp.ui
 		public function ChromeControls()
 		{
 			super();
+			minimizeButton.buttonMode = true;
+			minimizeButton.mouseChildren = false;
+			
+			closeButton.buttonMode = true;
+			closeButton.mouseChildren = false;
 		}
 	}
 }
