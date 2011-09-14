@@ -45,7 +45,6 @@ package
 			cntrls.closeButton.addEventListener(MouseEvent.CLICK,onCloseClick);
 			cntrls.minimizeButton.addEventListener(MouseEvent.CLICK,onMinClick);
 			
-			
 			//init main view
 			
 			//init search
