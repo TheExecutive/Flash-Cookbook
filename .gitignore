@@ -1,4 +1,4 @@
 .DS_Store
 .actionScriptProperties
 .project
-bin-debug/
+bin-debug/*
