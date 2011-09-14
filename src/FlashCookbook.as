@@ -2,6 +2,7 @@ package
 {
 	import com.fullsail.dfp.ui.Background;
 	import com.fullsail.dfp.ui.ChromeControls;
+	import com.fullsail.dfp.ui.CodeListView;
 	
 	import flash.display.Sprite;
 	import flash.events.MouseEvent;
@@ -46,7 +47,12 @@ package
 			cntrls.closeButton.addEventListener(MouseEvent.CLICK,onCloseClick);
 			cntrls.minimizeButton.addEventListener(MouseEvent.CLICK,onMinClick);
 			
-			//init main view
+			//init list view
+			var cListView:CodeListView = new CodeListView();
+			addChild(cListView);
+			cListView.x = (stage.stageWidth - cListView.width) / 2;
+			cListView.y = bg.y + 96;
+			
 			
 			//init search
 			
