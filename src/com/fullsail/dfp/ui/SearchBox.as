@@ -5,9 +5,9 @@ package com.fullsail.dfp.ui
 	import flash.events.FocusEvent;
 	import flash.events.MouseEvent;
 	
-	import libs.SearchBoxBase;
+	import libs.NewSB;
 	
-	public class SearchBox extends SearchBoxBase
+	public class SearchBox extends NewSB
 	{
 		public function SearchBox()
 		{
@@ -16,12 +16,12 @@ package com.fullsail.dfp.ui
 			//search box attributes
 			this.scaleX = this.scaleY = .75;
 			this.x = 418;
-			this.y = 60;
+			this.y = 55;
 			
 			//search button attributes
 			var sbtn:SearchButton = new SearchButton();
-			sbtn.y = 6;
-			sbtn.x = 233;
+			sbtn.y = 6;  
+			sbtn.x = 213;
 			this.addChild(sbtn);
 			
 			//search button event Listener
@@ -39,7 +39,7 @@ package com.fullsail.dfp.ui
 				tfSearchInput.text = "";
 			}
 		}
-		private function onFocusOut(evt:FocusEvent):void
+		private function onFocusOut(evt:FocusEvent):void 
 		{
 			if(tfSearchInput.text == "")
 			{

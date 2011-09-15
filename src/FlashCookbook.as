@@ -8,6 +8,9 @@ package
 	import flash.display.Sprite;
 	import flash.events.MouseEvent;
 	
+	import libs.NewSB;
+	import libs.Newbtn;
+	
 	[SWF(width="800", height="640", frameRate="60")]
 	public class FlashCookbook extends Sprite
 	{
@@ -58,6 +61,7 @@ package
 			//init search
 			var sb:SearchBox = new SearchBox();
 			addChild(sb);
+			
 			//init buttons
 			
 			//init basebar

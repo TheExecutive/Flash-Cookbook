@@ -2,9 +2,9 @@ package com.fullsail.dfp.ui
 {
 	import flash.events.MouseEvent;
 	
-	import libs.SearchBtnBase;
+	import libs.Newbtn;
 	
-	public class SearchButton extends SearchBtnBase
+	public class SearchButton extends Newbtn
 	{
 		public function SearchButton()
 		{
