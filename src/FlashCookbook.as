@@ -62,13 +62,6 @@ package
 			cListView.x = (stage.stageWidth - cListView.width) / 2;
 			cListView.y = bg.y + 96;
 			
-			//init logo
-			var logo:FSUlogo = new FSUlogo();
-			logo.x = 130;
-			logo.y = 15;
-			logo.buttonMode = true;
-			addChild(logo); 
-			
 			/*var t:Title = new Title();
 			t.x = 290;
 			t.y = 11;       
