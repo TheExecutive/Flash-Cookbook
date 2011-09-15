@@ -383,5 +383,24 @@
 					<link href="http://wddbs.com/FFM/slides/Day%203/FFM_InputTextFields.pdf" title="FFM Portal" />
 				</resources>
 		</snippet>
+		<snippet id = "eventBasics" course="ffm">
+				<name>Events - Basic Structure</name>
+				<difficulty>Easy</difficulty>
+				<keywords text="textfield,input,text,ffm" />
+				<code>
+					<![CDATA[myMovieClip.addEventListener(MouseEvent.CLICK, doSomething);
+					function doSomething(event:MouseEvent):void
+					{
+						//actions to be performed
+					}]]>
+				</code>
+				<notes>
+					myMovieClip - Variable name for movie clip variable.
+					.addEventListener - Adds 
+				</notes>
+				<resources>
+					<link href="http://wddbs.com/FFM/slides/Day%203/FFM_InputTextFields.pdf" title="FFM Portal" />
+				</resources>
+		</snippet>
 	</snippets> <!--end of snippet node-->
 		
