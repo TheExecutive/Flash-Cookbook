@@ -87,7 +87,7 @@
 				</resources>
 		</snippet>
 		
-			<snippet id = "convertingDataTypes" course="ffm">
+		<snippet id = "convertingDataTypes" course="ffm">
 				<name>Converting a Data Type</name>
 				<difficulty>Very Easy</difficulty>
 				<keywords text="convert,converting,data,type,data type, dataType,ffm" />
