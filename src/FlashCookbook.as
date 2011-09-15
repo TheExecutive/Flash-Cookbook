@@ -51,7 +51,7 @@ package
 			var cntrls:ChromeControls = new ChromeControls();
 			addChild(cntrls);
 			cntrls.scaleX = cntrls.scaleY = 0.6;
-			cntrls.x = bg.x + bg.width - cntrls.width - 10;
+			cntrls.x = bg.x + bg.width - cntrls.width - 12;
 			cntrls.y = bg.y + 5;
 			cntrls.closeButton.addEventListener(MouseEvent.CLICK,onCloseClick);
 			cntrls.minimizeButton.addEventListener(MouseEvent.CLICK,onMinClick);
@@ -94,7 +94,7 @@ package
 			lb.addChild(oop);
 			lb.addChild(fat);
 			lb.addChild(dfp);
-			lb.x = 130;
+			lb.x = 127;
 			lb.y = 68;
 			addChild(lb);
 			
