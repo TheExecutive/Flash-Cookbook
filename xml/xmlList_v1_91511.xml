@@ -17,7 +17,6 @@
 				</resources>
 				
 		</snippet>
-
 		<snippet id = "creatingFunctions_basic" course="ffm">
 				<name>Creating a basic Function</name>
 				<difficulty>Very Easy</difficulty>
@@ -38,7 +37,6 @@
 					<link href="http://wddbs.com/FFM/slides/Day%201/FFM_Day1_Functions.pdf" title="FFM Portal" />
 				</resources>
 		</snippet>
-		
 		<snippet id = "creatingFunctions_advanced" course="ffm">
 				<name>Creating an Advanced Function</name>
 				<difficulty>Very Easy</difficulty>
@@ -61,7 +59,6 @@
 					<link href="http://wddbs.com/FFM/slides/Day%201/FFM_Day1_Functions.pdf" title="FFM Portal" />
 				</resources>
 		</snippet>
-		
 		<snippet id = "callingFunctions" course="ffm">
 				<name>Calling a Function</name>
 				<difficulty>Very Easy</difficulty>
@@ -86,7 +83,6 @@
 					<link href="http://wddbs.com/FFM/slides/Day%201/FFM_Day1_Functions.pdf" title="FFM Portal" />
 				</resources>
 		</snippet>
-		
 		<snippet id = "convertingDataTypes" course="ffm">
 				<name>Converting a Data Type</name>
 				<difficulty>Very Easy</difficulty>
@@ -104,6 +100,118 @@
 				</notes>
 				<resources>
 					<link href="http://wddbs.com/FFM/slides/Day%201/FFM_DataTypes.key.pdf" title="FFM Portal" />
+				</resources>
+		</snippet>	
+		<snippet id = "changeObjectsXPosition" course="ffm">
+				<name>Change an objects X position</name>
+				<difficulty>Very Easy</difficulty>
+				<keywords text="object,x,x position, position,ffm" />
+				<code>
+					<![CDATA[obj.x = n;]]>
+				</code>
+				<notes>
+					obj - the object you want to move.
+					x - declares you want to change the objects x property, or the horizontal position of the object.
+					n - represents the number for the new x position based on the objects container.
+				</notes>
+				<resources>
+					<link href="http://wddbs.com/FFM/slides/Day%202/FFM_Display%20Objects.pdf" title="FFM Portal" />
+				</resources>
+		</snippet>
+		<snippet id = "changeObjectsYPosition" course="ffm">
+				<name>Change an objects Y position</name>
+				<difficulty>Very Easy</difficulty>
+				<keywords text="object,y,y position, position,ffm" />
+				<code>
+					<![CDATA[obj.y = n;]]>
+				</code>
+				<notes>
+					obj - the object you want to move.
+					y - declares you want to change the objects y property, or the vertical position of the object.
+					n - represents the number for the new y position based on the objects container.
+				</notes>
+				<resources>
+					<link href="http://wddbs.com/FFM/slides/Day%202/FFM_Display%20Objects.pdf" title="FFM Portal" />
+				</resources>
+		</snippet>
+		<snippet id = "changeObjectsWidth" course="ffm">
+				<name>Change an objects width</name>
+				<difficulty>Very Easy</difficulty>
+				<keywords text="object,width,ffm" />
+				<code>
+					<![CDATA[obj.width = n;]]>
+				</code>
+				<notes>
+					obj - the object you want to move.
+					width - declares you want to change the objects width property.
+					n - represents the number for the objects new width.
+				</notes>
+				<resources>
+					<link href="http://wddbs.com/FFM/slides/Day%202/FFM_Display%20Objects.pdf" title="FFM Portal" />
+				</resources>
+		</snippet>
+		<snippet id = "changeObjectsHeight" course="ffm">
+				<name>Change an objects height</name>
+				<difficulty>Very Easy</difficulty>
+				<keywords text="object,height,ffm" />
+				<code>
+					<![CDATA[obj.height = n;]]>
+				</code>
+				<notes>
+					obj - the object you want to move.
+					height - declares you want to change the objects height property.
+					n - represents the number for the objects new height.
+				</notes>
+				<resources>
+					<link href="http://wddbs.com/FFM/slides/Day%202/FFM_Display%20Objects.pdf" title="FFM Portal" />
+				</resources>
+		</snippet>
+		<snippet id = "changeObjectsScaleX" course="ffm">
+				<name>Change an objects scaleX</name>
+				<difficulty>Very Easy</difficulty>
+				<keywords text="object,scale,scaleX,ffm" />
+				<code>
+					<![CDATA[obj.scaleX = .n;]]>
+				</code>
+				<notes>
+					obj - the object you want to move.
+					scaleX - declares you want to change the objects scaleX property, or the ratio between the objects current size and its normal size.
+					.n - represents the number for the objects new scaleX, is a number between .1 and 1.
+				</notes>
+				<resources>
+					<link href="http://wddbs.com/FFM/slides/Day%202/FFM_Display%20Objects.pdf" title="FFM Portal" />
+				</resources>
+		</snippet>
+		<snippet id = "changeObjectsScaleY" course="ffm">
+				<name>Change an objects scaleY</name>
+				<difficulty>Very Easy</difficulty>
+				<keywords text="object,scale,scaleY,ffm" />
+				<code>
+					<![CDATA[obj.scaleY = .n;]]>
+				</code>
+				<notes>
+					obj - the object you want to move.
+					scaleX - declares you want to change the objects scaleY property, or the ratio between the objects current size and its normal size.
+					.n - represents the number for the objects new scaleX, is a number between .1 and 1.
+				</notes>
+				<resources>
+					<link href="http://wddbs.com/FFM/slides/Day%202/FFM_Display%20Objects.pdf" title="FFM Portal" />
+				</resources>
+		</snippet>
+		<snippet id = "setButtonMode" course="ffm">
+				<name>Change an objects scaleY</name>
+				<difficulty>Very Easy</difficulty>
+				<keywords text="object,button,mode,buttonMode,ffm" />
+				<code>
+					<![CDATA[obj.buttonMode = true;]]>
+				</code>
+				<notes>
+					obj - the object you want to move.
+					buttonMode - is a boolean value, by default set to false, setting the value true will cause the object to behave like a button.
+					true - sets the value to true, is set to false by default.
+				</notes>
+				<resources>
+					<link href="http://wddbs.com/FFM/slides/Day%202/FFM_Display%20Objects.pdf" title="FFM Portal" />
 				</resources>
 		</snippet>
 		
