@@ -87,5 +87,25 @@
 				</resources>
 		</snippet>
 		
+		<snippet id = "convertingDataTypes" course="ffm">
+				<name>Converting a Data Type</name>
+				<difficulty>Very Easy</difficulty>
+				<keywords text="convert,converting,data,type,data type, dataType,ffm" />
+				<code>
+					<![CDATA[var a:Number;]]>
+				</code>
+				<code>
+					<![CDATA[int(a);]]> OR <![CDATA[a as int;]]>
+				</code>
+				<notes>
+					a:Number - is a variable data typed as a Number.
+					int(a) - converts a to an int instead of a Number.
+					a as int - also converts a to an int instead of a Number.
+				</notes>
+				<resources>
+					<link href="http://wddbs.com/FFM/slides/Day%201/FFM_DataTypes.key.pdf" title="FFM Portal" />
+				</resources>
+		</snippet>
+		
 	</snippets> <!--end of snippet node-->
 		
