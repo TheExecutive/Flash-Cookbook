@@ -36,8 +36,12 @@ package com.fullsail.dfp.ui
 		
 		private function updateButtonState():void
 		{
-			// TODO Auto Generated method stub
-			
+			if(_isSelected)
+			{
+				btnRollover.gotoAndStop(30);
+			}else{
+				btnRollover.gotoAndStop(1);
+			}
 		}
 		
 	}

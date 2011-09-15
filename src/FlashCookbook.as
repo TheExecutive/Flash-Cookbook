@@ -41,6 +41,7 @@ package
 			*/
 
 		private var _cListView:CodeListView;
+		private var _buttonArray:Array = [];
 		
 		public function FlashCookbook()
 		{
@@ -86,39 +87,47 @@ package
 			var ffmRoll:RollOverManagerFSC = new RollOverManagerFSC(ffm);
 			ffm.label = "FFM";
 			ffm.addEventListener(MouseEvent.CLICK,onFFMClick);
+			_buttonArray.push(ffm);
 			
 			var oop:ClassButton = new ClassButton();
 			var oopRoll:RollOverManagerFSC = new RollOverManagerFSC(oop);
 			oop.label = "OOP";
 			oop.addEventListener(MouseEvent.CLICK,onOOPClick);
+			_buttonArray.push(oop);
 			
 			var fat:ClassButton = new ClassButton();
 			var fatRoll:RollOverManagerFSC = new RollOverManagerFSC(fat);
 			fat.label = "FAT";
 			fat.addEventListener(MouseEvent.CLICK,onFATClick);
+			_buttonArray.push(fat);
 			
 			var dfp:ClassButton = new ClassButton();
 			var dfpRoll:RollOverManagerFSC = new RollOverManagerFSC(dfp);
 			dfp.label = "DFP"; 
 			dfp.addEventListener(MouseEvent.CLICK,onDFPClick);
+			_buttonArray.push(dfp);
 			
 			//init layout box + add buttons to lb + add lb to stage
 			var lb:LayoutBoxFSC = new LayoutBoxFSC(5,true);
-			lb.addChild(ffm);
-			lb.addChild(oop);
-			lb.addChild(fat);
-			lb.addChild(dfp);
+			addChild(lb);
 			lb.x = 127;
 			lb.y = 68;
-			addChild(lb);
+			
+			for each (var cb:ClassButton in _buttonArray)
+			{
+				lb.addChild(cb);
+			}
 			
 			//init basebar
 		}
 		
 		protected function onFFMClick(event:MouseEvent):void
 		{
-			// TODO Auto-generated method stub
-			
+			event.currentTarget.isSelected = true;
+			/*for each (var cb:ClassButton in _buttonArray)
+			{
+				
+			} */
 		}
 		
 		protected function onOOPClick(event:MouseEvent):void
