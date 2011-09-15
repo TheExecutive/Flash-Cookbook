@@ -214,6 +214,24 @@
 					<link href="http://wddbs.com/FFM/slides/Day%202/FFM_Display%20Objects.pdf" title="FFM Portal" />
 				</resources>
 		</snippet>
+		<snippet id = "setSWFproperties" course="ffm">
+				<name>Set SWF properties</name>
+				<difficulty>Very Easy</difficulty>
+				<keywords text="swf,properties,swf properties,ffm" />
+				<code>
+					<![CDATA[ [SWF(width = "x" height = "x" frameRate = "xx" backgroundColor = "0xFFFFFF")] ]]>
+				</code>
+				<notes>
+					SWF - declares you are changing the properties of the SWF file.
+					width - sets the width of the SWF display window.
+					height - sets the height of the SWF display window.
+					frameRate - sets the frame rate of the SWF, will typically be 30 for standard projects and 60 for projects containing animations. 60 fps provides a smoother animation than 30 fps.
+					backgroundColor - sets the display windows background color, uses Hex values, must start with 0x (zero x).
+				</notes>
+				<resources>
+					<link href="http://wddbs.com/FFM/slides/Day%202/FFM_Display%20Objects.pdf" title="FFM Portal" />
+				</resources>
+		</snippet>
 		
 	</snippets> <!--end of snippet node-->
 		

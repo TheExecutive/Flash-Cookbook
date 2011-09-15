@@ -91,7 +91,7 @@ package
 			dfp.label = "DFP"; 
 			
 			//init layout box + add buttons to lb + add lb to stage
-			var lb:LayoutBoxFSC = new LayoutBoxFSC(5,true); 
+			var lb:LayoutBoxFSC = new LayoutBoxFSC(5,true);
 			lb.addChild(ffm);
 			lb.addChild(oop);
 			lb.addChild(fat);
