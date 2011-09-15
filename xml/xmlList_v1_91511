@@ -44,17 +44,43 @@
 				<difficulty>Very Easy</difficulty>
 				<keywords text="function,create,advanced,creating,ffm" />
 				<code>
-					<![CDATA[function stringLength(pString:String):Number
+					<![CDATA[private function stringLength(pString:String):Number
 					{
 						return pString.length;
 					}]]>
 				</code>
 				<notes>
+					private - accessor type, defines where a function is private or public.
 					function - declares you are creating a new function
 					stringLength() - acts as a unique identifier for the function. Must not start with a number but can contain numbers, letters, and underscores.
 					(pString:String) - the parameter that is being passed into the function. This is looking for a variable named pString that is data typed as a String.
 					Number - is the ReturnType, this function will return a number
 					return pString.length - this will return the number of characters that compose the variable pString. So if pString was equal to the word "Cat" the length of pString would be "3".
+				</notes>
+				<resources>
+					<link href="http://wddbs.com/FFM/slides/Day%201/FFM_Day1_Functions.pdf" title="FFM Portal" />
+				</resources>
+		</snippet>
+		
+		<snippet id = "callingFunctions" course="ffm">
+				<name>Calling a Function</name>
+				<difficulty>Very Easy</difficulty>
+				<keywords text="function,call,calling,ffm" />
+				<code>
+					<![CDATA[MovieClip.play()]]>
+				</code>
+				<notes>
+					MovieClip - the object that will call the function
+					play() - the function being called.
+					Executing this code would allow a movie clip to call the play() function, which would then play the movie clip. 
+				</notes>
+				<code>
+					<![CDATA[this.myFunction(var1, var2)]]>
+				</code>
+				<notes>
+					this - refers to the parent container, usually the stage, but can also be used to refer to assets created in the Flash IDE
+					myFunction - the name of the function being called, remember this is a unique identifier and can be named anything you would like, but it can not start with a number
+					(var1, var2) - the parameters being passed to the function. 
 				</notes>
 				<resources>
 					<link href="http://wddbs.com/FFM/slides/Day%201/FFM_Day1_Functions.pdf" title="FFM Portal" />
