@@ -4,6 +4,9 @@ package com.fullsail.dfp.ui
 	
 	public class ClassButton extends ClassBtn
 	{
+		
+		private var _label:String;
+		
 		public function ClassButton()
 		{
 			super();
@@ -11,5 +14,12 @@ package com.fullsail.dfp.ui
 			this.mouseChildren = false;
 			this.scaleX = this.scaleY = .75;
 		}
+
+		public function set label(value:String):void
+		{
+			_label = value;
+			tfClassName.text = _label;
+		}
+
 	}
 }

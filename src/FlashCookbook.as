@@ -62,13 +62,6 @@ package
 			cListView.x = (stage.stageWidth - cListView.width) / 2;
 			cListView.y = bg.y + 96;
 			
-			//init logo
-			var logo:FSUlogo = new FSUlogo();
-			logo.x = 130;
-			logo.y = 15;
-			logo.buttonMode = true;
-			addChild(logo); 
-			
 			/*var t:Title = new Title();
 			t.x = 290;
 			t.y = 11;       
@@ -81,13 +74,14 @@ package
 			
 			//init buttons
 			var ffm:ClassButton = new ClassButton();
-			ffm.tfClassName.text = "FFM";
+			ffm.label = "FFM";
 			var oop:ClassButton = new ClassButton();
-			oop.tfClassName.text = "OOP";
+			oop.label = "OOP";
 			var fat:ClassButton = new ClassButton();
-			fat.tfClassName.text = "FAT";
+			fat.label = "FAT";
 			var dfp:ClassButton = new ClassButton();
-			dfp.tfClassName.text = "DFP";
+			dfp.label = "DFP";
+			
 			//init layout box + add buttons to lb + add lb to stage
 			var lb:LayoutBoxFSC = new LayoutBoxFSC(2,true);
 			lb.addChild(ffm);

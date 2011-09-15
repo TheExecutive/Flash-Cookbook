@@ -51,7 +51,7 @@ package com.fullsail.dfp.ui
 			var se:SearchEvent = new SearchEvent(SearchEvent.SEARCH_QUERY);
 			se.query = tfSearchInput.text;
 			dispatchEvent(se);
-			trace("mouse clicked");
+			trace("mouse clicked, search event firing");
 		}
 	}
 }
