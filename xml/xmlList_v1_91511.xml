@@ -358,5 +358,30 @@
 					<link href="http://wddbs.com/FFM/slides/Day%202/FFM_TextFormat.pdf" title="FFM Portal" />
 				</resources>
 		</snippet>
+		<snippet id = "createInputTextField" course="ffm">
+				<name>Creating an Input TextField</name>
+				<difficulty>Very Easy</difficulty>
+				<keywords text="textfield,input,text,ffm" />
+				<code>
+					<![CDATA[myTF.type = TextFieldType.INPUT;]]>
+				</code>
+				<notes>
+					myTF - The text field variable name.
+					.type - The property of the text field you want to alter.
+					= TextFieldType.INPUT - Sets the text field to accept data inputted by the user. 
+				</notes>
+				<code>
+					<![CDATA[myTF.maxChars;]]>
+					<![CDATA[myTF.restrict = "a-z,A-Z,0-9";]]>
+				</code>
+				<notes>
+					myTF - The text field variable name.
+					.maxChars - Sets the maximum amount of characters the text field can hold, must be a number.
+					.restrict - Sets restrictions on what types of characters can be put into the text field. The above example allows for all letters (upper and lower case) and numbers 0 through 9 to be inputted into the text field.
+				</notes>
+				<resources>
+					<link href="http://wddbs.com/FFM/slides/Day%203/FFM_InputTextFields.pdf" title="FFM Portal" />
+				</resources>
+		</snippet>
 	</snippets> <!--end of snippet node-->
 		
