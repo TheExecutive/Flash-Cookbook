@@ -30,7 +30,7 @@ package com.fullsail.dfp.ui
 		private function createItemData():void
 		{
 			tfTitle.text = _codeVO.name;
-			tfCategory.text = _codeVO.course;
+			tfCategory.text = _codeVO.course + " / " + _codeVO.difficulty;
 		}
 		
 	}
