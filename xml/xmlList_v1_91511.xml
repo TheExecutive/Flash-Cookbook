@@ -344,7 +344,7 @@
 				</resources>
 		</snippet>
 		<snippet id = "assignTextFormatToTextField" course="ffm">
-				<name>Set a TextField's TextFormat</name>
+				<name>Applying TextFormat to a TextField</name>
 				<difficulty>Very Easy</difficulty>
 				<keywords text="textfield,format,text,textformat,ffm" />
 				<code>
