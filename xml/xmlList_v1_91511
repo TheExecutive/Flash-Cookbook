@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+	<snippets>
+		<snippet id="creatingVariables" course="ffm">
+				<name>Creating Variables</name>
+				<difficulty>Very Easy</difficulty>
+				<keywords text="variables,text, field,textfield,ffm" />
+				<code>
+					<![CDATA[var tf:TextField = new TextField]]>
+				</code>
+				<notes>
+					var - declares you are creating a new variable, and must be done before variable can be used.
+					tf - is the variable name, it can not begin with a number and can not contain spaces. You can use camelCase or underscores in place of spaces.
+					TextField - is the data type, it represents what kind of object the variable and what types of data can be stored in it - be specific with data types.
+				</notes>
+				<resources>
+					<link href="http://wddbs.com/FFM/slides/Day%201/FFM_Day1_VariablesAndValues.pdf" title="FFM Portal" />
+				</resources>
+				
+		</snippet>
+
+		<snippet id = "creatingFunctions_basic" course="ffm">
+				<name>Creating a basic Function</name>
+				<difficulty>Very Easy</difficulty>
+				<keywords text="function,create,creating,ffm" />
+				<code>
+					<![CDATA[function functionName():ReturnType
+					{
+						//action to be performed
+					}]]>
+				</code>
+				<notes>
+					function - declares you are creating a new function
+					functionName() - acts as a unique identifier for the function. 
+					() - the parenthatsis hold optional parameters, parameters are arguments you can pass with a function.
+					ReturnType - if your function returns a value, this is where you define that type of value will be returned. If no value is returned use "void" for the ReturnType.
+				</notes>
+				<resources>
+					<link href="http://wddbs.com/FFM/slides/Day%201/FFM_Day1_Functions.pdf" title="FFM Portal" />
+				</resources>
+		</snippet>
+		
+		<snippet id = "creatingFunctions_advanced" course="ffm">
+				<name>Creating an Advanced Function</name>
+				<difficulty>Very Easy</difficulty>
+				<keywords text="function,create,advanced,creating,ffm" />
+				<code>
+					<![CDATA[function stringLength(pString:String):Number
+					{
+						return pString.length;
+					}]]>
+				</code>
+				<notes>
+					function - declares you are creating a new function
+					stringLength() - acts as a unique identifier for the function. Must not start with a number but can contain numbers, letters, and underscores.
+					(pString:String) - the parameter that is being passed into the function. This is looking for a variable named pString that is data typed as a String.
+					Number - is the ReturnType, this function will return a number
+					return pString.length - this will return the number of characters that compose the variable pString. So if pString was equal to the word "Cat" the length of pString would be "3".
+				</notes>
+				<resources>
+					<link href="http://wddbs.com/FFM/slides/Day%201/FFM_Day1_Functions.pdf" title="FFM Portal" />
+				</resources>
+		</snippet>
+		
+	</snippets> <!--end of snippet node-->
+		
