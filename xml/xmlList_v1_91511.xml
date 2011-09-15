@@ -199,7 +199,7 @@
 				</resources>
 		</snippet>
 		<snippet id = "setButtonMode" course="ffm">
-				<name>Change an objects scaleY</name>
+				<name>Set objects button mode</name>
 				<difficulty>Very Easy</difficulty>
 				<keywords text="object,button,mode,buttonMode,ffm" />
 				<code>
