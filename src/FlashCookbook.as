@@ -76,7 +76,7 @@ package
 			addChild(t);*/
 			
 			//init search
-			var sb:SearchBox = new SearchBox();
+			var sb:SearchBox = new SearchBox();  
 			addChild(sb);
 			
 			//init buttons
@@ -88,8 +88,9 @@ package
 			fat.tfClassName.text = "FAT";
 			var dfp:ClassButton = new ClassButton();
 			dfp.tfClassName.text = "DFP";
+			
 			//init layout box + add buttons to lb + add lb to stage
-			var lb:LayoutBoxFSC = new LayoutBoxFSC(2,true);
+			var lb:LayoutBoxFSC = new LayoutBoxFSC(5,true);
 			lb.addChild(ffm);
 			lb.addChild(oop);
 			lb.addChild(fat);
