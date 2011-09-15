@@ -2,12 +2,15 @@ package
 {
 	import com.fullsail.dfp.ui.Background;
 	import com.fullsail.dfp.ui.ChromeControls;
+	import com.fullsail.dfp.ui.ClassButton;
 	import com.fullsail.dfp.ui.CodeListView;
+	import com.fullsail.dfp.ui.LayoutBoxFSC;
 	import com.fullsail.dfp.ui.SearchBox;
 	
 	import flash.display.Sprite;
 	import flash.events.MouseEvent;
 	
+	import libs.ClassBtn;
 	import libs.NewSB;
 	import libs.Newbtn;
 	
@@ -63,6 +66,23 @@ package
 			addChild(sb);
 			
 			//init buttons
+			var ffm:ClassButton = new ClassButton();
+			ffm.tfClassName.text = "FFM";
+			var oop:ClassButton = new ClassButton();
+			oop.tfClassName.text = "OOP";
+			var fat:ClassButton = new ClassButton();
+			fat.tfClassName.text = "FAT";
+			var dfp:ClassButton = new ClassButton();
+			dfp.tfClassName.text = "DFP";
+			//init layout box + add buttons to lb + add lb to stage
+			var lb:LayoutBoxFSC = new LayoutBoxFSC(2,true);
+			lb.addChild(ffm);
+			lb.addChild(oop);
+			lb.addChild(fat);
+			lb.addChild(dfp);
+			lb.x = 130;
+			lb.y = 68;
+			addChild(lb);
 			
 			//init basebar
 		}
