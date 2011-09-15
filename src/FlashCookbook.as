@@ -11,8 +11,10 @@ package
 	import flash.events.MouseEvent;
 	
 	import libs.ClassBtn;
+	import libs.FSUlogo;
 	import libs.NewSB;
 	import libs.Newbtn;
+	import libs.Title;
 	
 	[SWF(width="800", height="640", frameRate="60")]
 	public class FlashCookbook extends Sprite
@@ -60,6 +62,18 @@ package
 			cListView.x = (stage.stageWidth - cListView.width) / 2;
 			cListView.y = bg.y + 96;
 			
+			//init logo
+			var logo:FSUlogo = new FSUlogo();
+			logo.x = 130;
+			logo.y = 15;
+			logo.buttonMode = true;
+			addChild(logo); 
+			
+			/*var t:Title = new Title();
+			t.x = 290;
+			t.y = 11;       
+			t.scaleX = t.scaleY = .8;            
+			addChild(t);*/
 			
 			//init search
 			var sb:SearchBox = new SearchBox();
