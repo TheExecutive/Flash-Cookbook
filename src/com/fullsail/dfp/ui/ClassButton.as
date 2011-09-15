@@ -1,5 +1,7 @@
 package com.fullsail.dfp.ui
 {
+	import flash.filters.DropShadowFilter;
+	
 	import libs.ClassBtn;
 	
 	public class ClassButton extends ClassBtn
@@ -15,6 +17,9 @@ package com.fullsail.dfp.ui
 			this.buttonMode = true;
 			this.mouseChildren = false;
 			this.scaleX = this.scaleY = .75;
+			
+			var dropShadow:DropShadowFilter = new DropShadowFilter(2,45,0,0.9);
+			filters = [dropShadow];
 		}
 
 		public function set label(value:String):void

@@ -22,7 +22,7 @@ package
 	import libs.Newbtn;
 	import libs.Title;
 	
-	[SWF(width="800", height="640", frameRate="60")]
+	[SWF(width="800", height="680", frameRate="60")]
 	public class FlashCookbook extends Sprite
 	{
 		
