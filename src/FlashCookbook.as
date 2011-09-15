@@ -9,6 +9,7 @@ package
 	import com.fullsail.dfp.ui.ClassButton;
 	import com.fullsail.dfp.ui.CodeListView;
 	import com.fullsail.dfp.ui.LayoutBoxFSC;
+	import com.fullsail.dfp.ui.RollOverManagerFSC;
 	import com.fullsail.dfp.ui.SearchBox;
 	
 	import flash.display.Sprite;
@@ -82,13 +83,24 @@ package
 			
 			//init buttons
 			var ffm:ClassButton = new ClassButton();
+			var ffmRoll:RollOverManagerFSC = new RollOverManagerFSC(ffm);
 			ffm.label = "FFM";
+			ffm.addEventListener(MouseEvent.CLICK,onFFMClick);
+			
 			var oop:ClassButton = new ClassButton();
+			var oopRoll:RollOverManagerFSC = new RollOverManagerFSC(oop);
 			oop.label = "OOP";
+			oop.addEventListener(MouseEvent.CLICK,onOOPClick);
+			
 			var fat:ClassButton = new ClassButton();
+			var fatRoll:RollOverManagerFSC = new RollOverManagerFSC(fat);
 			fat.label = "FAT";
+			fat.addEventListener(MouseEvent.CLICK,onFATClick);
+			
 			var dfp:ClassButton = new ClassButton();
+			var dfpRoll:RollOverManagerFSC = new RollOverManagerFSC(dfp);
 			dfp.label = "DFP"; 
+			dfp.addEventListener(MouseEvent.CLICK,onDFPClick);
 			
 			//init layout box + add buttons to lb + add lb to stage
 			var lb:LayoutBoxFSC = new LayoutBoxFSC(5,true);
@@ -101,6 +113,30 @@ package
 			addChild(lb);
 			
 			//init basebar
+		}
+		
+		protected function onFFMClick(event:MouseEvent):void
+		{
+			// TODO Auto-generated method stub
+			
+		}
+		
+		protected function onOOPClick(event:MouseEvent):void
+		{
+			// TODO Auto-generated method stub
+			
+		}
+		
+		protected function onFATClick(event:MouseEvent):void
+		{
+			// TODO Auto-generated method stub
+			
+		}
+		
+		protected function onDFPClick(event:MouseEvent):void
+		{
+			// TODO Auto-generated method stub
+			
 		}
 		
 		protected function onSearch(event:SearchEvent):void

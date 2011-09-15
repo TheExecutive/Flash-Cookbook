@@ -6,10 +6,12 @@ package com.fullsail.dfp.ui
 	{
 		
 		private var _label:String;
+		private var _isSelected:Boolean = false;
 		
 		public function ClassButton()
 		{
 			super();
+			stop();
 			this.buttonMode = true;
 			this.mouseChildren = false;
 			this.scaleX = this.scaleY = .75;
@@ -21,5 +23,22 @@ package com.fullsail.dfp.ui
 			tfClassName.text = _label;
 		}
 
+		public function get isSelected():Boolean
+		{
+			return _isSelected;
+		}
+
+		public function set isSelected(value:Boolean):void
+		{
+			_isSelected = value;
+			updateButtonState();
+		}
+		
+		private function updateButtonState():void
+		{
+			// TODO Auto Generated method stub
+			
+		}
+		
 	}
 }
