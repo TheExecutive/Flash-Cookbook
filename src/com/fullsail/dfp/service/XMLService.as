@@ -23,7 +23,7 @@ package com.fullsail.dfp.service
 		public function search(query:String = ""):void
 		{
 			//for testing, the default value for search is an empty string
-			loadXML("testurl");
+			loadXML("xmlList_v1_91511.xml");
 		}
 		
 		private function loadXML(url:String):void
@@ -36,7 +36,7 @@ package com.fullsail.dfp.service
 		
 		protected function onError(event:IOErrorEvent):void
 		{
-			trace("XML failed to load");
+			trace("XML failed to load",event);
 			var eEvent:ErrorEvent = new ErrorEvent(ErrorEvent.LOAD_ERROR);
 			dispatchEvent(eEvent); //dispatching an error event
 			//to let main know that an error has occured
@@ -45,22 +45,27 @@ package com.fullsail.dfp.service
 		protected function onLoad(event:Event):void
 		{
 			var xml:XML = new XML(event.target.data);
-			
+			trace(event.target.data);
 			//creating a VO array to hold the VOs that will be taken
 			//from XML
 			var cVOArray:Array = [];
 			
-			/*for each(var snippet:XML in *insert path here*)
+			for each(var snippet:XML in xml.snippets)
 			{
 				var cVO:CodeVO = new CodeVO();
-				cVO.title = snippet.title;
+				cVO.id = snippet.@id;
+				cVO.course = snippet.@course;
+				cVO.name = snippet.name;
 				cVO.difficulty = snippet.difficulty;
+				cVO.keywords = snippet.keywords.@text;
 				cVO.codeString = snippet.code;
 				cVO.notes = snippet.notes;
+				cVO.resourcesLink = snippet.resources.link.@href;
+				cVO.resourcesTitle = snippet.resources.link.@title;
 				
 				cVOArray.push(cVO);
 				
-			}*/
+			}
 			
 			//dispatching event when all this completes
 			var xmlEvent:XMLEvent = new XMLEvent(XMLEvent.DATA_LOAD_COMPLETE);
