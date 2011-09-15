@@ -1,5 +1,7 @@
 package com.fullsail.dfp.ui
 {
+	import com.fullsail.dfp.vo.CodeVO;
+	
 	import flash.events.Event;
 	
 	import libs.CodeListViewBase;
@@ -29,9 +31,6 @@ package com.fullsail.dfp.ui
 			setUpSliderManager();
 			
 			_codeItemListArray = []; //empty array to start.
-			
-			updateResultList(); //REMOVE this for final build 
-			//this is just to test
 		}
 		
 		private function setUpSliderManager():void
@@ -91,12 +90,17 @@ package com.fullsail.dfp.ui
 			//on subsequent runs, make the array empty
 			//and repopulate it.
 			
-			
-			for (var i:int = 0; i < 50 ; i++)
+			for each(var cVO:CodeVO in _searchResults)
 			{
+				//creating a code list tem for each cVO passed in
 				var listItem:CodeListItem = new CodeListItem();
+				
+				//pushing the vo into the vo setter for the code list item
+				listItem.codeVO = cVO;
+				
+				//adding it to the layout box
 				_lb.addChild(listItem);
-				listItem.tfTitle.text = "Tab " + (i+1);
+				
 				
 				_codeItemListArray.push(listItem);
 			}

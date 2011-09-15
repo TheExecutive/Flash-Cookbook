@@ -45,12 +45,11 @@ package com.fullsail.dfp.service
 		protected function onLoad(event:Event):void
 		{
 			var xml:XML = new XML(event.target.data);
-			trace(event.target.data);
 			//creating a VO array to hold the VOs that will be taken
 			//from XML
 			var cVOArray:Array = [];
 			
-			for each(var snippet:XML in xml.snippets)
+			for each(var snippet:XML in xml.snippet)
 			{
 				var cVO:CodeVO = new CodeVO();
 				cVO.id = snippet.@id;
@@ -62,7 +61,6 @@ package com.fullsail.dfp.service
 				cVO.notes = snippet.notes;
 				cVO.resourcesLink = snippet.resources.link.@href;
 				cVO.resourcesTitle = snippet.resources.link.@title;
-				
 				cVOArray.push(cVO);
 				
 			}
