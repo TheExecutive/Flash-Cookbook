@@ -11,13 +11,18 @@ package com.fullsail.dfp.service
 	import flash.net.URLLoader;
 	import flash.net.URLRequest;
 	
+	[Event(name="XMLEvent.DATA_LOAD_COMPLETE", type="com.fullsail.dfp.events.XMLEvent")]
 	[Event(name="ErrorEvent.LOAD_ERROR", type="com.fullsail.dfp.events.ErrorEvent")]
 	public class XMLService extends EventDispatcher
 	{
 		public function XMLService(target:IEventDispatcher=null)
 		{
 			super(target);
-			
+		}
+		
+		public function search(query:String = ""):void
+		{
+			//for testing, the default value for search is an empty string
 			loadXML("testurl");
 		}
 		

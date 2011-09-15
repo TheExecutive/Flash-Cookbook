@@ -1,5 +1,9 @@
 package
 {
+	import com.fullsail.dfp.events.ErrorEvent;
+	import com.fullsail.dfp.events.SearchEvent;
+	import com.fullsail.dfp.events.XMLEvent;
+	import com.fullsail.dfp.service.XMLService;
 	import com.fullsail.dfp.ui.Background;
 	import com.fullsail.dfp.ui.ChromeControls;
 	import com.fullsail.dfp.ui.ClassButton;
@@ -8,6 +12,7 @@ package
 	import com.fullsail.dfp.ui.SearchBox;
 	
 	import flash.display.Sprite;
+	import flash.events.Event;
 	import flash.events.MouseEvent;
 	
 	import libs.ClassBtn;
@@ -33,6 +38,8 @@ package
 				Set up custom chrome basics
 				Set stage dimensions
 			*/
+
+		private var _cListView:CodeListView;
 		
 		public function FlashCookbook()
 		{
@@ -57,10 +64,10 @@ package
 			cntrls.minimizeButton.addEventListener(MouseEvent.CLICK,onMinClick);
 			
 			//init list view
-			var cListView:CodeListView = new CodeListView();
-			addChild(cListView);
-			cListView.x = (stage.stageWidth - cListView.width) / 2;
-			cListView.y = bg.y + 96;
+			_cListView = new CodeListView();
+			addChild(_cListView);
+			_cListView.x = (stage.stageWidth - _cListView.width) / 2;
+			_cListView.y = bg.y + 96;
 			
 			/*var t:Title = new Title();
 			t.x = 290;
@@ -71,6 +78,7 @@ package
 			//init search
 			var sb:SearchBox = new SearchBox();
 			addChild(sb);
+			sb.addEventListener(SearchEvent.SEARCH_QUERY,onSearch);
 			
 			//init buttons
 			var ffm:ClassButton = new ClassButton();
@@ -93,6 +101,33 @@ package
 			addChild(lb);
 			
 			//init basebar
+		}
+		
+		protected function onSearch(event:SearchEvent):void
+		{
+			// When the search button is clicked, this function runs
+			
+			var xmlService:XMLService = new XMLService();
+			xmlService.search(event.query);
+			//event.query is whatever is in the search box at the time 
+			//the user hit the search button
+			
+			//listeners for the XMLService
+			xmlService.addEventListener(XMLEvent.DATA_LOAD_COMPLETE,onDataComplete);
+			xmlService.addEventListener(ErrorEvent.LOAD_ERROR,onDataError);
+			
+		}
+		
+		protected function onDataError(event:ErrorEvent):void
+		{
+			trace("Something's wrong with the XML");
+		}
+		
+		protected function onDataComplete(event:XMLEvent):void
+		{
+			//after the data has finished loading and being parsed,
+			//pass it to the setter in the codeListView
+			_cListView.searchResults = event.codeVOArray;
 		}
 		
 		protected function onCloseClick(event:MouseEvent):void
