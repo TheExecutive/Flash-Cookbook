@@ -343,5 +343,20 @@
 					<link href="http://wddbs.com/FFM/slides/Day%202/FFM_TextFields.pdf" title="FFM Portal" />
 				</resources>
 		</snippet>
+		<snippet id = "assignTextFormatToTextField" course="ffm">
+				<name>Set a TextField's TextFormat</name>
+				<difficulty>Very Easy</difficulty>
+				<keywords text="textfield,format,text,textformat,ffm" />
+				<code>
+					<![CDATA[myTF.setTextFormat = myFormat;]]> OR <![CDATA[myTF.defaultTextFormat = myFormat;]]>
+				</code>
+				<notes>
+					myTF.setTextFormat - Applies the text formatting to the text field AFTER the text has been placed in the text field.
+					myTF.defaultTextFormat - Applies the text formatting to the text field BEFORE the text has been placed in the text field.
+				</notes>
+				<resources>
+					<link href="http://wddbs.com/FFM/slides/Day%202/FFM_TextFormat.pdf" title="FFM Portal" />
+				</resources>
+		</snippet>
 	</snippets> <!--end of snippet node-->
 		
