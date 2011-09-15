@@ -5,6 +5,7 @@ package com.fullsail.dfp.vo
 		public var title:String;
 		public var difficulty:String;
 		public var codeString:String;
+		public var notes:String;
 		
 		
 		public function CodeVO()
