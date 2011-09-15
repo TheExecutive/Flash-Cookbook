@@ -80,10 +80,10 @@ package
 			var fat:ClassButton = new ClassButton();
 			fat.label = "FAT";
 			var dfp:ClassButton = new ClassButton();
-			dfp.label = "DFP";
+			dfp.label = "DFP"; 
 			
 			//init layout box + add buttons to lb + add lb to stage
-			var lb:LayoutBoxFSC = new LayoutBoxFSC(2,true);
+			var lb:LayoutBoxFSC = new LayoutBoxFSC(5,true);
 			lb.addChild(ffm);
 			lb.addChild(oop);
 			lb.addChild(fat);
