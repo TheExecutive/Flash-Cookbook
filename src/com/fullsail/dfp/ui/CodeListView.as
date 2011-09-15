@@ -70,12 +70,21 @@ package com.fullsail.dfp.ui
 		
 		private function updateResultList():void
 		{
-			//resetting slider bar
-			_sm.pct = 0;
-			
 			// This function will create list items upon getting
 			// a search result array full of VOs
 			
+			//resetting slider bar
+			_sm.pct = 0;
+			
+			//if an old code item list is on the
+			//stage, remove it
+			var popListItem:CodeListItem;
+			while(popListItem = _codeItemListArray.pop())
+			{
+				_lb.removeChild(popListItem);
+				// as long as it is able to pop items
+				// pop them off of the layout box
+			}
 			
 			//the below is a tester for loop to test the position
 			//of list items, the final version will use a for each loop
