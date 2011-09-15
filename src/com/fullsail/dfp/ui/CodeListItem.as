@@ -7,6 +7,8 @@ package com.fullsail.dfp.ui
 		public function CodeListItem()
 		{
 			super();
+			buttonMode = true;
+			mouseChildren = false;
 		}
 	}
 }
