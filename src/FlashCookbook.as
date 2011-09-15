@@ -81,13 +81,14 @@ package
 			
 			//init buttons
 			var ffm:ClassButton = new ClassButton();
-			ffm.tfClassName.text = "FFM";
+			ffm.label = "FFM";
 			var oop:ClassButton = new ClassButton();
-			oop.tfClassName.text = "OOP";
+			oop.label = "OOP";
 			var fat:ClassButton = new ClassButton();
-			fat.tfClassName.text = "FAT";
+			fat.label = "FAT";
 			var dfp:ClassButton = new ClassButton();
-			dfp.tfClassName.text = "DFP";
+			dfp.label = "DFP";
+			
 			//init layout box + add buttons to lb + add lb to stage
 			var lb:LayoutBoxFSC = new LayoutBoxFSC(2,true);
 			lb.addChild(ffm);
