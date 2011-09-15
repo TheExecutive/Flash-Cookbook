@@ -262,8 +262,82 @@
 				</code>
 				<notes>
 					myTF - Unique identifier for the text field you are creating.
-					.multiline - Access multi-line property for text field.
-					= true; by setting true allows the text field to wrap text into multiple lines. is set to false by default.
+					.multiline - Access multi-line property of text field.
+					= true; by setting equal to true allows the text field to have multiple lines.
+				</notes>
+				<resources>
+					<link href="http://wddbs.com/FFM/slides/Day%202/FFM_TextFields.pdf" title="FFM Portal" />
+				</resources>
+		</snippet>
+		<snippet id = "textFieldWordWrap" course="ffm">
+				<name>Set TextField word wrap</name>
+				<difficulty>Very Easy</difficulty>
+				<keywords text="textfield,wrap,word wrap,ffm" />
+				<code>
+					<![CDATA[myTF.wordWrap = true;]]>
+				</code>
+				<notes>
+					myTF - Unique identifier for the text field you are creating.
+					.wordWrap - Access word wrap property of text field.
+					= true; by setting true allows the text field to wrap text into multiple lines. is set to false by default. Must set multi-line property to true for text to wrap to multiple lines.
+				</notes>
+				<resources>
+					<link href="http://wddbs.com/FFM/slides/Day%202/FFM_TextFields.pdf" title="FFM Portal" />
+				</resources>
+		</snippet>
+		<snippet id = "textFieldEnableTab" course="ffm">
+				<name>Set TextField to enable tab</name>
+				<difficulty>Very Easy</difficulty>
+				<keywords text="textfield,tabEnabled,tab,enable,ffm" />
+				<code>
+					<![CDATA[myTF.tabEnabled = true;]]>
+				</code>
+				<notes>
+					myTF - Unique identifier for the text field you are creating.
+					.tabEnabled - Determines whether the text field can be selected by pressing the tab key.
+					= true; sets tabEnabled to true and allows text fields to be selected by pressing the tab key.
+				</notes>
+				<resources>
+					<link href="http://wddbs.com/FFM/slides/Day%202/FFM_TextFields.pdf" title="FFM Portal" />
+				</resources>
+		</snippet>
+		<snippet id = "textFieldEmbedFonts" course="ffm">
+				<name>Embed fonts for text fields</name>
+				<difficulty>Very Easy</difficulty>
+				<keywords text="textfield,embed,font,fonts,embedFonts,ffm" />
+				<code>
+					<![CDATA[myTF.embedFonts = true;]]>
+				</code>
+				<notes>
+					myTF - Unique identifier for the text field you are creating.
+					.embedFonts - Embedding fonts allows Flash to use the desired font you would like text to be displayed in.
+					= true; - Directs the TextField to use the font outlines embedded in the movies library, if correct font doesnt exist in library nothing is show. By default this is set to false and the TextField will pick a standard font to display the text in.
+				</notes>
+				<resources>
+					<link href="http://wddbs.com/FFM/slides/Day%202/FFM_TextFields.pdf" title="FFM Portal" />
+				</resources>
+		</snippet>
+		<snippet id = "setTextFormat" course="ffm">
+				<name>Set a TextField's TextFormat</name>
+				<difficulty>Very Easy</difficulty>
+				<keywords text="textfield,format,text,textformat,ffm" />
+				<code>
+					<![CDATA[var myFormat:TextFormat = new TextFormat();]]>
+				</code>
+				<notes>
+					var - Declares you are creating a new variable.
+					myFormat - Unique identifier for variable.
+					:TextFormat - Data types the new variable as TextFormat.
+				</notes>
+				<code>
+					<![CDATA[myFormat.font = "Font Name";
+					myFormat.size = n;
+					myFormat.color = 0xFFFFFF;]]>
+				</code>
+				<notes>
+					myFormat.font = Sets the font you would like to be displayed in the TextField, must be enclosed in quotes and spelled correctly including spaces and/or special characters.
+					myFormat.size = Sets the font size for the text in the text field, must be a number;
+					myFormat.color = Sets the color of the font in the text field, must be a HEX value and must start with 0x.
 				</notes>
 				<resources>
 					<link href="http://wddbs.com/FFM/slides/Day%202/FFM_TextFields.pdf" title="FFM Portal" />
