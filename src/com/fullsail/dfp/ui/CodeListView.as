@@ -27,6 +27,7 @@ package com.fullsail.dfp.ui
 		private var _rangeOfMotion:Number;
 
 		private var _itemFieldHeight:Number;
+		private var _listFieldOpen:Boolean = false;
 		
 		public function CodeListView()
 		{
@@ -146,6 +147,7 @@ package com.fullsail.dfp.ui
 					{
 						//if removeThisIndex has a value and if it's greater than 0
 						_lb.removeChildAt(_removeThisIndex);
+						_listFieldOpen = false;
 						
 					}
 					var itemIndex:int = _codeItemListArray.indexOf(listItem);
@@ -160,6 +162,7 @@ package com.fullsail.dfp.ui
 					_itemFieldHeight = cItemField.height;
 					
 					_lb.addChildAt(cItemField, itemIndex + 1);
+					_listFieldOpen = true;
 					
 					//after an ItemField has been opened, update scrolling
 					updateScrollingData();
@@ -184,9 +187,13 @@ package com.fullsail.dfp.ui
 				_rangeOfMotion += (item.height + 2);
 				// +2 is for the padding in the layout box
 			}
+			if(_listFieldOpen)
+			{
+				_rangeOfMotion += _itemFieldHeight + 2;
+				//tacking on the itemfieldheight, but only 
+				//if there is an itemfield open
+			}
 			
-			_rangeOfMotion += _itemFieldHeight + 2;
-			//tacking on the itemfieldheight
 			
 		}
 		
