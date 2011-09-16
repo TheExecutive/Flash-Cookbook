@@ -23,9 +23,9 @@ TextField - Is the data type, it represents what kind of object the variable and
 				<keywords text="function,create,creating,ffm" />
 				<code>
 					<![CDATA[function functionName():ReturnType
-					{
-						//action to be performed
-					}]]>
+	{
+		//action to be performed
+	}]]>
 				</code>
 				<notes>
 function - Declares you are creating a new function
@@ -43,9 +43,9 @@ ReturnType - If your function returns a value, this is where you define that typ
 				<keywords text="function,create,advanced,creating,ffm" />
 				<code>
 					<![CDATA[private function stringLength(pString:String):Number
-					{
-						return pString.length;
-					}]]>
+	{
+		return pString.length;
+	}]]>
 				</code>
 				<notes>
 private - Accessor type, defines where a function is private or public.
@@ -238,8 +238,8 @@ backgroundColor - Sets the display windows background color, uses Hex values, mu
 				<keywords text="textfield,create,ffm" />
 				<code>
 					<![CDATA[var myTF:TextField = new TextField();
-					this.addChild(myTF);
-					myTF.text = "Hello World";]]>
+	this.addChild(myTF);
+	myTF.text = "Hello World";]]>
 				</code>
 				<notes>
 var - Delcares a new variable is being created.
@@ -348,7 +348,10 @@ myFormat.color = Sets the color of the font in the text field, must be a HEX val
 				<difficulty>Very Easy</difficulty>
 				<keywords text="textfield,format,text,textformat,ffm" />
 				<code>
-					<![CDATA[myTF.setTextFormat = myFormat;]]> OR <![CDATA[myTF.defaultTextFormat = myFormat;]]>
+					<![CDATA[myTF.setTextFormat = myFormat;]]>
+				</code>
+				<code>
+					<![CDATA[	myTF.defaultTextFormat = myFormat;]]>
 				</code>
 				<notes>
 myTF.setTextFormat - Applies the text formatting to the text field AFTER the text has been placed in the text field.
@@ -372,6 +375,8 @@ myTF - The text field variable name.
 				</notes>
 				<code>
 					<![CDATA[myTF.maxChars;]]>
+				</code>
+				<code>
 					<![CDATA[myTF.restrict = "a-z,A-Z,0-9";]]>
 				</code>
 				<notes>
@@ -399,10 +404,10 @@ Responder); - Is the function that will run once the event has occured, can be n
 				</notes>
 				<code>
 					<![CDATA[myMovieClip.addEventListener(MouseEvent.CLICK, doSomething);
-					function doSomething(event:MouseEvent):void
-					{
-						//actions to be performed
-					}]]>
+	function doSomething(event:MouseEvent):void
+	{
+		//actions to be performed
+	}]]>
 				</code>
 				<notes>
 myMovieClip - Variable name for movie clip variable.
@@ -433,6 +438,92 @@ myItem - The variable you are removing the listener from
 				</notes>
 				<resources>
 					<link href="http://wddbs.com/FFM/slides/Day%203/FFM_Events.pdf" title="FFM Portal" />
+				</resources>
+		</snippet>
+		<snippet id = "basicConditional" course="ffm">
+				<name>Basic Conditional Statement</name>
+				<difficulty>Easy</difficulty>
+				<keywords text="conditional,if,if else,ffm" />
+				<code>
+					<![CDATA[if(condition)
+	{
+		doSomething():
+	}
+	else
+	{
+		doSomethingElse();
+	}]]>
+				</code>
+				<notes>
+if() - Evaluates a condition, where condition equals the parameters of the condition you are evaluating.
+doSomething() - Would be the actions performed if the condition is true.
+else - provides a second condition in the event the condition returns false.
+doSomethingElse() - The second set of actions to be performed is the condition returns false.
+				</notes>
+				<resources>
+					<link href="http://wddbs.com/FFM/slides/Day%203/FFM_Conditionals.pdf" title="FFM Portal" />
+				</resources>
+		</snippet>
+		<snippet id = "multipleConditional" course="ffm">
+				<name>Basic Conditional Statement</name>
+				<difficulty>Easy</difficulty>
+				<keywords text="conditional,if,if else,multiple,ffm" />
+				<code>
+					<![CDATA[if(condition)
+	{
+		doSomething():
+	}
+	else if (a == b)
+	{
+		doSomethingElse();
+	}
+	else
+	{
+		doAnotherThing();
+	}]]>
+				</code>
+				<notes>
+if() - Evaluates a condition, where condition equals the parameters of the condition you are evaluating.
+doSomething() - Would be the actions performed if the condition is true.
+else if (a == b) - Provides another set of conditions to evaluate, in this case if a is equal to b then the doSomethingElse function would run.
+doSomethingElse() - The second set of actions to be performed is the condition returns false.
+else - Provides a third set of instruction in the event neither of the first two conditions returns true.
+doAnotherThing(); Action to perform in the event neither of the first two conditions return true.
+				</notes>
+				<resources>
+					<link href="http://wddbs.com/FFM/slides/Day%203/FFM_Conditionals.pdf" title="FFM Portal" />
+				</resources>
+		</snippet>
+		<snippet id = "comparisonOperators" course="ffm">
+				<name>Comparison Operators</name>
+				<difficulty>Easy</difficulty>
+				<keywords text="conditional,comparison,operators,ffm" />
+				<code>
+					<![CDATA[(a == b)]]>
+				</code>
+				<notes>
+	a/b - Variables to be compared, where a represents one variable and b represents the second
+	== - Same as saying "if equal to". So the above statement would read "If a is equal to b" which evaluates to TRUE if the two values are the same.
+				</notes>
+				<code>
+					<![CDATA[(a != b)]]>
+				</code>
+				<notes>
+	a/b - Variables to be compared, where a represents one variable and b represents the second
+	!= - Same as saying "if not equal to". So the above statement would read "If a is not equal to b" which evaluates to TRUE if the two values are not the same.
+				</notes>
+				<code>
+					<![CDATA[(a>b), (a<b), (a<=b), (a>=b);]]>
+				</code>
+				<notes>
+	a/b - Variables to be compared, where a represents one variable and b represents the second
+	> - Same as saying "if value a is greater than value b".
+	< - Same as saying "if value a is less than value b".
+	<= - Same as saying "if value a is less than or equal to value b".
+	>= - Same as saying "if value a is great than or equal to value b".
+				</notes>
+				<resources>
+					<link href="http://wddbs.com/FFM/slides/Day%203/FFM_Conditionals.pdf" title="FFM Portal" />
 				</resources>
 		</snippet>
 	</snippets> <!--end of snippet node-->
