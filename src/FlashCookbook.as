@@ -13,14 +13,9 @@ package
 	import com.fullsail.dfp.ui.SearchBox;
 	
 	import flash.display.Sprite;
-	import flash.events.Event;
 	import flash.events.MouseEvent;
 	
 	import libs.ClassBtn;
-	import libs.FSUlogo;
-	import libs.NewSB;
-	import libs.Newbtn;
-	import libs.Title;
 	
 	[SWF(width="800", height="680", frameRate="60")]
 	public class FlashCookbook extends Sprite

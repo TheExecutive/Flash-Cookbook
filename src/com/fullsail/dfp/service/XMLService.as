@@ -77,7 +77,7 @@ package com.fullsail.dfp.service
 					cVO.notes = snippet.notes;
 				}else if(snippet.notes.length() > 1)
 				{
-					for(var j:int = 0; j<snippet.notes.length(); j++)
+					for(var j:int = 0; j < snippet.notes.length(); j++)
 					{
 						cVO.notes += snippet.notes[j] + "\n";
 					}
@@ -91,7 +91,6 @@ package com.fullsail.dfp.service
 			var xmlEvent:XMLEvent = new XMLEvent(XMLEvent.DATA_LOAD_COMPLETE);
 			xmlEvent.codeVOArray = cVOArray; //passing the Array full of VOs along with the custom event
 			dispatchEvent(xmlEvent);
-			trace("xml event dispatched");
 		}
 	}
 }
