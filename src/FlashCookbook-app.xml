@@ -34,7 +34,7 @@
 
 	<!-- Description, displayed in the AIR application installer.
 	May have multiple values for each language. See samples or xsd schema file. Optional. -->
-	<!-- <description></description> -->
+	<description>Full Sail University Essential Flash Cookbook. A simple code snippet application for FSU students.</description>
 
 	<!-- Copyright information. Optional -->
 	<!-- <copyright></copyright> -->
