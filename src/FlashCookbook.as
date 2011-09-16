@@ -30,14 +30,15 @@ package
 		//REMINDER: Commit all major changes to any class files.
 		
 			/* ---------TO DO LIST-----------
-				Build Base Class Structure (comments)
+				Add Functionality to Class Buttons
+				Add search functionality
+				XML
+				Minor design additions (animations, shading, etc)
 			*/
 		
-			/* ---------COMPLETED (as of Wed morning)------
-				Created libs folder
-				Merged in assets FLA
-				Set up custom chrome basics
-				Set stage dimensions
+			/* ---------COMPLETED (as of Fri evening)------
+				List Item expansion
+				List Item styling
 			*/
 
 		private var _cListView:CodeListView;
