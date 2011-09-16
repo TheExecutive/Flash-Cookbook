@@ -465,8 +465,8 @@ doSomethingElse() - The second set of actions to be performed is the condition r
 				</resources>
 		</snippet>
 		<snippet id = "multipleConditional" course="ffm">
-				<name>Basic Conditional Statement</name>
-				<difficulty>Easy</difficulty>
+				<name>Multiple Conditions Statement</name>
+				<difficulty>Moderate</difficulty>
 				<keywords text="conditional,if,if else,multiple,ffm" />
 				<code>
 					<![CDATA[if(condition)
@@ -496,7 +496,7 @@ doAnotherThing(); Action to perform in the event neither of the first two condit
 		</snippet>
 		<snippet id = "comparisonOperators" course="ffm">
 				<name>Comparison Operators</name>
-				<difficulty>Easy</difficulty>
+				<difficulty>Moderate</difficulty>
 				<keywords text="conditional,comparison,operators,ffm" />
 				<code>
 					<![CDATA[(a == b)]]>
@@ -531,7 +531,7 @@ doAnotherThing(); Action to perform in the event neither of the first two condit
 		</snippet>
 		<snippet id = "mathClass" course="ffm">
 				<name>Math Class</name>
-				<difficulty>Easy</difficulty>
+				<difficulty>Moderate</difficulty>
 				<keywords text="math,class,math class,round,ceiling,ceil,floor,ffm" />
 				<code>
 					<![CDATA[Math.round(num)]]>
