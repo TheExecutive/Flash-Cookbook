@@ -139,6 +139,12 @@ package com.fullsail.dfp.ui
 				
 				if(listItem.isSelected) //if isSelected is true
 				{
+					var itemIndex:int = _codeItemListArray.indexOf(listItem);
+					
+					var cItemField:CodeItemField = new CodeItemField();
+					cItemField.cVO = listItem.codeVO;
+					
+					_lb.addChildAt(cItemField, itemIndex + 1);
 					
 					//not sure if I need this event here yet
 					//but it can't hurt
