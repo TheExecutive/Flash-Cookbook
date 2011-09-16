@@ -388,6 +388,16 @@ myTF - The text field variable name.
 				<difficulty>Easy</difficulty>
 				<keywords text="event,listener,eventListener,ffm" />
 				<code>
+					<![CDATA[item.addEventListener(Event.EVENT_TYPE, Responder);]]>
+				</code>
+				<notes>
+item - the variable you want to attach the event listener to.
+.addEventListner - Adds the event listner to the object it is attached to, is a property of the object.
+(Event.EVENT_TYPE, - Declares what event to listen for, there are many to choose from so make sure you choose to right event for the right task.
+Responder); - Is the function that will run once the event has occured, can be named anything but make sure function names are descriptive.
+//See below example for more detail on writing event listeners.
+				</notes>
+				<code>
 					<![CDATA[myMovieClip.addEventListener(MouseEvent.CLICK, doSomething);
 					function doSomething(event:MouseEvent):void
 					{

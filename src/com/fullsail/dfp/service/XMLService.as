@@ -52,14 +52,18 @@ package com.fullsail.dfp.service
 			for each(var snippet:XML in xml.snippet)
 			{
 				var cVO:CodeVO = new CodeVO();
+				cVO.codeString = "";
+				cVO.notes = "";
 				cVO.id = snippet.@id;
 				cVO.course = snippet.@course;
 				cVO.name = snippet.name;
 				cVO.difficulty = snippet.difficulty;
 				cVO.keywords = snippet.keywords.@text;
+				//fix to remove null from code view;
 				if(snippet.code.length() == 1)
 				{
 					cVO.codeString = snippet.code;
+					
 				}else if(snippet.code.length() > 1)
 				{
 					for(var i:int = 0; i < snippet.code.length(); i++)
@@ -67,11 +71,20 @@ package com.fullsail.dfp.service
 						cVO.codeString += snippet.code[i] + "\n";
 					}
 				}
-				cVO.notes = snippet.notes;
+				//fix to remove notes node from notes view;
+				if(snippet.notes.length() == 1)
+				{
+					cVO.notes = snippet.notes;
+				}else if(snippet.notes.length() > 1)
+				{
+					for(var j:int = 0; j<snippet.notes.length(); j++)
+					{
+						cVO.notes += snippet.notes[j] + "\n";
+					}
+				}
 				cVO.resourcesLink = snippet.resources.link.@href;
 				cVO.resourcesTitle = snippet.resources.link.@title;
 				cVOArray.push(cVO);
-				
 			}
 			
 			//dispatching event when all this completes
