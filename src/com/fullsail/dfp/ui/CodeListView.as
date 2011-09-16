@@ -144,7 +144,9 @@ package com.fullsail.dfp.ui
 					var cItemField:CodeItemField = new CodeItemField();
 					cItemField.cVO = listItem.codeVO;
 					
-					_lb.addChildAt(cItemField, itemIndex + 1);
+					_lb.addChild(cItemField);
+					cItemField.y = listItem.y + listItem.height;
+					//Buggy and broken. Need to update layoutbox
 					
 					//not sure if I need this event here yet
 					//but it can't hurt
