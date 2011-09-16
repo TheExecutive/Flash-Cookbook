@@ -91,12 +91,12 @@
 					<![CDATA[var a:Number;]]>
 				</code>
 				<code>
-					<![CDATA[int(a);]]> OR <![CDATA[a as int;]]>
+					<![CDATA[int(a); OR a as int;]]>
 				</code>
 				<notes>
-					a:Number - Is a variable data typed as a Number.
-					int(a) - Converts a to an int instead of a Number.
-					a as int - Also converts a to an int instead of a Number.
+a:Number - Is a variable data typed as a Number.
+int(a) - Converts a to an int instead of a Number.
+a as int - Also converts a to an int instead of a Number.
 				</notes>
 				<resources>
 					<link href="http://wddbs.com/FFM/slides/Day%201/FFM_DataTypes.key.pdf" title="FFM Portal" />

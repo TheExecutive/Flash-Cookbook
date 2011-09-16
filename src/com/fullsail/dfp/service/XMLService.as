@@ -57,7 +57,16 @@ package com.fullsail.dfp.service
 				cVO.name = snippet.name;
 				cVO.difficulty = snippet.difficulty;
 				cVO.keywords = snippet.keywords.@text;
-				cVO.codeString = snippet.code;
+				if(snippet.code.length() == 1)
+				{
+					cVO.codeString = snippet.code;
+				}else if(snippet.code.length() > 1)
+				{
+					for(var i:int = 0; i < snippet.code.length(); i++)
+					{
+						cVO.codeString += snippet.code[i] + "\n";
+					}
+				}
 				cVO.notes = snippet.notes;
 				cVO.resourcesLink = snippet.resources.link.@href;
 				cVO.resourcesTitle = snippet.resources.link.@title;
