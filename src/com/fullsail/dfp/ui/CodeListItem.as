@@ -4,6 +4,8 @@ package com.fullsail.dfp.ui
 	
 	import libs.CodeListItemBase;
 	
+	import mx.utils.StringUtil;
+	
 	public class CodeListItem extends CodeListItemBase
 	{
 		
@@ -29,8 +31,10 @@ package com.fullsail.dfp.ui
 		
 		private function createItemData():void
 		{
-			tfTitle.text = _codeVO.name;
-			tfCategory.text = _codeVO.course + " / " + _codeVO.difficulty;
+			tfName.text = _codeVO.name;
+			tfCourse.text = _codeVO.course.toUpperCase(); 
+			//course abbreviation in all caps
+			tfDifficulty.text = "Difficulty: " + _codeVO.difficulty;
 		}
 		
 	}
