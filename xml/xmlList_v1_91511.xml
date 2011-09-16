@@ -529,5 +529,27 @@ doAnotherThing(); Action to perform in the event neither of the first two condit
 					<link href="http://wddbs.com/FFM/slides/Day%203/FFM_Conditionals.pdf" title="FFM Portal" />
 				</resources>
 		</snippet>
+		<snippet id = "mathClass" course="ffm">
+				<name>Math Class</name>
+				<difficulty>Easy</difficulty>
+				<keywords text="math,class,math class,round,ceiling,ceil,floor,ffm" />
+				<code>
+					<![CDATA[Math.round(num)]]>
+					<![CDATA[Math.ceil(num)]]>
+					<![CDATA[Math.floor(num)]]>
+					<![CDATA[Math.random()]]>
+				</code>
+				<notes>
+	Math. - Math class, contains methods and constants that represent common mathematical functions and values.
+	num - Any number you want to perform the Math action on
+	round(num) - Rounds the num up or down to the nearest integer and returns the value.
+	ceil(num) - Rounds the parameter up to the next higher integer.
+	floor(num) - Rounds the num down to an integer, is effectively the same as casting to an integer.
+	random() - Returns a "psuedo-random" number between 0 and 1.
+				</notes>
+				<resources>
+					<link href="http://wddbs.com/FFM/slides/Day%204/FFM_MathClass.key.pdf" title="FFM Portal" />
+				</resources>
+		</snippet>
 	</snippets> <!--end of snippet node-->
 		
