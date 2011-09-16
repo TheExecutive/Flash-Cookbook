@@ -17,7 +17,7 @@ TextField - Is the data type, it represents what kind of object the variable and
 				</resources>
 				
 		</snippet>
-		<snippet id = "creatingFunctions_basic" course="ffm">
+		<snippet id = "creatingFunctions_basic" course="oop">
 				<name>Creating a basic Function</name>
 				<difficulty>Very Easy</difficulty>
 				<keywords text="function,create,creating,ffm" />
@@ -37,7 +37,7 @@ ReturnType - If your function returns a value, this is where you define that typ
 					<link href="http://wddbs.com/FFM/slides/Day%201/FFM_Day1_Functions.pdf" title="FFM Portal" />
 				</resources>
 		</snippet>
-		<snippet id = "creatingFunctions_advanced" course="ffm">
+		<snippet id = "creatingFunctions_advanced" course="fat">
 				<name>Creating an Advanced Function</name>
 				<difficulty>Very Easy</difficulty>
 				<keywords text="function,create,advanced,creating,ffm" />
@@ -59,7 +59,7 @@ return pString.length - This will return the number of characters that compose t
 					<link href="http://wddbs.com/FFM/slides/Day%201/FFM_Day1_Functions.pdf" title="FFM Portal" />
 				</resources>
 		</snippet>
-		<snippet id = "callingFunctions" course="ffm">
+		<snippet id = "callingFunctions" course="dfp">
 				<name>Calling a Function</name>
 				<difficulty>Very Easy</difficulty>
 				<keywords text="function,call,calling,ffm" />
@@ -386,7 +386,7 @@ myTF - The text field variable name.
 		<snippet id = "eventBasics" course="ffm">
 				<name>Events - Basic Structure</name>
 				<difficulty>Easy</difficulty>
-				<keywords text="textfield,input,text,ffm" />
+				<keywords text="event,listener,eventListener,ffm" />
 				<code>
 					<![CDATA[myMovieClip.addEventListener(MouseEvent.CLICK, doSomething);
 					function doSomething(event:MouseEvent):void
@@ -396,10 +396,33 @@ myTF - The text field variable name.
 				</code>
 				<notes>
 myMovieClip - Variable name for movie clip variable.
-.addEventListener - Adds 
+.addEventListener - Adds an event listener to the variable. 
+(MouseEvent.CLICK - Tells the variable to listen for a mouse event, specifically when a user clicks the mouse button. Is basically a variable hold the string "click".
+,doSomething) - Is the function that will run once the mouse button has been clicked.
+function doSomething - declares a new function with the name doSomething.
+(event:MouseEvent) - Parameters that let the function know to respond to a mouse event, specifically when the mouse is clicked.
+:void - Since the function does not return anything we end the function with the keyword "void".
+//actions to be performed - this is where you would write the actions to be performed once the mouse event is dispatched.
 				</notes>
 				<resources>
-					<link href="http://wddbs.com/FFM/slides/Day%203/FFM_InputTextFields.pdf" title="FFM Portal" />
+					<link href="http://wddbs.com/FFM/slides/Day%203/FFM_Events.pdff" title="FFM Portal" />
+				</resources>
+		</snippet>
+		<snippet id = "removeEvent" course="ffm">
+				<name>Removing an Event Listener</name>
+				<difficulty>Easy</difficulty>
+				<keywords text="event,remove,removeEvent,listner,ffm" />
+				<code>
+					<![CDATA[myItem.removeEventListner(MouseEvent.CLICK, doSomething;]]>
+				</code>
+				<notes>
+myItem - The variable you are removing the listener from
+.removeEventListner - Removes the event listener from the object it is attached to
+(MouseEvent.CLICK, doSomething) - Parameters for removeEventListener, in this case the event being removed is a mouse click event. You must also include the function the event listener is attached to. 
+//You should always remove an event listener once it is not needed anymore, this will not only prevent memory leaks, but also keep the program running effeciently.
+				</notes>
+				<resources>
+					<link href="http://wddbs.com/FFM/slides/Day%203/FFM_Events.pdf" title="FFM Portal" />
 				</resources>
 		</snippet>
 	</snippets> <!--end of snippet node-->
