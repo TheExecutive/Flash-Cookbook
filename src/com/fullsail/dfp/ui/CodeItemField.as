@@ -13,8 +13,6 @@ package com.fullsail.dfp.ui
 		public function CodeItemField()
 		{
 			super();
-			tfKeywords.autoSize = TextFieldAutoSize.LEFT;
-			tfKeywords.width = 502;
 			tfCode.autoSize = TextFieldAutoSize.LEFT;
 			tfCode.width = 502;
 			tfNotes.autoSize = TextFieldAutoSize.LEFT;
@@ -34,11 +32,20 @@ package com.fullsail.dfp.ui
 		
 		private function updateItemField():void
 		{
-			tfKeywords.text = _cVO.keywords;
 			tfCode.text = _cVO.codeString;
 			tfNotes.text = _cVO.notes;
 			
-			fieldbaseBG.height = (tfKeywords.height + tfCode.height + tfNotes.height) + 10;
+			//adding 10px of padding to every textfield
+			tfCode.height = tfCode.height + 10;
+			tfNotes.height = tfNotes.height + 10;
+			
+			//correcting y position - the y of the notes will be
+			//based on the code y and code height
+			tfNotes.y = tfCode.y + tfCode.height;
+			
+			fieldbaseBG.height = (tfCode.height + tfNotes.height) + 20;
+			
+			this.height = fieldbaseBG.height;
 			
 		}
 		
