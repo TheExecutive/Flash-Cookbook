@@ -400,7 +400,8 @@ myFormat.color = 0xFFFFFF;]]>
 • .addEventListner - Adds the event listner to the object it is attached to, is a property of the object.
 • (Event.EVENT_TYPE, - Declares what event to listen for, there are many to choose from so make sure you choose to right event for the right task.
 Responder); - Is the function that will run once the event has occured, can be named anything but make sure function names are descriptive.
-• //See below example for more detail on writing event listeners.
+
+//See below example for more detail on writing event listeners.
 				</notes>
 				<code>
 					<![CDATA[myMovieClip.addEventListener(MouseEvent.CLICK, doSomething);
@@ -434,7 +435,8 @@ Responder); - Is the function that will run once the event has occured, can be n
 • myItem - The variable you are removing the listener from
 • .removeEventListner - Removes the event listener from the object it is attached to
 • (MouseEvent.CLICK, doSomething) - Parameters for removeEventListener, in this case the event being removed is a mouse click event. You must also include the function the event listener is attached to. 
-• //You should always remove an event listener once it is not needed anymore, this will not only prevent memory leaks, but also keep the program running effeciently.
+
+//You should always remove an event listener once it is not needed anymore, this will not only prevent memory leaks, but also keep the program running effeciently.
 				</notes>
 				<resources>
 					<link href="http://wddbs.com/FFM/slides/Day%203/FFM_Events.pdf" title="FFM Portal" />
