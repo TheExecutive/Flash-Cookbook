@@ -34,7 +34,7 @@ package com.fullsail.dfp.ui
 		
 		private function updateItemField():void
 		{
-			tfCode.text = "\t" + _cVO.codeString;
+			tfCode.text = _cVO.codeString;
 			tfNotes.text = _cVO.notes;
 			
 			//adding 10px of padding to every textfield
