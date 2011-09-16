@@ -6,7 +6,6 @@ package com.fullsail.dfp.ui
 	
 	public class ClassButton extends ClassBtn
 	{
-		
 		private var _label:String;
 		private var _isSelected:Boolean = false;
 		
@@ -21,7 +20,11 @@ package com.fullsail.dfp.ui
 			var dropShadow:DropShadowFilter = new DropShadowFilter(2,45,0,0.9);
 			filters = [dropShadow];
 		}
-
+		
+		public function get label():String
+		{
+			return _label;
+		}
 		public function set label(value:String):void
 		{
 			_label = value;
@@ -48,6 +51,7 @@ package com.fullsail.dfp.ui
 				btnRollover.gotoAndStop(1);
 			}
 		}
+
 		
 	}
 }

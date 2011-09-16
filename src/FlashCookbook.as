@@ -83,29 +83,26 @@ package
 			sb.addEventListener(SearchEvent.SEARCH_QUERY,onSearch);
 			
 			//init buttons
+			createButtons();
+			
+			//init basebar
+		}
+		
+		private function createButtons():void
+		{
 			var ffm:ClassButton = new ClassButton();
-			var ffmRoll:RollOverManagerFSC = new RollOverManagerFSC(ffm);
 			ffm.label = "FFM";
-			ffm.addEventListener(MouseEvent.CLICK,onFFMClick);
-			_buttonArray.push(ffm);
 			
 			var oop:ClassButton = new ClassButton();
-			var oopRoll:RollOverManagerFSC = new RollOverManagerFSC(oop);
 			oop.label = "OOP";
-			oop.addEventListener(MouseEvent.CLICK,onOOPClick);
-			_buttonArray.push(oop);
 			
 			var fat:ClassButton = new ClassButton();
-			var fatRoll:RollOverManagerFSC = new RollOverManagerFSC(fat);
 			fat.label = "FAT";
-			fat.addEventListener(MouseEvent.CLICK,onFATClick);
-			_buttonArray.push(fat);
 			
 			var dfp:ClassButton = new ClassButton();
-			var dfpRoll:RollOverManagerFSC = new RollOverManagerFSC(dfp);
 			dfp.label = "DFP"; 
-			dfp.addEventListener(MouseEvent.CLICK,onDFPClick);
-			_buttonArray.push(dfp);
+			
+			_buttonArray = [ffm, oop, fat, dfp];
 			
 			//init layout box + add buttons to lb + add lb to stage
 			var lb:LayoutBoxFSC = new LayoutBoxFSC(5,true);
@@ -115,37 +112,17 @@ package
 			
 			for each (var cb:ClassButton in _buttonArray)
 			{
+				var rm:RollOverManagerFSC = new RollOverManagerFSC(cb);
+				cb.addEventListener(MouseEvent.CLICK,onButtonClick);
 				lb.addChild(cb);
 			}
 			
-			//init basebar
 		}
 		
-		protected function onFFMClick(event:MouseEvent):void
+		protected function onButtonClick(event:MouseEvent):void
 		{
-			event.currentTarget.isSelected = true;
-			/*for each (var cb:ClassButton in _buttonArray)
-			{
-				
-			} */
-		}
-		
-		protected function onOOPClick(event:MouseEvent):void
-		{
-			// TODO Auto-generated method stub
-			
-		}
-		
-		protected function onFATClick(event:MouseEvent):void
-		{
-			// TODO Auto-generated method stub
-			
-		}
-		
-		protected function onDFPClick(event:MouseEvent):void
-		{
-			// TODO Auto-generated method stub
-			
+			var clickedButton:ClassButton = ClassButton(event.currentTarget);
+			trace("clicked: " + clickedButton.label);
 		}
 		
 		protected function onSearch(event:SearchEvent):void
