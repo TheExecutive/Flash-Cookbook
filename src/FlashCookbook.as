@@ -123,6 +123,16 @@ package
 		{
 			var clickedButton:ClassButton = ClassButton(event.currentTarget);
 			trace("clicked: " + clickedButton.label);
+			
+			for each (var cb:ClassBtn in _buttonArray)
+			{
+				cb.isSelected = (event.currentTarget == cb);  
+				//this is a shorthand if statement, it's asking if the button clicked on 
+				//is the currentTarget
+				// event.currentTarget == cb will ONLY be true for the button clicked on
+				// and it will set all other buttons to false.
+				
+			}
 		}
 		
 		protected function onSearch(event:SearchEvent):void

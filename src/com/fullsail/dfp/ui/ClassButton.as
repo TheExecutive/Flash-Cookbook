@@ -1,13 +1,18 @@
 package com.fullsail.dfp.ui
 {
 	import flash.filters.DropShadowFilter;
+	import flash.filters.GlowFilter;
 	
 	import libs.ClassBtn;
 	
 	public class ClassButton extends ClassBtn
 	{
 		private var _label:String;
-		private var _isSelected:Boolean = false;
+		private var _isSelected:Boolean = false; //default is false
+
+		private var _selectedGlow:GlowFilter;
+
+		private var _dropShadow:DropShadowFilter;
 		
 		public function ClassButton()
 		{
@@ -17,8 +22,11 @@ package com.fullsail.dfp.ui
 			this.mouseChildren = false;
 			this.scaleX = this.scaleY = .75;
 			
-			var dropShadow:DropShadowFilter = new DropShadowFilter(2,45,0,0.9);
-			filters = [dropShadow];
+			_dropShadow = new DropShadowFilter(2,45,0,0.9);
+			filters = [_dropShadow];
+			
+			_selectedGlow = new GlowFilter(0xa94000,1);
+			//setting up glow
 		}
 		
 		public function get label():String
@@ -46,9 +54,11 @@ package com.fullsail.dfp.ui
 		{
 			if(_isSelected)
 			{
-				btnRollover.gotoAndStop(30);
+				filters = [_dropShadow, _selectedGlow];
+				alpha = 1;
 			}else{
-				btnRollover.gotoAndStop(1);
+				filters = [_dropShadow];
+				alpha = 0.7;
 			}
 		}
 
