@@ -517,10 +517,13 @@ doAnotherThing(); Action to perform in the event neither of the first two condit
 				</code>
 				<notes>
 	a/b - Variables to be compared, where a represents one variable and b represents the second
-	> - Same as saying "if value a is greater than value b".
-	< - Same as saying "if value a is less than value b".
-	<= - Same as saying "if value a is less than or equal to value b".
-	>= - Same as saying "if value a is great than or equal to value b".
+	<![CDATA[>]]> - Same as saying "if value a is greater than value b".
+	<![CDATA[<]]> - Same as saying "if value a is less than value b".
+	<![CDATA[<=]]> - "AND" - Same as saying "if value a is less than or equal to value b".
+	<![CDATA[>=]]> - "OR" - Same as saying "if value a is great than or equal to value b".
+	// Other optional condition evaluators
+	<![CDATA[&&]]> - Same as saying "if condition 1 AND codition 2 are the same", if the same the condition would return true.
+	<![CDATA[||]]> - Same as saying "if condition 1 OR condition 2 are the same" 
 				</notes>
 				<resources>
 					<link href="http://wddbs.com/FFM/slides/Day%203/FFM_Conditionals.pdf" title="FFM Portal" />
