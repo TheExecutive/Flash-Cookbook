@@ -1,8 +1,10 @@
 package com.fullsail.dfp.ui
 {
+	import com.fullsail.dfp.events.DetailEvent;
 	import com.fullsail.dfp.vo.CodeVO;
 	
 	import flash.events.Event;
+	import flash.events.MouseEvent;
 	
 	import libs.CodeListViewBase;
 	
@@ -110,11 +112,41 @@ package com.fullsail.dfp.ui
 				//adding it to the layout box
 				_lb.addChild(listItem);
 				
-				
+				//setting up a listener and pushing into array
+				listItem.addEventListener(MouseEvent.CLICK,onItemClick);
 				_codeItemListArray.push(listItem);
+				/*
+				the reason I don't have just one listener on the layout box 
+				instead is because we eventually plan to have the layoutbox 
+				expand with content that will not be clickable, (indexOf) 
+				and that will cause errors if those items are clicked. 
+				This can possibly be fixed with IF statements. 
+				Something to look into later.
+				*/
+				
 			}
 			
 			updateScrollingData();
+		}
+		
+		protected function onItemClick(event:MouseEvent):void
+		{
+			for each(var listItem:CodeListItem in _codeItemListArray)
+			{
+				listItem.isSelected = (event.currentTarget == listItem);
+				//again, this will make the one clicked true and 
+				//all the others false. Only one can be active at a time.
+				
+				if(listItem.isSelected) //if isSelected is true
+				{
+					
+					//not sure if I need this event here yet
+					//but it can't hurt
+					var dEvent:DetailEvent = new DetailEvent(DetailEvent.CODE_DETAIL);
+					dEvent.cVO = listItem.codeVO;
+					dispatchEvent(dEvent);
+				}
+			}
 		}
 		private function updateScrollingData():void
 		{

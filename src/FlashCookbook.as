@@ -109,11 +109,13 @@ package
 			addChild(lb);
 			lb.x = 127;
 			lb.y = 68;
+			lb.addEventListener(MouseEvent.CLICK,onButtonClick);
+			//a single listener on the layoutbox, listening for all buttons.
+			//saving memory for the win
 			
 			for each (var cb:ClassButton in _buttonArray)
 			{
 				var rm:RollOverManagerFSC = new RollOverManagerFSC(cb);
-				cb.addEventListener(MouseEvent.CLICK,onButtonClick);
 				lb.addChild(cb);
 			}
 			
@@ -121,12 +123,12 @@ package
 		
 		protected function onButtonClick(event:MouseEvent):void
 		{
-			var clickedButton:ClassButton = ClassButton(event.currentTarget);
+			var clickedButton:ClassButton = ClassButton(event.target);
 			trace("clicked: " + clickedButton.label);
 			
 			for each (var cb:ClassBtn in _buttonArray)
 			{
-				cb.isSelected = (event.currentTarget == cb);  
+				cb.isSelected = (event.target == cb);  
 				//this is a shorthand if statement, it's asking if the button clicked on 
 				//is the currentTarget
 				// event.currentTarget == cb will ONLY be true for the button clicked on

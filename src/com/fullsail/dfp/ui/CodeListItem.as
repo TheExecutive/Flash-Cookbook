@@ -10,6 +10,7 @@ package com.fullsail.dfp.ui
 	{
 		
 		private var _codeVO:CodeVO;
+		private var _isSelected:Boolean = false;
 		
 		public function CodeListItem()
 		{
@@ -36,6 +37,17 @@ package com.fullsail.dfp.ui
 			//course abbreviation in all caps
 			tfDifficulty.text = "Difficulty: " + _codeVO.difficulty;
 		}
+
+		public function get isSelected():Boolean
+		{
+			return _isSelected;
+		}
+
+		public function set isSelected(value:Boolean):void
+		{
+			_isSelected = value;
+		}
+
 		
 	}
 }
