@@ -238,8 +238,8 @@ backgroundColor - Sets the display windows background color, uses Hex values, mu
 				<keywords text="textfield,create,ffm" />
 				<code>
 					<![CDATA[var myTF:TextField = new TextField();
-	this.addChild(myTF);
-	myTF.text = "Hello World";]]>
+this.addChild(myTF);
+myTF.text = "Hello World";]]>
 				</code>
 				<notes>
 var - Delcares a new variable is being created.
@@ -331,8 +331,8 @@ myFormat - Unique identifier for variable.
 				</notes>
 				<code>
 					<![CDATA[myFormat.font = "Font Name";
-					myFormat.size = n;
-					myFormat.color = 0xFFFFFF;]]>
+myFormat.size = n;
+myFormat.color = 0xFFFFFF;]]>
 				</code>
 				<notes>
 myFormat.font = Sets the font you would like to be displayed in the TextField, must be enclosed in quotes and spelled correctly including spaces and/or special characters.
@@ -351,7 +351,7 @@ myFormat.color = Sets the color of the font in the text field, must be a HEX val
 					<![CDATA[myTF.setTextFormat = myFormat;]]>
 				</code>
 				<code>
-					<![CDATA[	myTF.defaultTextFormat = myFormat;]]>
+					<![CDATA[myTF.defaultTextFormat = myFormat;]]>
 				</code>
 				<notes>
 myTF.setTextFormat - Applies the text formatting to the text field AFTER the text has been placed in the text field.
