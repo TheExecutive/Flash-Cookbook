@@ -31,6 +31,15 @@ package com.fullsail.dfp.ui
 			return child; // you could say return super.addChild(child) here and not need
 			// the super.addChild(child) at the top
 		}
+		override public function addChildAt(child:DisplayObject, index:int):DisplayObject
+		{
+			//splice. 0 means delete nothing.
+			_children.splice(index, 0, child);
+			
+			updateUI();
+			
+			return super.addChildAt(child,index);
+		}
 		override public function removeChild(child:DisplayObject):DisplayObject
 		{
 			var index:int = _children.indexOf(child); 
@@ -42,6 +51,15 @@ package com.fullsail.dfp.ui
 			updateUI();
 			
 			return super.removeChild(child);
+		}
+		override public function removeChildAt(index:int):DisplayObject
+		{	
+			_children.splice(index, 1);
+			// removing the element from the array at that position specified, and removing only 1.
+			
+			updateUI();
+			
+			return super.removeChildAt(index);
 		}
 		private function updateUI():void
 		{

@@ -12,6 +12,7 @@ package com.fullsail.dfp.ui
 	{
 		private var _searchResults:Array;
 		private var _codeItemListArray:Array;
+		private var _removeThisIndex:int;
 		
 		private var _lb:LayoutBoxFSC;
 		//FSC stands for full sail cookbook
@@ -24,6 +25,8 @@ package com.fullsail.dfp.ui
 		//and the manager in reusable code.
 		
 		private var _rangeOfMotion:Number;
+
+		private var _itemFieldHeight:Number;
 		
 		public function CodeListView()
 		{
@@ -125,7 +128,7 @@ package com.fullsail.dfp.ui
 				*/
 				
 			}
-			
+			//updateScrolling data after list has been populated
 			updateScrollingData();
 		}
 		
@@ -139,14 +142,27 @@ package com.fullsail.dfp.ui
 				
 				if(listItem.isSelected) //if isSelected is true
 				{
+					if(_removeThisIndex && _removeThisIndex > 0) 
+					{
+						//if removeThisIndex has a value and if it's greater than 0
+						_lb.removeChildAt(_removeThisIndex);
+						
+					}
 					var itemIndex:int = _codeItemListArray.indexOf(listItem);
 					
 					var cItemField:CodeItemField = new CodeItemField();
 					cItemField.cVO = listItem.codeVO;
 					
-					_lb.addChild(cItemField);
-					cItemField.y = listItem.y + listItem.height;
-					//Buggy and broken. Need to update layoutbox
+					//saving the index of the item clicked, plus 1, meaning the codebox that's open
+					_removeThisIndex = itemIndex + 1;
+					
+					//saving height of the itemField so the scrolling data can be updated
+					_itemFieldHeight = cItemField.height;
+					
+					_lb.addChildAt(cItemField, itemIndex + 1);
+					
+					//after an ItemField has been opened, update scrolling
+					updateScrollingData();
 					
 					//not sure if I need this event here yet
 					//but it can't hurt
@@ -169,6 +185,8 @@ package com.fullsail.dfp.ui
 				// +2 is for the padding in the layout box
 			}
 			
+			_rangeOfMotion += _itemFieldHeight + 2;
+			//tacking on the itemfieldheight
 			
 		}
 		
