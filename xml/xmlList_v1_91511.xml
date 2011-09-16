@@ -8,9 +8,9 @@
 					<![CDATA[var tf:TextField = new TextField]]>
 				</code>
 				<notes>
-					var - Declares you are creating a new variable, and must be done before variable can be used.
-					tf - Is the variable name, it can not begin with a number and can not contain spaces. You can use camelCase or underscores in place of spaces.
-					TextField - Is the data type, it represents what kind of object the variable and what types of data can be stored in it - be specific with data types.
+var - Declares you are creating a new variable, and must be done before variable can be used.
+tf - Is the variable name, it can not begin with a number and can not contain spaces. You can use camelCase or underscores in place of spaces.
+TextField - Is the data type, it represents what kind of object the variable and what types of data can be stored in it - be specific with data types.
 				</notes>
 				<resources>
 					<link href="http://wddbs.com/FFM/slides/Day%201/FFM_Day1_VariablesAndValues.pdf" title="FFM Portal" />
@@ -28,10 +28,10 @@
 					}]]>
 				</code>
 				<notes>
-					function - Declares you are creating a new function
-					functionName() - Acts as a unique identifier for the function. 
-					() - The parenthatsis hold optional parameters, parameters are arguments you can pass with a function.
-					ReturnType - If your function returns a value, this is where you define that type of value will be returned. If no value is returned use "void" for the ReturnType.
+function - Declares you are creating a new function
+functionName() - Acts as a unique identifier for the function. 
+() - The parenthatsis hold optional parameters, parameters are arguments you can pass with a function.
+ReturnType - If your function returns a value, this is where you define that type of value will be returned. If no value is returned use "void" for the ReturnType.
 				</notes>
 				<resources>
 					<link href="http://wddbs.com/FFM/slides/Day%201/FFM_Day1_Functions.pdf" title="FFM Portal" />
@@ -48,12 +48,12 @@
 					}]]>
 				</code>
 				<notes>
-					private - Accessor type, defines where a function is private or public.
-					function - Declares you are creating a new function
-					stringLength() - Acts as a unique identifier for the function. Must not start with a number but can contain numbers, letters, and underscores.
-					(pString:String) - The parameter that is being passed into the function. This is looking for a variable named pString that is data typed as a String.
-					Number - Is the ReturnType, this function will return a number
-					return pString.length - This will return the number of characters that compose the variable pString. So if pString was equal to the word "Cat" the length of pString would be "3".
+private - Accessor type, defines where a function is private or public.
+function - Declares you are creating a new function
+stringLength() - Acts as a unique identifier for the function. Must not start with a number but can contain numbers, letters, and underscores.
+(pString:String) - The parameter that is being passed into the function. This is looking for a variable named pString that is data typed as a String.
+Number - Is the ReturnType, this function will return a number
+return pString.length - This will return the number of characters that compose the variable pString. So if pString was equal to the word "Cat" the length of pString would be "3".
 				</notes>
 				<resources>
 					<link href="http://wddbs.com/FFM/slides/Day%201/FFM_Day1_Functions.pdf" title="FFM Portal" />
@@ -67,24 +67,24 @@
 					<![CDATA[MovieClip.play()]]>
 				</code>
 				<notes>
-					MovieClip - The object that will call the function
-					play() - The function being called.
-					Executing this code would allow a movie clip to call the play() function, which would then play the movie clip. 
+MovieClip - The object that will call the function
+play() - The function being called.
+Executing this code would allow a movie clip to call the play() function, which would then play the movie clip. 
 				</notes>
 				<code>
 					<![CDATA[this.myFunction(var1, var2)]]>
 				</code>
 				<notes>
-					this - Refers to the parent container, usually the stage, but can also be used to refer to assets created in the Flash IDE
-					myFunction - The name of the function being called, remember this is a unique identifier and can be named anything you would like, but it can not start with a number
-					(var1, var2) - The parameters being passed to the function. 
+this - Refers to the parent container, usually the stage, but can also be used to refer to assets created in the Flash IDE
+myFunction - The name of the function being called, remember this is a unique identifier and can be named anything you would like, but it can not start with a number
+(var1, var2) - The parameters being passed to the function. 
 				</notes>
 				<resources>
 					<link href="http://wddbs.com/FFM/slides/Day%201/FFM_Day1_Functions.pdf" title="FFM Portal" />
 				</resources>
 		</snippet>
-		<snippet id = "convertingDataTypes" course="ffm">
-				<name>Converting a Data Type</name>
+		<snippet id = "castingDataTypes" course="ffm">
+				<name>Casting a Data Type</name>
 				<difficulty>Very Easy</difficulty>
 				<keywords text="convert,converting,data,type,data type, dataType,ffm" />
 				<code>
@@ -110,9 +110,9 @@ a as int - Also converts a to an int instead of a Number.
 					<![CDATA[obj.x = n;]]>
 				</code>
 				<notes>
-					obj - The object you want to move.
-					x - Declares you want to change the objects x property, or the horizontal position of the object.
-					n - Represents the number for the new x position based on the objects container.
+obj - The object you want to move.
+x - Declares you want to change the objects x property, or the horizontal position of the object.
+n - Represents the number for the new x position based on the objects container.
 				</notes>
 				<resources>
 					<link href="http://wddbs.com/FFM/slides/Day%202/FFM_Display%20Objects.pdf" title="FFM Portal" />
@@ -126,9 +126,9 @@ a as int - Also converts a to an int instead of a Number.
 					<![CDATA[obj.y = n;]]>
 				</code>
 				<notes>
-					obj - The object you want to move.
-					y - Declares you want to change the objects y property, or the vertical position of the object.
-					n - Represents the number for the new y position based on the objects container.
+obj - The object you want to move.
+y - Declares you want to change the objects y property, or the vertical position of the object.
+n - Represents the number for the new y position based on the objects container.
 				</notes>
 				<resources>
 					<link href="http://wddbs.com/FFM/slides/Day%202/FFM_Display%20Objects.pdf" title="FFM Portal" />
@@ -142,9 +142,9 @@ a as int - Also converts a to an int instead of a Number.
 					<![CDATA[obj.width = n;]]>
 				</code>
 				<notes>
-					obj - The object you want to move.
-					width - Declares you want to change the objects width property.
-					n - Represents the number for the objects new width.
+obj - The object you want to move.
+width - Declares you want to change the objects width property.
+n - Represents the number for the objects new width.
 				</notes>
 				<resources>
 					<link href="http://wddbs.com/FFM/slides/Day%202/FFM_Display%20Objects.pdf" title="FFM Portal" />
@@ -158,9 +158,9 @@ a as int - Also converts a to an int instead of a Number.
 					<![CDATA[obj.height = n;]]>
 				</code>
 				<notes>
-					obj - The object you want to move.
-					height - Declares you want to change the objects height property.
-					n - Represents the number for the objects new height.
+obj - The object you want to move.
+height - Declares you want to change the objects height property.
+n - Represents the number for the objects new height.
 				</notes>
 				<resources>
 					<link href="http://wddbs.com/FFM/slides/Day%202/FFM_Display%20Objects.pdf" title="FFM Portal" />
@@ -174,9 +174,9 @@ a as int - Also converts a to an int instead of a Number.
 					<![CDATA[obj.scaleX = .n;]]>
 				</code>
 				<notes>
-					obj - The object you want to move.
-					scaleX - Declares you want to change the objects scaleX property, or the ratio between the objects current size and its normal size.
-					.n - Represents the number for the objects new scaleX, is a number between .1 and 1.
+obj - The object you want to move.
+scaleX - Declares you want to change the objects scaleX property, or the ratio between the objects current size and its normal size.
+.n - Represents the number for the objects new scaleX, is a number between .1 and 1.
 				</notes>
 				<resources>
 					<link href="http://wddbs.com/FFM/slides/Day%202/FFM_Display%20Objects.pdf" title="FFM Portal" />
@@ -190,9 +190,9 @@ a as int - Also converts a to an int instead of a Number.
 					<![CDATA[obj.scaleY = .n;]]>
 				</code>
 				<notes>
-					obj - The object you want to move.
-					scaleX - Declares you want to change the objects scaleY property, or the ratio between the objects current size and its normal size.
-					.n - Represents the number for the objects new scaleX, is a number between .1 and 1.
+obj - The object you want to move.
+scaleX - Declares you want to change the objects scaleY property, or the ratio between the objects current size and its normal size.
+.n - Represents the number for the objects new scaleX, is a number between .1 and 1.
 				</notes>
 				<resources>
 					<link href="http://wddbs.com/FFM/slides/Day%202/FFM_Display%20Objects.pdf" title="FFM Portal" />
@@ -206,9 +206,9 @@ a as int - Also converts a to an int instead of a Number.
 					<![CDATA[obj.buttonMode = true;]]>
 				</code>
 				<notes>
-					obj - The object you want to move.
-					buttonMode - Is a boolean value, by default set to false, setting the value true will cause the object to behave like a button.
-					true - Sets the value to true, is set to false by default.
+obj - The object you want to move.
+buttonMode - Is a boolean value, by default set to false, setting the value true will cause the object to behave like a button.
+true - Sets the value to true, is set to false by default.
 				</notes>
 				<resources>
 					<link href="http://wddbs.com/FFM/slides/Day%202/FFM_Display%20Objects.pdf" title="FFM Portal" />
@@ -222,11 +222,11 @@ a as int - Also converts a to an int instead of a Number.
 					<![CDATA[ [SWF(width = "x" height = "x" frameRate = "xx" backgroundColor = "0xFFFFFF")] ]]>
 				</code>
 				<notes>
-					SWF - Declares you are changing the properties of the SWF file.
-					width - Sets the width of the SWF display window.
-					height - Sets the height of the SWF display window.
-					frameRate - Sets the frame rate of the SWF, will typically be 30 for standard projects and 60 for projects containing animations. 60 fps provides a smoother animation than 30 fps.
-					backgroundColor - Sets the display windows background color, uses Hex values, must start with 0x (zero x).
+SWF - Declares you are changing the properties of the SWF file.
+width - Sets the width of the SWF display window.
+height - Sets the height of the SWF display window.
+frameRate - Sets the frame rate of the SWF, will typically be 30 for standard projects and 60 for projects containing animations. 60 fps provides a smoother animation than 30 fps.
+backgroundColor - Sets the display windows background color, uses Hex values, must start with 0x (zero x).
 				</notes>
 				<resources>
 					<link href="http://wddbs.com/FFM/slides/Day%202/FFM_Display%20Objects.pdf" title="FFM Portal" />
@@ -242,12 +242,12 @@ a as int - Also converts a to an int instead of a Number.
 					myTF.text = "Hello World";]]>
 				</code>
 				<notes>
-					var - Delcares a new variable is being created.
-					myTF - Unique identifier for the text field you are creating.
-					:TextField - Declares the data type for the variable, in this case it is a TextField.
-					= new TextField - Declares that this variable is a new text field, by default text fields have a height and width of 100.
-					this.addChild(myTF) - Adds the text field to the stage, or display window. Do not forget to add the child to the display list or your text field will not show up.
-					myTF.text = "Hello World" - Sets the text of the newly created variable to a string equal to Hello World. Note: you must enclose the text string in quotes.
+var - Delcares a new variable is being created.
+myTF - Unique identifier for the text field you are creating.
+:TextField - Declares the data type for the variable, in this case it is a TextField.
+= new TextField - Declares that this variable is a new text field, by default text fields have a height and width of 100.
+this.addChild(myTF) - Adds the text field to the stage, or display window. Do not forget to add the child to the display list or your text field will not show up.
+myTF.text = "Hello World" - Sets the text of the newly created variable to a string equal to Hello World. Note: you must enclose the text string in quotes.
 				</notes>
 				<resources>
 					<link href="http://wddbs.com/FFM/slides/Day%202/FFM_TextFields.pdf" title="FFM Portal" />
@@ -261,9 +261,9 @@ a as int - Also converts a to an int instead of a Number.
 					<![CDATA[myTF.multiline = true;]]>
 				</code>
 				<notes>
-					myTF - Unique identifier for the text field you are creating.
-					.multiline - Access multi-line property of text field.
-					= true; by setting equal to true allows the text field to have multiple lines.
+myTF - Unique identifier for the text field you are creating.
+.multiline - Access multi-line property of text field.
+= true; by setting equal to true allows the text field to have multiple lines.
 				</notes>
 				<resources>
 					<link href="http://wddbs.com/FFM/slides/Day%202/FFM_TextFields.pdf" title="FFM Portal" />
@@ -277,9 +277,9 @@ a as int - Also converts a to an int instead of a Number.
 					<![CDATA[myTF.wordWrap = true;]]>
 				</code>
 				<notes>
-					myTF - Unique identifier for the text field you are creating.
-					.wordWrap - Access word wrap property of text field.
-					= true; by setting true allows the text field to wrap text into multiple lines. is set to false by default. Must set multi-line property to true for text to wrap to multiple lines.
+myTF - Unique identifier for the text field you are creating.
+.wordWrap - Access word wrap property of text field.
+= true; by setting true allows the text field to wrap text into multiple lines. is set to false by default. Must set multi-line property to true for text to wrap to multiple lines.
 				</notes>
 				<resources>
 					<link href="http://wddbs.com/FFM/slides/Day%202/FFM_TextFields.pdf" title="FFM Portal" />
@@ -293,9 +293,9 @@ a as int - Also converts a to an int instead of a Number.
 					<![CDATA[myTF.tabEnabled = true;]]>
 				</code>
 				<notes>
-					myTF - Unique identifier for the text field you are creating.
-					.tabEnabled - Determines whether the text field can be selected by pressing the tab key.
-					= true; sets tabEnabled to true and allows text fields to be selected by pressing the tab key.
+myTF - Unique identifier for the text field you are creating.
+.tabEnabled - Determines whether the text field can be selected by pressing the tab key.
+= true; sets tabEnabled to true and allows text fields to be selected by pressing the tab key.
 				</notes>
 				<resources>
 					<link href="http://wddbs.com/FFM/slides/Day%202/FFM_TextFields.pdf" title="FFM Portal" />
@@ -309,9 +309,9 @@ a as int - Also converts a to an int instead of a Number.
 					<![CDATA[myTF.embedFonts = true;]]>
 				</code>
 				<notes>
-					myTF - Unique identifier for the text field you are creating.
-					.embedFonts - Embedding fonts allows Flash to use the desired font you would like text to be displayed in.
-					= true; - Directs the TextField to use the font outlines embedded in the movies library, if correct font doesnt exist in library nothing is show. By default this is set to false and the TextField will pick a standard font to display the text in.
+myTF - Unique identifier for the text field you are creating.
+.embedFonts - Embedding fonts allows Flash to use the desired font you would like text to be displayed in.
+= true; - Directs the TextField to use the font outlines embedded in the movies library, if correct font doesnt exist in library nothing is show. By default this is set to false and the TextField will pick a standard font to display the text in.
 				</notes>
 				<resources>
 					<link href="http://wddbs.com/FFM/slides/Day%202/FFM_TextFields.pdf" title="FFM Portal" />
@@ -325,9 +325,9 @@ a as int - Also converts a to an int instead of a Number.
 					<![CDATA[var myFormat:TextFormat = new TextFormat();]]>
 				</code>
 				<notes>
-					var - Declares you are creating a new variable.
-					myFormat - Unique identifier for variable.
-					:TextFormat - Data types the new variable as TextFormat.
+var - Declares you are creating a new variable.
+myFormat - Unique identifier for variable.
+:TextFormat - Data types the new variable as TextFormat.
 				</notes>
 				<code>
 					<![CDATA[myFormat.font = "Font Name";
@@ -335,9 +335,9 @@ a as int - Also converts a to an int instead of a Number.
 					myFormat.color = 0xFFFFFF;]]>
 				</code>
 				<notes>
-					myFormat.font = Sets the font you would like to be displayed in the TextField, must be enclosed in quotes and spelled correctly including spaces and/or special characters.
-					myFormat.size = Sets the font size for the text in the text field, must be a number;
-					myFormat.color = Sets the color of the font in the text field, must be a HEX value and must start with 0x.
+myFormat.font = Sets the font you would like to be displayed in the TextField, must be enclosed in quotes and spelled correctly including spaces and/or special characters.
+myFormat.size = Sets the font size for the text in the text field, must be a number;
+myFormat.color = Sets the color of the font in the text field, must be a HEX value and must start with 0x.
 				</notes>
 				<resources>
 					<link href="http://wddbs.com/FFM/slides/Day%202/FFM_TextFields.pdf" title="FFM Portal" />
@@ -351,8 +351,8 @@ a as int - Also converts a to an int instead of a Number.
 					<![CDATA[myTF.setTextFormat = myFormat;]]> OR <![CDATA[myTF.defaultTextFormat = myFormat;]]>
 				</code>
 				<notes>
-					myTF.setTextFormat - Applies the text formatting to the text field AFTER the text has been placed in the text field.
-					myTF.defaultTextFormat - Applies the text formatting to the text field BEFORE the text has been placed in the text field.
+myTF.setTextFormat - Applies the text formatting to the text field AFTER the text has been placed in the text field.
+myTF.defaultTextFormat - Applies the text formatting to the text field BEFORE the text has been placed in the text field.
 				</notes>
 				<resources>
 					<link href="http://wddbs.com/FFM/slides/Day%202/FFM_TextFormat.pdf" title="FFM Portal" />
@@ -366,18 +366,18 @@ a as int - Also converts a to an int instead of a Number.
 					<![CDATA[myTF.type = TextFieldType.INPUT;]]>
 				</code>
 				<notes>
-					myTF - The text field variable name.
-					.type - The property of the text field you want to alter.
-					= TextFieldType.INPUT - Sets the text field to accept data inputted by the user. 
+myTF - The text field variable name.
+.type - The property of the text field you want to alter.
+= TextFieldType.INPUT - Sets the text field to accept data inputted by the user. 
 				</notes>
 				<code>
 					<![CDATA[myTF.maxChars;]]>
 					<![CDATA[myTF.restrict = "a-z,A-Z,0-9";]]>
 				</code>
 				<notes>
-					myTF - The text field variable name.
-					.maxChars - Sets the maximum amount of characters the text field can hold, must be a number.
-					.restrict - Sets restrictions on what types of characters can be put into the text field. The above example allows for all letters (upper and lower case) and numbers 0 through 9 to be inputted into the text field.
+myTF - The text field variable name.
+.maxChars - Sets the maximum amount of characters the text field can hold, must be a number.
+.restrict - Sets restrictions on what types of characters can be put into the text field. The above example allows for all letters (upper and lower case) and numbers 0 through 9 to be inputted into the text field.
 				</notes>
 				<resources>
 					<link href="http://wddbs.com/FFM/slides/Day%203/FFM_InputTextFields.pdf" title="FFM Portal" />
@@ -395,8 +395,8 @@ a as int - Also converts a to an int instead of a Number.
 					}]]>
 				</code>
 				<notes>
-					myMovieClip - Variable name for movie clip variable.
-					.addEventListener - Adds 
+myMovieClip - Variable name for movie clip variable.
+.addEventListener - Adds 
 				</notes>
 				<resources>
 					<link href="http://wddbs.com/FFM/slides/Day%203/FFM_InputTextFields.pdf" title="FFM Portal" />
