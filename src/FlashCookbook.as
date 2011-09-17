@@ -25,13 +25,13 @@ package
 		//REMINDER: Commit all major changes to any class files.
 		
 			/* ---------TO DO LIST-----------
-				Add Functionality to Class Buttons
 				Add search functionality
 				XML
 				Minor design additions (animations, shading, etc)
 			*/
 		
-			/* ---------COMPLETED (as of Fri evening)------
+			/* ---------COMPLETED (as of Sat morning)------
+				Added functionality to class buttons
 				List Item expansion
 				List Item styling
 			*/

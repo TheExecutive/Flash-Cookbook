@@ -74,6 +74,7 @@ package com.fullsail.dfp.ui
 		public function set searchResults(value:Array):void
 		{
 			_searchResults = value;
+			clearListFieldsFromLB();
 			updateResultList();
 		}
 		
@@ -230,7 +231,8 @@ package com.fullsail.dfp.ui
 		}
 		private function clearListFieldsFromLB():void
 		{
-			//a quick and dirty, error sidesteppin' function, courtesy of Troy
+			//a quick and dirty error sidesteppin' function, 
+			//courtesy of your friendly, neighborhood Troy
 			trace(_codeItemListArray.length);
 			if(_listFieldOpen)
 			{
