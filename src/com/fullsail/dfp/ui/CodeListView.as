@@ -14,6 +14,8 @@ package com.fullsail.dfp.ui
 		private var _codeItemListArray:Array;
 		private var _removeThisIndex:int;
 		
+		private var _currentlyViewing:String = "";
+		
 		private var _lb:LayoutBoxFSC;
 		//FSC stands for full sail cookbook
 		//just so there's no confusion between this layout box
@@ -107,26 +109,42 @@ package com.fullsail.dfp.ui
 			
 			for each(var cVO:CodeVO in _searchResults)
 			{
-				//creating a code list tem for each cVO passed in
-				var listItem:CodeListItem = new CodeListItem();
+				if(_currentlyViewing == cVO.course.toUpperCase())
+				{
+					//creating a code list tem for each cVO passed in
+					var listItem:CodeListItem = new CodeListItem();
+					
+					//pushing the vo into the vo setter for the code list item
+					listItem.codeVO = cVO;
+					
+					//adding it to the layout box
+					_lb.addChild(listItem);
+					
+					//setting up a listener and pushing into array
+					listItem.addEventListener(MouseEvent.CLICK,onItemClick);
+					_codeItemListArray.push(listItem);
+					/*
+					the reason I don't have just one listener on the layout box 
+					instead is because we eventually plan to have the layoutbox 
+					expand with content that will not be clickable, (indexOf) 
+					and that will cause errors if those items are clicked. 
+					This can possibly be fixed with IF statements. 
+					Something to look into later.
+					*/
+				}else if(_currentlyViewing == "" || _currentlyViewing == "All")
+				{
+					//this should only run on the first load or if the 
+					// all button is clicked
+					var listItemAll:CodeListItem = new CodeListItem();
+	
+					listItemAll.codeVO = cVO;
+					
+					_lb.addChild(listItemAll);
+					
+					listItemAll.addEventListener(MouseEvent.CLICK,onItemClick);
+					_codeItemListArray.push(listItemAll);
+				}
 				
-				//pushing the vo into the vo setter for the code list item
-				listItem.codeVO = cVO;
-				
-				//adding it to the layout box
-				_lb.addChild(listItem);
-				
-				//setting up a listener and pushing into array
-				listItem.addEventListener(MouseEvent.CLICK,onItemClick);
-				_codeItemListArray.push(listItem);
-				/*
-				the reason I don't have just one listener on the layout box 
-				instead is because we eventually plan to have the layoutbox 
-				expand with content that will not be clickable, (indexOf) 
-				and that will cause errors if those items are clicked. 
-				This can possibly be fixed with IF statements. 
-				Something to look into later.
-				*/
 				
 			}
 			//updateScrolling data after list has been populated
@@ -196,6 +214,18 @@ package com.fullsail.dfp.ui
 			
 			
 		}
+
+		public function get currentlyViewing():String
+		{
+			return _currentlyViewing;
+		}
+
+		public function set currentlyViewing(value:String):void
+		{
+			_currentlyViewing = value;
+			updateResultList();
+		}
+
 		
 	}
 }

@@ -82,6 +82,23 @@ package
 			createButtons();
 			
 			//init basebar
+			
+			//load in initial data
+			loadInitialData();
+		}
+		
+		private function loadInitialData():void
+		{
+			//this data loads in when the program first opens
+			
+			var xmlService:XMLService = new XMLService();
+			xmlService.search();
+			//event.query is whatever is in the search box at the time 
+			//the user hit the search button
+			
+			//listeners for the XMLService
+			xmlService.addEventListener(XMLEvent.DATA_LOAD_COMPLETE,onDataComplete);
+			xmlService.addEventListener(ErrorEvent.LOAD_ERROR,onDataError);
 		}
 		
 		private function createButtons():void
@@ -130,7 +147,10 @@ package
 				// event.currentTarget == cb will ONLY be true for the button clicked on
 				// and it will set all other buttons to false.
 				
+				
 			}
+			var currentClass:String = event.target.label
+			_cListView.currentlyViewing = currentClass;
 		}
 		
 		protected function onSearch(event:SearchEvent):void
