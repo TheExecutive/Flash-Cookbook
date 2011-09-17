@@ -55,7 +55,7 @@ package
 			//init page controls
 			var cntrls:ChromeControls = new ChromeControls();
 			addChild(cntrls);
-			cntrls.scaleX = cntrls.scaleY = 0.6;
+			cntrls.scaleX = cntrls.scaleY = 0.7;
 			cntrls.x = bg.x + bg.width - cntrls.width - 12;
 			cntrls.y = bg.y + 5;
 			cntrls.closeButton.addEventListener(MouseEvent.CLICK,onCloseClick);
