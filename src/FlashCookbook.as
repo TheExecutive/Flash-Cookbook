@@ -149,8 +149,10 @@ package
 				
 				
 			}
-			var currentClass:String = event.target.label
-			_cListView.currentlyViewing = currentClass;
+			var currentClass:String = event.target.label;
+			_cListView.currentlyViewing = currentClass; 
+			//assigning the label of the button clicked 
+			//on as the currentlyViewing value in the setter
 		}
 		
 		protected function onSearch(event:SearchEvent):void

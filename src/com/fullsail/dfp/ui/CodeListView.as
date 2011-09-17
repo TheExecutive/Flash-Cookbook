@@ -3,6 +3,7 @@ package com.fullsail.dfp.ui
 	import com.fullsail.dfp.events.DetailEvent;
 	import com.fullsail.dfp.vo.CodeVO;
 	
+	import flash.display.DisplayObject;
 	import flash.events.Event;
 	import flash.events.MouseEvent;
 	
@@ -174,6 +175,7 @@ package com.fullsail.dfp.ui
 					cItemField.cVO = listItem.codeVO;
 					
 					//saving the index of the item clicked, plus 1, meaning the codebox that's open
+					
 					_removeThisIndex = itemIndex + 1;
 					
 					//saving height of the itemField so the scrolling data can be updated
@@ -223,7 +225,25 @@ package com.fullsail.dfp.ui
 		public function set currentlyViewing(value:String):void
 		{
 			_currentlyViewing = value;
+			clearListFieldsFromLB();
 			updateResultList();
+		}
+		private function clearListFieldsFromLB():void
+		{
+			//a quick and dirty, error sidesteppin' function, courtesy of Troy
+			trace(_codeItemListArray.length);
+			if(_listFieldOpen)
+			{
+				if(_removeThisIndex && _removeThisIndex > 0) 
+				{
+					//if removeThisIndex has a value and if it's greater than 0
+					_lb.removeChildAt(_removeThisIndex);
+					_listFieldOpen = false;
+				}
+			}
+			_removeThisIndex = 0; //this stops the error of the index being wrong
+			//resetting the index
+			
 		}
 
 		
