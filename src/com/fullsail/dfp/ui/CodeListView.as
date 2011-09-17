@@ -3,7 +3,6 @@ package com.fullsail.dfp.ui
 	import com.fullsail.dfp.events.DetailEvent;
 	import com.fullsail.dfp.vo.CodeVO;
 	
-	import flash.display.DisplayObject;
 	import flash.events.Event;
 	import flash.events.MouseEvent;
 	
