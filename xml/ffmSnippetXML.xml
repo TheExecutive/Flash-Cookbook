@@ -17,7 +17,7 @@
 				</resources>
 				
 		</snippet>
-		<snippet id = "creatingFunctions_basic" course="oop">
+		<snippet id = "creatingFunctions_basic" course="ffm">
 				<name>Creating a basic Function</name>
 				<difficulty>Very Easy</difficulty>
 				<keywords text="function,create,creating,ffm" />
@@ -37,7 +37,7 @@
 					<link href="http://wddbs.com/FFM/slides/Day%201/FFM_Day1_Functions.pdf" title="FFM Portal" />
 				</resources>
 		</snippet>
-		<snippet id = "creatingFunctions_advanced" course="fat">
+		<snippet id = "creatingFunctions_advanced" course="ffm">
 				<name>Creating an Advanced Function</name>
 				<difficulty>Very Easy</difficulty>
 				<keywords text="function,create,advanced,creating,ffm" />
@@ -59,7 +59,7 @@
 					<link href="http://wddbs.com/FFM/slides/Day%201/FFM_Day1_Functions.pdf" title="FFM Portal" />
 				</resources>
 		</snippet>
-		<snippet id = "callingFunctions" course="dfp">
+		<snippet id = "callingFunctions" course="ffm">
 				<name>Calling a Function</name>
 				<difficulty>Very Easy</difficulty>
 				<keywords text="function,call,calling,ffm" />
@@ -876,5 +876,117 @@ while(counter < n)
 				<resources>
 				</resources>
 		</snippet>
+		
+<!--             end FFM code snippets, begin OOP snippets                -->
+
+		<snippet id="creatingValueObject" course="oop">
+				<name>Creating a Value Object</name>
+				<difficulty>easy</difficulty>
+				<keywords text="creating,value,object,value object,creating value object,ffm" />
+				<code>
+					<![CDATA[public class CodeVO
+{
+	public var name:String;
+	public var age:int;
+	public var color:uint;
+	public var condition:boolean = true (or false);
+	public var num:Number;
+	
+public function CodeVO()
+{
+}]]>
+				</code>
+				<notes>
+• Creates a new class with an extension of "vo" (ex. com.fsu.vo), once created your value object can hold variables of various data types.
+• Next, create your public variables, these variables can be any data type depending on the data they need to store. While a default value is not required for  all the boolean data type does require a default value.
+				</notes>
+				<resources>
+
+				</resources>
+		</snippet>
+		<snippet id="implicitGetterSetter" course="oop">
+				<name>Implicit Getter/Setter</name>
+				<difficulty>advanced</difficulty>
+				<keywords text="getter,setter,implicit,getter/setter,ffm" />
+				<code>
+					<![CDATA[public class Button extends buttonBase
+{
+	private var _book:BookVO;
+		
+	public function Button()
+	{
+		super();
+	}
+	public function get book():BookVO
+	{
+		return _book;
+	}
+	public function set book(value:BookVO):void
+	{
+		_book = value;
+		tfLabel.text = _book.title;
+	}
+}]]>
+				</code>
+				<notes>
+//First create a new class with the extension vo (ex. com.fsu.vo) then give it a class name that ends in VO (ex. BookVO). Press create and your Value Object is ready.
+// This example creates a button that holds the data stored in the BookVO value object.
+
+• public class Button extends ButtonBase - Custom class that extends a button symbol created in the Flash IDE. 
+• private var _book:BookVO - Instantiates a new variable called "_book" that is data typed as a BookVO. By data typing the variable BookVO it understands that it understands the information it will be holding will be in the form of a Value Object.
+• public function Button() - Constructor class for the button object.
+• super(); - refers to the parent of the button class.
+
+// To generate your Getter/Setter highlight the "_book" variable, right click your mouse, under SOURCE click "Generate Getter/Setter", select your preferences then click OK.
+
+• public function get book():BookVO - Gets the information from the book Value Object and returns the information as a BookVO.
+• return _book; - returns the BookVO information to the _book variable.
+• public function set book(value:BookVO):void - Setter for setting the book variables values to that of the BookVO. This function returns nothing.
+• _book = value  - Sets the "_book" variables data equal to the value of the BookVO.
+•tfLabel.text = book.title - Sets the button text equal to the title of the first book. Using a for each loop would create a button for each Value Object and set the text for each button equal to the title of each book in the VO.
+				</notes>
+				<resources>
+
+				</resources>
+		</snippet>
+		<snippet id="creatingButtonsWithArray" course="oop">
+				<name>Creating button with Array data</name>
+				<difficulty>advanced</difficulty>
+				<keywords text="for each,loop,array,for,each,button,oop" />
+				<code>
+					<![CDATA[var show:ShowsVO;
+var _shows:Array = [show1,show2,show3];
+var yPos:Number = 10;
+var xPos:Number = 10;
+			
+for each(var show:ShowsVO in _shows)
+{
+	var btn:ShowButton = new ShowButton();
+	addChild(btn);
+	btn.showVO = show;
+				
+	btn.y = yPos += btn.height + 10;
+	btn.x = xPos;
+}]]>
+				</code>
+				<notes>
+• var show:ShowVO - Creates a new variable named show that holds ShowVO data.
+• var _shows:Array = [show1,show2,show3] - Creates a new Array named _shows that is holding 3 show items in it.
+• var yPos:Number = 10; - Creates a variable that represents the buttons Y position, data types this variable as a Number, and gives it a default value of 10.
+• var xPos:Number = 10; - Creates a variable that represents the buttons X position, data types this variable as a Number, and gives it a default value of 10.
+
+• for each(var show:ShowVO in _shows) - This for each loop goes through the "_shows" array and for every Value Object in the Array it pulls that information out and stores it in a variable called "show".
+• var btn:ShowButton = new ShowButton - Creates a new variable named "btn" that is data typed as a ShowButton, which is a custom class that extends a button object created in the Flash IDE, and then sets that variable equal to a new instance of the ShowButton.
+• addChild(btn) - Adds the button to the stage.
+• btn.ShowVO = show; - Takes the data from the show variable and stores that in the Value Object inside the button class. By doing this the button class now has access to the data stored in the ShowVO Value Object. 
+
+btn.y = yPos += btn.height + 10 - Sets the buttons vertical position. Starts with an itial value of 10 pixels, it then adds the button height plus 10 pixels of padding for each button that is created. This will allow the buttons to position themselves into a vertical stack
+btn.x = xPos - sets the buttons horizontol position equal to value of xPos, which is 10 pixels.
+				</notes>
+				<resources>
+
+				</resources>
+		</snippet>
+		
 	</snippets> <!--end of snippet node-->
 		
