@@ -93,8 +93,6 @@ package
 			
 			var xmlService:XMLService = new XMLService();
 			xmlService.search();
-			//event.query is whatever is in the search box at the time 
-			//the user hit the search button
 			
 			//listeners for the XMLService
 			xmlService.addEventListener(XMLEvent.DATA_LOAD_COMPLETE,onDataComplete);
