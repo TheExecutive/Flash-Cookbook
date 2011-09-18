@@ -3,12 +3,16 @@ package com.fullsail.dfp.ui
 	import com.fullsail.dfp.events.SearchEvent;
 	
 	import flash.events.FocusEvent;
+	import flash.events.KeyboardEvent;
 	import flash.events.MouseEvent;
+	import flash.ui.Keyboard;
 	
 	import libs.NewSB;
 	
 	public class SearchBox extends NewSB
 	{
+		private static const SEARCH_PROMPT:String = "I want info on...";
+		
 		public function SearchBox()
 		{
 			super();
@@ -28,13 +32,29 @@ package com.fullsail.dfp.ui
 			sbtn.addEventListener(MouseEvent.CLICK, onSearchClick);
 			
 			//search box text attributes / listeners
-			tfSearchInput.text = "Search For Snippet";
+			tfSearchInput.text = SEARCH_PROMPT;
 			tfSearchInput.addEventListener(FocusEvent.FOCUS_IN, onFocusIn);
 			tfSearchInput.addEventListener(FocusEvent.FOCUS_OUT, onFocusOut);
+			tfSearchInput.addEventListener(KeyboardEvent.KEY_DOWN,onKeyDown);
+		}
+		
+		protected function onKeyDown(event:KeyboardEvent):void
+		{
+			if(event.keyCode == Keyboard.ENTER)
+			{
+				onSearch();
+			}
+		}
+		
+		private function onSearch():void
+		{
+			var se:SearchEvent = new SearchEvent(SearchEvent.SEARCH_QUERY);
+			se.query = tfSearchInput.text;
+			dispatchEvent(se);
 		}
 		private function onFocusIn(evt:FocusEvent):void
 		{
-			if(tfSearchInput.text == "Search For Snippet")
+			if(tfSearchInput.text == SEARCH_PROMPT)
 			{
 				tfSearchInput.text = "";
 			}
@@ -43,15 +63,12 @@ package com.fullsail.dfp.ui
 		{
 			if(tfSearchInput.text == "")
 			{
-				tfSearchInput.text = "Search For Snippet";
+				tfSearchInput.text = SEARCH_PROMPT;
 			}
 		}
 		private function onSearchClick(evt:MouseEvent):void
 		{
-			var se:SearchEvent = new SearchEvent(SearchEvent.SEARCH_QUERY);
-			se.query = tfSearchInput.text;
-			dispatchEvent(se);
-			trace("mouse clicked, search event firing");
+			onSearch();
 		}
 	}
 }

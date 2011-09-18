@@ -91,9 +91,10 @@ package com.fullsail.dfp.service
 				cVO.resourcesTitle = snippet.resources.link.@title;
 				
 				//THIS IS THE SEARCH FILTER
-				if(cVO.keywords.indexOf(_searchedFor) != -1)
+				if(cVO.keywords.indexOf(_searchedFor) != -1 && _searchedFor != ",")
 				{
-					//if the word searched for is one of the keywords
+					//if the word searched for is one of the keywords and it is not a comma,
+					//push it into the array, if not, drop it
 					cVOArray.push(cVO);
 				}else if(_searchedFor == "")
 				{
