@@ -901,7 +901,7 @@ public function CodeVO()
 • Next, create your public variables, these variables can be any data type depending on the data they need to store. While a default value is not required for  all the boolean data type does require a default value.
 				</notes>
 				<resources>
-
+					<link href="http://wddbs.com/~jmadsen/oop/videos/" title="OOP ScreenCasts" />
 				</resources>
 		</snippet>
 		<snippet id="implicitGetterSetter" course="oop">
@@ -943,7 +943,7 @@ public function CodeVO()
 •tfLabel.text = book.title - Sets the button text equal to the title of the first book. Using a for each loop would create a button for each Value Object and set the text for each button equal to the title of each book in the VO.
 				</notes>
 				<resources>
-
+					<link href="http://wddbs.com/~jmadsen/oop/videos/" title="OOP ScreenCasts" />
 				</resources>
 		</snippet>
 		<snippet id="creatingButtonsWithArray" course="oop">
@@ -981,7 +981,7 @@ btn.y = yPos += btn.height + 10 - Sets the buttons vertical position. Starts wit
 btn.x = xPos - sets the buttons horizontol position equal to value of xPos, which is 10 pixels.
 				</notes>
 				<resources>
-
+					<link href="http://wddbs.com/~jmadsen/oop/videos/" title="OOP ScreenCasts" />
 				</resources>
 		</snippet>
 		<snippet id="overridingFunction" course="oop">
@@ -1007,7 +1007,7 @@ override public function get name():String
 • return name; - Returns the value of the String to the name variable.
 				</notes>
 				<resources>
-
+					<link href="http://wddbs.com/~jmadsen/oop/videos/" title="OOP ScreenCasts" />
 				</resources>
 		</snippet>
 		<snippet id="creatingAnInterface" course="oop">
@@ -1035,7 +1035,7 @@ override public function get name():String
 //Once your interface has all the function it needs, you can then proceed to attach this interface to any class that needs access to these functions. You may then override these functions for each class so the functions work the same but return different data.
 				</notes>
 				<resources>
-
+					<link href="http://wddbs.com/~jmadsen/oop/videos/" title="OOP ScreenCasts" />
 				</resources>
 		</snippet>
 		<snippet id="implimentingAnInterface" course="oop">
@@ -1052,7 +1052,7 @@ override public function get name():String
 • Click "Finish" in the class creation menu and your new class will be created and will extend the Interface you chose to include.
 				</notes>
 				<resources>
-
+					<link href="http://wddbs.com/~jmadsen/oop/videos/" title="OOP ScreenCasts" />
 				</resources>
 		</snippet>
 		<snippet id="creatingAConstant" course="oop">
@@ -1068,7 +1068,7 @@ override public function get name():String
 • = "OOP"; - Is the string value for the constant, this value will not change throughout the run of the program. However, if you need to chagne the value of the constant you can change it here.
 				</notes>
 				<resources>
-
+					<link href="http://wddbs.com/~jmadsen/oop/videos/" title="OOP ScreenCasts" />
 				</resources>
 		</snippet>
 		<snippet id="creatingAStaticConstant" course="oop">
@@ -1084,7 +1084,7 @@ override public function get name():String
 • = "OOP"; - Is the string value for the constant, this value will not change throughout the run of the program. However, if you need to chagne the value of the constant you can change it here.
 				</notes>
 				<resources>
-
+					<link href="http://wddbs.com/~jmadsen/oop/videos/" title="OOP ScreenCasts" />
 				</resources>
 		</snippet>
 		<snippet id="creatingAStaticVariable" course="oop">
@@ -1135,7 +1135,7 @@ var Testvar:Testvar = new Testvar(); - Instantiates the Testvar class, this allo
 • tField.text = Testvar.test; - Sets the text of the textField created Main class equal to the value of the static variable in the Testvar class.
 				</notes>
 				<resources>
-
+					<link href="http://wddbs.com/~jmadsen/oop/videos/" title="OOP ScreenCasts" />
 				</resources>
 		</snippet>
 		<snippet id="creatingAStaticFunction" course="oop">
@@ -1166,7 +1166,7 @@ private function truncateText():void
 //Each class can define their own static methods with the same name/signature of the static methods as defined in their subclasses/superclasses.
 				</notes>
 				<resources>
-
+					<link href="http://wddbs.com/~jmadsen/oop/videos/" title="OOP ScreenCasts" />
 				</resources>
 		</snippet>
 		<snippet id="useCapture" course="oop">
@@ -1183,7 +1183,7 @@ private function truncateText():void
 • useCapture - Indicates that the user wishes to initiate capture. After initiating capture, all events of the specified type will be dispatched to the registered listener before being dispatched to any EventTargets beneath it in the DOM tree.
 				</notes>
 				<resources>
-
+					<link href="http://wddbs.com/~jmadsen/oop/videos/" title="OOP ScreenCasts" />
 				</resources>
 		</snippet>
 		<snippet id="inheritence" course="oop">
@@ -1236,7 +1236,7 @@ public class NewObject extends Object
 • public function doSomethingElse():void - Public function inherited from the class the NewObject class is extending. These functions will performt he same actions for any class they extend.
 				</notes>
 				<resources>
-
+					<link href="http://wddbs.com/~jmadsen/oop/videos/" title="OOP ScreenCasts" />
 				</resources>
 		</snippet>
 		<snippet id="polymorphism" course="oop">
@@ -1289,7 +1289,7 @@ public class NewObject extends Object
 • override public function doSomethingElse():void - Overrides the inherited function, this allows the function to work in the same manner but produce different results depending on the code inside of the function. (Polymorphism)
 				</notes>
 				<resources>
-
+					<link href="http://wddbs.com/~jmadsen/oop/videos/" title="OOP ScreenCasts" />
 				</resources>
 		</snippet>
 		<snippet id="flexLibraryProject" course="oop">
@@ -1308,7 +1308,7 @@ public class NewObject extends Object
 • Lastly, click OK in the build path menu box. Thats it, your Flex Library has been added to your project and you may now utilize any reusable code you have in your library in the project you added it to.
 				</notes>
 				<resources>
-
+					<link href="http://wddbs.com/~jmadsen/oop/videos/" title="OOP ScreenCasts" />
 				</resources>
 		</snippet>
 		
