@@ -64,6 +64,15 @@ package com.fullsail.dfp.ui
 		
 		private function updateItemField():void
 		{
+			if(_cVO.resourcesLink == "")
+			{
+				//if there is no resource link, 
+				//remove the button and listener
+				mc_pdf.removeEventListener(MouseEvent.CLICK,onViewPDF);
+				removeChild(mc_pdf);
+			}
+			
+			
 			tfCode.text = _cVO.codeString;
 			tfNotes.text = _cVO.notes;
 			
