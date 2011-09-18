@@ -15,6 +15,9 @@ package com.fullsail.dfp.service
 	[Event(name="ErrorEvent.LOAD_ERROR", type="com.fullsail.dfp.events.ErrorEvent")]
 	public class XMLService extends EventDispatcher
 	{
+		
+		private var _searchedFor:String;
+		
 		public function XMLService(target:IEventDispatcher=null)
 		{
 			super(target);
@@ -22,7 +25,9 @@ package com.fullsail.dfp.service
 		
 		public function search(query:String = ""):void
 		{
-			//for testing, the default value for search is an empty string
+			_searchedFor = ""; //clear this out by default
+			//the default value for search is an empty string
+			_searchedFor = query;
 			loadXML("ffmSnippetXML.xml");
 		}
 		
@@ -84,7 +89,17 @@ package com.fullsail.dfp.service
 				}
 				cVO.resourcesLink = snippet.resources.link.@href;
 				cVO.resourcesTitle = snippet.resources.link.@title;
-				cVOArray.push(cVO);
+				
+				//THIS IS THE SEARCH FILTER
+				if(cVO.keywords.indexOf(_searchedFor) != -1)
+				{
+					//if the word searched for is one of the keywords
+					cVOArray.push(cVO);
+				}else if(_searchedFor == "")
+				{
+					cVOArray.push(cVO);
+				}
+				
 			}
 			
 			//dispatching event when all this completes

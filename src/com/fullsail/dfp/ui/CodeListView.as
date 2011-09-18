@@ -110,8 +110,11 @@ package com.fullsail.dfp.ui
 			
 			for each(var cVO:CodeVO in _searchResults)
 			{
-				if(_currentlyViewing == cVO.course.toUpperCase())
+				if(_currentlyViewing == cVO.course.toUpperCase()) 	
 				{
+					/* toUpperCase because the button labels are uppercase
+					but the xml might not be */
+					
 					//creating a code list tem for each cVO passed in
 					var listItem:CodeListItem = new CodeListItem();
 					
