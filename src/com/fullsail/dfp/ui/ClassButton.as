@@ -20,7 +20,7 @@ package com.fullsail.dfp.ui
 			stop();
 			this.buttonMode = true;
 			this.mouseChildren = false;
-			this.scaleX = this.scaleY = .75;
+			this.scaleX = this.scaleY = .7; //this was .75 to start
 			
 			_dropShadow = new DropShadowFilter(2,45,0,0.9);
 			filters = [_dropShadow];
