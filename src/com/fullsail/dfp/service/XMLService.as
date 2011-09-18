@@ -23,7 +23,7 @@ package com.fullsail.dfp.service
 		public function search(query:String = ""):void
 		{
 			//for testing, the default value for search is an empty string
-			loadXML("xmlList_v1_91511.xml");
+			loadXML("ffmSnippetXML.xml");
 		}
 		
 		private function loadXML(url:String):void

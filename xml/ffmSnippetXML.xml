@@ -17,7 +17,7 @@
 				</resources>
 				
 		</snippet>
-		<snippet id = "creatingFunctions_basic" course="oop">
+		<snippet id = "creatingFunctions_basic" course="ffm">
 				<name>Creating a basic Function</name>
 				<difficulty>Very Easy</difficulty>
 				<keywords text="function,create,creating,ffm" />
@@ -37,7 +37,7 @@
 					<link href="http://wddbs.com/FFM/slides/Day%201/FFM_Day1_Functions.pdf" title="FFM Portal" />
 				</resources>
 		</snippet>
-		<snippet id = "creatingFunctions_advanced" course="fat">
+		<snippet id = "creatingFunctions_advanced" course="ffm">
 				<name>Creating an Advanced Function</name>
 				<difficulty>Very Easy</difficulty>
 				<keywords text="function,create,advanced,creating,ffm" />
@@ -59,7 +59,7 @@
 					<link href="http://wddbs.com/FFM/slides/Day%201/FFM_Day1_Functions.pdf" title="FFM Portal" />
 				</resources>
 		</snippet>
-		<snippet id = "callingFunctions" course="dfp">
+		<snippet id = "callingFunctions" course="ffm">
 				<name>Calling a Function</name>
 				<difficulty>Very Easy</difficulty>
 				<keywords text="function,call,calling,ffm" />
