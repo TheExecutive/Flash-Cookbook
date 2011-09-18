@@ -882,7 +882,7 @@ while(counter < n)
 		<snippet id="creatingValueObject" course="oop">
 				<name>Creating a Value Object</name>
 				<difficulty>easy</difficulty>
-				<keywords text="creating,value,object,value object,creating value object,ffm" />
+				<keywords text="creating,value,object,value object,creating value object,oop" />
 				<code>
 					<![CDATA[public class CodeVO
 {
@@ -907,7 +907,7 @@ public function CodeVO()
 		<snippet id="implicitGetterSetter" course="oop">
 				<name>Implicit Getter/Setter</name>
 				<difficulty>advanced</difficulty>
-				<keywords text="getter,setter,implicit,getter/setter,ffm" />
+				<keywords text="getter,setter,implicit,getter/setter,oop" />
 				<code>
 					<![CDATA[public class Button extends buttonBase
 {
@@ -929,9 +929,6 @@ public function CodeVO()
 }]]>
 				</code>
 				<notes>
-//First create a new class with the extension vo (ex. com.fsu.vo) then give it a class name that ends in VO (ex. BookVO). Press create and your Value Object is ready.
-// This example creates a button that holds the data stored in the BookVO value object.
-
 • public class Button extends ButtonBase - Custom class that extends a button symbol created in the Flash IDE. 
 • private var _book:BookVO - Instantiates a new variable called "_book" that is data typed as a BookVO. By data typing the variable BookVO it understands that it understands the information it will be holding will be in the form of a Value Object.
 • public function Button() - Constructor class for the button object.
@@ -960,14 +957,14 @@ var yPos:Number = 10;
 var xPos:Number = 10;
 			
 for each(var show:ShowsVO in _shows)
-{
-	var btn:ShowButton = new ShowButton();
-	addChild(btn);
-	btn.showVO = show;
+	{
+		var btn:ShowButton = new ShowButton();
+		addChild(btn);
+		btn.showVO = show;
 				
-	btn.y = yPos += btn.height + 10;
-	btn.x = xPos;
-}]]>
+		btn.y = yPos += btn.height + 10;
+		btn.x = xPos;
+	}]]>
 				</code>
 				<notes>
 • var show:ShowVO - Creates a new variable named show that holds ShowVO data.
@@ -987,6 +984,335 @@ btn.x = xPos - sets the buttons horizontol position equal to value of xPos, whic
 
 				</resources>
 		</snippet>
+		<snippet id="overridingFunction" course="oop">
+				<name>Overriding a function</name>
+				<difficulty>advanced</difficulty>
+				<keywords text="function,override,overriding a function,oop" />
+				<code>
+					<![CDATA[override public function set name(value:String):void
+{
+	name = value;
+}
+		
+override public function get name():String
+{
+	return name;
+}]]>
+				</code>
+				<notes>
+• override public function - Overrides a public function stored in another class. This is used so multiple classes can use the same function and return different results.
+• set name(value:String):void - Setter for a name variable, accepts a value in the form of a String and returns nothing.
+• name = value - Sets the name variable equal the value returned from the Getter.
+• override public function get name():String - Getter for retrieving the String data used for the name variable.
+• return name; - Returns the value of the String to the name variable.
+				</notes>
+				<resources>
+
+				</resources>
+		</snippet>
+		<snippet id="creatingAnInterface" course="oop">
+				<name>Creating an Interface</name>
+				<difficulty>advanced</difficulty>
+				<keywords text="create,creating,interface,creating an interface,oop" />
+				<code>
+					<![CDATA[public interface IAnimals
+{
+	function makeNoise():void
+	function sayHello():void
+	function set name(value:String):void
+	function get name():String
+}]]>
+				</code>
+				<notes>
+//Begin by creating a new interface class, give the class a package and a file name then press OK, this will create your new interface class. Remeber to begin the name of your interface classes with a capital letter "i" (I).
+
+• public interface IAnimals - The constructor function for the Interface class.
+• function makeNoise():void - Creates a public function called "makeNoise" that returns nothing.
+• function sayHello():void - Creates a function call "sayHello" that returns nothing.
+• function set name(value:String):void - Creates a public implicit Setter that accepts a value equal to a string and returns nothing.
+• function get name():String - Creates a public implicit Getter that accepts nothing and returns a String.
+
+//Once your interface has all the function it needs, you can then proceed to attach this interface to any class that needs access to these functions. You may then override these functions for each class so the functions work the same but return different data.
+				</notes>
+				<resources>
+
+				</resources>
+		</snippet>
+		<snippet id="implimentingAnInterface" course="oop">
+				<name>Implimenting an Interface</name>
+				<difficulty>advanced</difficulty>
+				<keywords text="impliment,implimenting,interface,implimenting an interface,oop" />
+				<code>
+					<![CDATA[public class Duck extends DuckBase implements IAnimals]]>
+				</code>
+				<notes>
+• When creating a class that needs to impliment an Interface, simply click "Add.." in the class creation menu, this will display a search box. 
+• Type the name of your interface into the search box, the list updates dynamically so your interface should appear after only typing a few letter.
+• Click the Interface you want to include and and click "OK".
+• Click "Finish" in the class creation menu and your new class will be created and will extend the Interface you chose to include.
+				</notes>
+				<resources>
+
+				</resources>
+		</snippet>
+		<snippet id="creatingAConstant" course="oop">
+				<name>Creating a Constant</name>
+				<difficulty>advanced</difficulty>
+				<keywords text="create,creating,constant,static,public,oop" />
+				<code>
+					<![CDATA[private const CLASS_NAME:String = "OOP";]]>
+				</code>
+				<notes>
+• private const - Creates a new public static constant. Constants are variables who value does not change.
+• CLASS_NAME:String - CLASS_NAME is the name of constant, notice it uses all uppercase letter and underscores in place of spaces or camelCase. Is data typed as a String.
+• = "OOP"; - Is the string value for the constant, this value will not change throughout the run of the program. However, if you need to chagne the value of the constant you can change it here.
+				</notes>
+				<resources>
+
+				</resources>
+		</snippet>
+		<snippet id="creatingAStaticConstant" course="oop">
+				<name>Creating a Static Constant</name>
+				<difficulty>advanced</difficulty>
+				<keywords text="create,creating,constant,static,public,oop" />
+				<code>
+					<![CDATA[public static const CLASS_NAME:String = "OOP";]]>
+				</code>
+				<notes>
+• public static const - Creates a new public static constant. Static constants are variables who value does not change and can be accessed throughout the run of the program.
+• CLASS_NAME:String - CLASS_NAME is the name of constant, notice it uses all uppercase letter and underscores in place of spaces or camelCase. Is data typed as a String.
+• = "OOP"; - Is the string value for the constant, this value will not change throughout the run of the program. However, if you need to chagne the value of the constant you can change it here.
+				</notes>
+				<resources>
+
+				</resources>
+		</snippet>
+		<snippet id="creatingAStaticVariable" course="oop">
+				<name>Creating a Static Variable</name>
+				<difficulty>advanced</difficulty>
+				<keywords text="create,creating,variable,static,public,oop" />
+				<code>
+					<![CDATA[//creates a class that that displays a textField. The text for that textField is called from another class that is held in a static variable.
+					
+package 
+{
+	import flash.display.Sprite;
+	import flash.text.TextField;
+	
+	public class Main extends Sprite 
+	{
+	       private var tField:TextField;
+	       public function Main () 
+	       {
+	               myTest();
+	       }
+	       private function myTest():void 
+	       {
+	               var Testvar:Testvar = new Testvar ();
+	               tField = new TextField();
+	               tField.text = Testvar.test;
+	               addChild(tField);
+	       }
+	}
+}
+//creates a class that holds a static variable
+
+import flash.display.Sprite;
+class Testvar extends Sprite 
+{
+	public static var test:String;
+	public function Testvar() 
+	{
+	   test = "I am static";
+	}
+}]]>
+				</code>
+				<notes>
+//Static variables are part of the class where they are declared and can only be called through the class.
+• public static var test:String - Creates a new static variable that holds a String.
+• test = "I am static" - Sets the String of the static variable equal to the text in quotes.
+var Testvar:Testvar = new Testvar(); - Instantiates the Testvar class, this allows the static variable to be called through the class.
+• tField.text = Testvar.test; - Sets the text of the textField created Main class equal to the value of the static variable in the Testvar class.
+				</notes>
+				<resources>
+
+				</resources>
+		</snippet>
+		<snippet id="creatingAStaticFunction" course="oop">
+				<name>Creating a Static Function</name>
+				<difficulty>advanced</difficulty>
+				<keywords text="create,creating,variable,static,public,oop" />
+				<code>
+					<![CDATA[public static function truncateTxt(value:String, length:int):String
+{
+	return value.slice(0, length);
+}		
+		
+private function truncateText():void
+{
+	var text:String = "Truncate this text";
+	var length:int = Math.random() * 10;
+			
+	textField.text = TextUtil.truncateTxt(text, length);
+}]]>
+				</code>
+				<notes>
+//Static methods cannot be overridden in subclasses since they are resolved at compile time. (doesn’t allow for polymorphism) 
+
+• public static function truncateTxt(value:String, length:int):String; - Creates a new static function that accepts a String value and a integer and will truncate the text to match the integer passed in. It then returns the truncated text as a Sring.
+• return value.slice(0,length); - Will slice the String value based on the length integer, starts at the zero index (first letter).
+• TextUtil.truncateTxt(text, length); - TextUtil is a Utility class that holds the truncateTxt function. In the main class you pass this function the text String and length integer and it will truncate the text based on these values.
+
+//Each class can define their own static methods with the same name/signature of the static methods as defined in their subclasses/superclasses.
+				</notes>
+				<resources>
+
+				</resources>
+		</snippet>
+		<snippet id="useCapture" course="oop">
+				<name>Events with useCapture</name>
+				<difficulty>advanced</difficulty>
+				<keywords text="event,events,capture,usecapture,oop" />
+				<code>
+					<![CDATA[object.addEventListener(event.EVENT, doSomething, useCapture;]]>
+				</code>
+				<notes>
+• object.addEventListner - Adds an event listener to an object.
+• event.EVENT - The event the listener responds to, can be any event in the object event list.
+• doSomething - The function that would run once the event has taken place.
+• useCapture - Indicates that the user wishes to initiate capture. After initiating capture, all events of the specified type will be dispatched to the registered listener before being dispatched to any EventTargets beneath it in the DOM tree.
+				</notes>
+				<resources>
+
+				</resources>
+		</snippet>
+		<snippet id="inheritence" course="oop">
+				<name>Inheritence: Extending another class</name>
+				<difficulty>advanced</difficulty>
+				<keywords text="inheritence,class,extend,extending,oop" />
+				<code>
+					<![CDATA[	public class Object extends ObjectBase
+{
+	public function object()
+	{
+		super();
+	}
+	public function doSomething():void
+	{
+			//actions to be performed
+	}
+	public function doSometingElse():void
+	{
+			//actions be performed
+	}
+}
+
+//Next creates a new class that needs the same functionality and extend the first class you created (object)
+
+public class NewObject extends Object
+{
+	public function MaxMover()
+	{
+		super();
+	}
+	public function doSomething():void
+	{
+		//new actions to be performed
+	}
+	public function doSomethingElse():void
+	{
+		//new actions to be performed
+	}
+}]]>
+				</code>
+				<notes>
+• public class Object extends ObjectBase - A custom class that extends a object created in the Flash IDE.
+• public function object() - The class constructor.
+• super() - Extends the parents functionality to this class.
+• public function doSomething() / doSomethingElse() - Functions the class performs, made public so that other classes can access these functions as well.
+
+• public class NewObject extends Object - Creates a new class named "NewObject" that extends the "Object" class created earlier. By allowing the new class to extend the previous class it gains all the functionality of the previous class through the concept of Inheritence.
+• public function doSomething():void -Public function inherited from the class the NewObject class is extending. These functions will performt he same actions for any class they extend.
+• public function doSomethingElse():void - Public function inherited from the class the NewObject class is extending. These functions will performt he same actions for any class they extend.
+				</notes>
+				<resources>
+
+				</resources>
+		</snippet>
+		<snippet id="polymorphism" course="oop">
+				<name>Polymorphism</name>
+				<difficulty>advanced</difficulty>
+				<keywords text="inheritence,class,extend,extending,oop" />
+				<code>
+					<![CDATA[	public class Object extends ObjectBase
+{
+	public function object()
+	{
+		super();
+	}
+	public function doSomething():void
+	{
+			//actions to be performed
+	}
+	public function doSometingElse():void
+	{
+			//actions be performed
+	}
+}
+
+//Next creates a new class that needs the same functionality and extend the first class you created (object)
+
+public class NewObject extends Object
+{
+	public function MaxMover()
+	{
+		super();
+	}
+	override public function doSomething():void
+	{
+		//new actions to be performed
+	}
+	override public function doSomethingElse():void
+	{
+		//new actions to be performed
+	}
+}]]>
+				</code>
+				<notes>
+• public class Object extends ObjectBase - A custom class that extends a object created in the Flash IDE.
+• public function object() - The class constructor.
+• super() - Extends the parents functionality to this class.
+• public function doSomething() / doSomethingElse() - Functions the class performs, made public so that other classes can access these functions as well.
+
+• public class NewObject extends Object - Creates a new class named "NewObject" that extends the "Object" class created earlier. By allowing the new class to extend the previous class it gains all the functionality of the previous class through the concept of Inheritence.
+• override public function doSomething():void - Overrides the inherited function, this allows the function to work in the same manner but produce different results depending on the code inside of the function. (Polymorphism)
+• override public function doSomethingElse():void - Overrides the inherited function, this allows the function to work in the same manner but produce different results depending on the code inside of the function. (Polymorphism)
+				</notes>
+				<resources>
+
+				</resources>
+		</snippet>
+		<snippet id="flexLibraryProject" course="oop">
+				<name>Resource: Adding a Flex library project</name>
+				<difficulty>easy</difficulty>
+				<keywords text="flex library,library,flex,adding,project,oop" />
+				<code>
+					<![CDATA[//By adding Flex LIbraries to your projects it allows you to utilize assets such a "Reusable code library" in any project you are working on. There is no code for this so just follow the steps below to add a library to your project.]]>
+				</code>
+				<notes>
+• Beging by right-clicking on the projects main container folder, at the bottom of the pop up menu you will see an option called "Properties" click on properties to open properties menu.
+• Next, click on the "Actionscript Build Path" option in the left side menu.
+• From here you can add projects, SWC folders, or single SWCs. To add a library such as a "Reusable code library" select the "Add Project" option.
+• If your code libraries are loaded into the Flash Builder the a box should pop up with all the Flex Projects Flex Builder can find. 
+• Select the library you would like to add to your project and click OK.
+• Lastly, click OK in the build path menu box. Thats it, your Flex Library has been added to your project and you may now utilize any reusable code you have in your library in the project you added it to.
+				</notes>
+				<resources>
+
+				</resources>
+		</snippet>
+		
+<!--             end OOP code snippets, begin FAT snippets                -->
 		
 	</snippets> <!--end of snippet node-->
 		

@@ -67,12 +67,6 @@ package
 			_cListView.x = (stage.stageWidth - _cListView.width) / 2;
 			_cListView.y = bg.y + 96;
 			
-			/*var t:Title = new Title();
-			t.x = 290;
-			t.y = 11;       
-			t.scaleX = t.scaleY = .8;            
-			addChild(t);*/
-			
 			//init search
 			var sb:SearchBox = new SearchBox();
 			addChild(sb);
