@@ -2,6 +2,10 @@ package com.fullsail.dfp.ui
 {
 	import com.fullsail.dfp.vo.CodeVO;
 	
+	import flash.events.MouseEvent;
+	import flash.net.URLRequest;
+	import flash.net.navigateToURL;
+	import flash.system.System;
 	import flash.text.TextFieldAutoSize;
 	
 	import libs.ItemFieldBase;
@@ -19,8 +23,34 @@ package com.fullsail.dfp.ui
 			tfNotes.width = 502;
 			
 			mc_codebg.width = tfCode.width + 5;
+			
+			//text in buttons
+			mc_copy.tfListButton.text = "Copy";
+			mc_pdf.tfListButton.text = "View PDF";
+			
+			//button mode
+			mc_copy.buttonMode = true;
+			mc_copy.mouseChildren = false;
+			mc_pdf.buttonMode = true;
+			mc_pdf.mouseChildren = false;
+			
+			//listeners
+			mc_copy.addEventListener(MouseEvent.CLICK, onCopy);
+			mc_pdf.addEventListener(MouseEvent.CLICK,onViewPDF);
 		}
-
+		
+		protected function onViewPDF(event:MouseEvent):void
+		{
+			navigateToURL(new URLRequest(_cVO.resourcesLink), "_blank");
+		}
+		
+		protected function onCopy(event:MouseEvent):void
+		{
+			tfCode.setSelection(0,tfCode.length);
+			System.setClipboard(tfCode.text);
+			mc_copy.tfListButton.text = "Copied!";
+		}
+		
 		public function get cVO():CodeVO
 		{
 			return _cVO;
@@ -34,6 +64,15 @@ package com.fullsail.dfp.ui
 		
 		private function updateItemField():void
 		{
+			if(_cVO.resourcesLink == "")
+			{
+				//if there is no resource link, 
+				//remove the button and listener
+				mc_pdf.removeEventListener(MouseEvent.CLICK,onViewPDF);
+				removeChild(mc_pdf);
+			}
+			
+			
 			tfCode.text = _cVO.codeString;
 			tfNotes.text = _cVO.notes;
 			
@@ -47,13 +86,16 @@ package com.fullsail.dfp.ui
 			mc_codebg.y = tfCode.y - 5;
 			mc_codebg.height = tfCode.height + 10;
 			
+			//changing the buttons to be positioned according to height of code window
+			mc_copy.y = mc_codebg.y + mc_codebg.height + 5;
+			mc_pdf.y = mc_copy.y;
 			
 			//correcting y position - the y of the notes will be
 			//based on the code y and code height
-			tfNotes.y = tfCode.y + tfCode.height + 20;
+			tfNotes.y = mc_copy.y + mc_copy.height + 10;
 			//20px of padding between the notes and code
 			
-			fieldbaseBG.height = (tfCode.height + tfNotes.height) + 40;
+			fieldbaseBG.height = (tfCode.height + mc_copy.height + tfNotes.height) + 40;
 			
 			this.height = fieldbaseBG.height;
 			
