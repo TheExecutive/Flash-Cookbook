@@ -881,7 +881,7 @@ while(counter < n)
 
 		<snippet id="creatingValueObject" course="oop">
 				<name>Creating a Value Object</name>
-				<difficulty>easy</difficulty>
+				<difficulty>Easy</difficulty>
 				<keywords text="creating,value,object,value object,creating value object,oop" />
 				<code>
 					<![CDATA[public class CodeVO
@@ -906,7 +906,7 @@ public function CodeVO()
 		</snippet>
 		<snippet id="implicitGetterSetter" course="oop">
 				<name>Implicit Getter/Setter</name>
-				<difficulty>advanced</difficulty>
+				<difficulty>Moderate</difficulty>
 				<keywords text="getter,setter,implicit,getter/setter,oop" />
 				<code>
 					<![CDATA[public class Button extends buttonBase
@@ -948,7 +948,7 @@ public function CodeVO()
 		</snippet>
 		<snippet id="creatingButtonsWithArray" course="oop">
 				<name>Creating button with Array data</name>
-				<difficulty>advanced</difficulty>
+				<difficulty>Moderate</difficulty>
 				<keywords text="for each,loop,array,for,each,button,oop" />
 				<code>
 					<![CDATA[var show:ShowsVO;
@@ -986,7 +986,7 @@ btn.x = xPos - sets the buttons horizontol position equal to value of xPos, whic
 		</snippet>
 		<snippet id="overridingFunction" course="oop">
 				<name>Overriding a function</name>
-				<difficulty>advanced</difficulty>
+				<difficulty>Moderate</difficulty>
 				<keywords text="function,override,overriding a function,oop" />
 				<code>
 					<![CDATA[override public function set name(value:String):void
@@ -1012,7 +1012,7 @@ override public function get name():String
 		</snippet>
 		<snippet id="creatingAnInterface" course="oop">
 				<name>Creating an Interface</name>
-				<difficulty>advanced</difficulty>
+				<difficulty>Easy</difficulty>
 				<keywords text="create,creating,interface,creating an interface,oop" />
 				<code>
 					<![CDATA[public interface IAnimals
@@ -1040,7 +1040,7 @@ override public function get name():String
 		</snippet>
 		<snippet id="implimentingAnInterface" course="oop">
 				<name>Implimenting an Interface</name>
-				<difficulty>advanced</difficulty>
+				<difficulty>Easy</difficulty>
 				<keywords text="impliment,implimenting,interface,implimenting an interface,oop" />
 				<code>
 					<![CDATA[public class Duck extends DuckBase implements IAnimals]]>
@@ -1057,7 +1057,7 @@ override public function get name():String
 		</snippet>
 		<snippet id="creatingAConstant" course="oop">
 				<name>Creating a Constant</name>
-				<difficulty>advanced</difficulty>
+				<difficulty>Easy</difficulty>
 				<keywords text="create,creating,constant,static,public,oop" />
 				<code>
 					<![CDATA[private const CLASS_NAME:String = "OOP";]]>
@@ -1073,7 +1073,7 @@ override public function get name():String
 		</snippet>
 		<snippet id="creatingAStaticConstant" course="oop">
 				<name>Creating a Static Constant</name>
-				<difficulty>advanced</difficulty>
+				<difficulty>easy</difficulty>
 				<keywords text="create,creating,constant,static,public,oop" />
 				<code>
 					<![CDATA[public static const CLASS_NAME:String = "OOP";]]>
@@ -1089,7 +1089,7 @@ override public function get name():String
 		</snippet>
 		<snippet id="creatingAStaticVariable" course="oop">
 				<name>Creating a Static Variable</name>
-				<difficulty>advanced</difficulty>
+				<difficulty>Moderate</difficulty>
 				<keywords text="create,creating,variable,static,public,oop" />
 				<code>
 					<![CDATA[//creates a class that that displays a textField. The text for that textField is called from another class that is held in a static variable.
@@ -1140,7 +1140,7 @@ var Testvar:Testvar = new Testvar(); - Instantiates the Testvar class, this allo
 		</snippet>
 		<snippet id="creatingAStaticFunction" course="oop">
 				<name>Creating a Static Function</name>
-				<difficulty>advanced</difficulty>
+				<difficulty>Moderate</difficulty>
 				<keywords text="create,creating,variable,static,public,oop" />
 				<code>
 					<![CDATA[public static function truncateTxt(value:String, length:int):String
@@ -1171,7 +1171,7 @@ private function truncateText():void
 		</snippet>
 		<snippet id="useCapture" course="oop">
 				<name>Events with useCapture</name>
-				<difficulty>advanced</difficulty>
+				<difficulty>Advanced</difficulty>
 				<keywords text="event,events,capture,usecapture,oop" />
 				<code>
 					<![CDATA[object.addEventListener(event.EVENT, doSomething, useCapture;]]>
@@ -1188,7 +1188,7 @@ private function truncateText():void
 		</snippet>
 		<snippet id="inheritence" course="oop">
 				<name>Inheritence: Extending another class</name>
-				<difficulty>advanced</difficulty>
+				<difficulty>Advanced</difficulty>
 				<keywords text="inheritence,class,extend,extending,oop" />
 				<code>
 					<![CDATA[	public class Object extends ObjectBase
@@ -1241,7 +1241,7 @@ public class NewObject extends Object
 		</snippet>
 		<snippet id="polymorphism" course="oop">
 				<name>Polymorphism</name>
-				<difficulty>advanced</difficulty>
+				<difficulty>Advanced</difficulty>
 				<keywords text="inheritence,class,extend,extending,oop" />
 				<code>
 					<![CDATA[	public class Object extends ObjectBase
@@ -1294,7 +1294,7 @@ public class NewObject extends Object
 		</snippet>
 		<snippet id="flexLibraryProject" course="oop">
 				<name>Resource: Adding a Flex library project</name>
-				<difficulty>easy</difficulty>
+				<difficulty>Easy</difficulty>
 				<keywords text="flex library,library,flex,adding,project,oop" />
 				<code>
 					<![CDATA[//By adding Flex LIbraries to your projects it allows you to utilize assets such a "Reusable code library" in any project you are working on. There is no code for this so just follow the steps below to add a library to your project.]]>
@@ -1313,6 +1313,20 @@ public class NewObject extends Object
 		</snippet>
 		
 <!--             end OOP code snippets, begin FAT snippets                -->
+		<snippet id="urlLoader" course="fat">
+				<name>URLLoader class</name>
+				<difficulty>Advanced</difficulty>
+				<keywords text="xxxx,fat" />
+				<code>
+					<![CDATA[xxxxxx]]>
+				</code>
+				<notes>
+• xxxxx
+				</notes>
+				<resources>
+					<link href="#" />
+				</resources>
+		</snippet>
 		
 	</snippets> <!--end of snippet node-->
 		
