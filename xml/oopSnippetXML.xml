@@ -360,3 +360,18 @@ public class NewObject extends Object
 				</resources>
 		</snippet>
 	</snippets>
+	
+			<snippet id="urlLoader" course="fat">
+				<name>URLLoader class</name>
+				<difficulty>Advanced</difficulty>
+				<keywords text="xxxx,fat" />
+				<code>
+					<![CDATA[xxxxxx]]>
+				</code>
+				<notes>
+• xxxxx
+				</notes>
+				<resources>
+					<link href="#" />
+				</resources>
+		</snippet>

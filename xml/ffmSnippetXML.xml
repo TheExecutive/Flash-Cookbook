@@ -1313,7 +1313,270 @@ public class NewObject extends Object
 		</snippet>
 		
 <!--             end OOP code snippets, begin FAT snippets                -->
+
 		<snippet id="urlLoader" course="fat">
+				<name>URLLoader class - Data loading</name>
+				<difficulty>Advanced</difficulty>
+				<keywords text="url,loader,urlloader,fat" />
+				<code>
+					<![CDATA[var xmlLoader:URLLoader = new URLLoader();
+xmlLoader.load(new URLRequest("resources/xml/images.xml"));]]>
+				</code>
+				<notes>
+• var xmlLoader - Creates a new variable
+• URLLoader = new URLLoader() - Instantiates a new URL Loader class. URLLoaders load data from APIs and other dynamic data connected to a URL.
+• xmlLoader.laod() - Calls the laod() method connected to the URLLoader class. This loads the data.
+• new URLRequest("xxx"); - You must pass the URL you want to load data from into the load() function with a new URLRequest.
+				</notes>
+				<resources>
+					<link href="#" />
+				</resources>
+		</snippet>
+		<snippet id="urlLoaderEvents" course="fat">
+				<name>URLLoader Events</name>
+				<difficulty>Advanced</difficulty>
+				<keywords text="url,loader,urlloader,event,urlloader event,fat" />
+				<code>
+					<![CDATA[var xmlLoader:URLLoader = new URLLoader();
+xmlLoader.addEventListener(Event.COMPLETE, xmlComplete);
+xmlLoader.addEventLIstener(Event.IOErrorEvent.IO_ERROR0);
+xmlLoader.load(new URLRequest("resources/xml/images.xml"));]]>
+				</code>
+				<notes>
+• xmlLoader.addEventListener(Event.COMPLETE, onComplete); - This event is attached to the xmlLoader and listens for the data to finish loading. Once the data has finished loading it runs an "onComplete" function that manages the data.
+• xmlLoader.addEventListener(Event.IOErrorEvent.IO_ERROR, onError); - This event is attached to the xmlLoader and listens for load errors that occur while loading the data. If an error occurs it runs an "onError" function that would handle the error and alert the user of an error.
+				</notes>
+				<resources>
+					<link href="#" />
+				</resources>
+		</snippet>
+		<snippet id="xmlParsing" course="fat">
+				<name>XML Parsing</name>
+				<difficulty>Advanced</difficulty>
+				<keywords text="xml,parse,parsing,parsing xml,fat" />
+				<code>
+					<![CDATA[private function loadXML():void
+{
+	//instantiates loader, loads the XML data, runs onComplete function
+	_loader = new URLLoader();
+	_loader.load(new URLRequest("resources/songs.xml"));
+	_loader.addEventListener(Event.COMPLETE, onXMLLoad);
+}
+private function onXMLLoad(evt:Event):void
+{
+	var xmlData:XML = new XML(evt.currentTarget.data);
+
+	tracks:Array = [];
+
+		for each(var track:XML in xmlData.song)
+		{
+			tVO:TracksVO = new TracksVO();
+			tVO.artist = track.artist;
+			tVO.title = track.title;
+				
+			tracks.push(tVO);
+		}
+}]]>
+				</code>
+				<notes>
+• private function loadXML():void - The loadXML function instantiates the loader, send the URL request, and listens for the data to finsh loading before running an onComplete function called "onXMLLoad".
+• private function onXMLLoad(evt:Event):void - The onComplete event that is fired once the URL data has finshed loading.
+• var xmlData:XML = new XML() - Creates a new variable to hold the XML data that is loaded by the URLLoader.
+• new XML(evt.currentTarget.data) - Sets the XML data equal to the data of the object dispatching the event. In this case the xmlData is equal to the data loaded in by the URLLoader.
+
+•tracks:Array = [] - You then create an Array to hold the information that is loaded into xmlData. A for each() loop goes through the data in the array and stores it into a Value Object.
+• tVO:TracksVO = new TracksVO(); -  You then instantiate your Value Object that will hold the data is the "track" variables, which is your xmlData.
+• tVO.artist = track.artist - This sets the artist variable in TracksVO equal to the artist name located in the xmlData. The variable "track" acts as your base path so you only have to write "track" and then the node you want to target.
+• tVO.title = track.title - This sets the title variable in TracksVO equal to the title name located in the xmlData. The variable "track" acts as your base path so you only have to write "track" and then the node you want to target.
+
+• tracks.push(tVO); - This pushes the newly created Value Objects into the empty Array by using the push() method. This is placed inside the loop so everytime the loop runs the new Value Object is stored in the Array.
+				</notes>
+				<resources>
+					<link href="#" />
+				</resources>
+		</snippet>
+		<snippet id="XMLelementLength" course="fat">
+				<name>Number of elements in XML object</name>
+				<difficulty>Advanced</difficulty>
+				<keywords text="xml,object,length,xml object length,fat" />
+				<code>
+					<![CDATA[var xmlData:XML = new XML("data.xml");
+xmlData.length();]]>
+				</code>
+				<notes>
+• var xmlData:XML = new XML("data.xml"); - Creates a xmlData variable that holds data from an XML document.
+• xmlData.length() - Returns the number of elements in a XML object. This is a method and not a property so dont forget to put the method brackets (). 
+				</notes>
+				<resources>
+					<link href="#" />
+				</resources>
+		</snippet>
+		<snippet id="loaderClass" course="fat">
+				<name>Loader class - Image loading</name>
+				<difficulty>Advanced</difficulty>
+				<keywords text="loader,image loader,fat" />
+				<code>
+					<![CDATA[var loader:Loader = new Loader();
+loader.contentLoaderInfo.addEventListener(Event.COMPLETE, onComplete);
+loader.load(new URLRequest(files/src/imgs));
+addChild(loader);]]>
+				</code>
+				<notes>
+• var loader:Loader = new Loader(); - Creates a new instance of the Loader class. The Loader class is used for loading graphics and images. 
+• loader.contentLoaderInfo.addEventListener(Event.COMPLETE, onComplete); - Adds a event handler that listens for the loader to finish loading its data. Once it has finished the handler runs a "onComplete" function.
+//NOTE: You must add the event listener to the Loader's "contentLoaderInfo" property since you want to listen for the content to finish loading.
+• loader.load(new URLRequest(files/src/imgs)); - Passes the URL for the images into the loader and loads those images.
+• addChild(loader) - This adds the loader to the stage. The loader is a display object that holds the loaded images.
+				</notes>
+				<resources>
+					<link href="#" />
+				</resources>
+		</snippet>
+		<snippet id="loaderEvents" course="fat">
+				<name>Loader Events</name>
+				<difficulty>Advanced</difficulty>
+				<keywords text="loader,events,loader events,fat" />
+				<code>
+					<![CDATA[var loader:Loader = new Loader();
+loader.contentLoaderInfo.addEventListener(Event.COMPLETE, onComplete);
+loader.contentLoaderInfo.addEventListener(ProgressEvent.PROGRESS, onProgress)
+loader.load(new URLRequest(path));
+addChild(loader);]]>
+				</code>
+				<notes>
+• var loader:Loader = new Loader(); - Creates a new instance of the Loader class. The Loader class is used for loading graphics and images. 
+• loader.contentLoaderInfo.addEventListener(Event.COMPLETE, onComplete); - Adds a event handler that listens for the loader to finish loading its data. Once it has finished the handler runs a "onComplete" function.
+//NOTE: You must add the event listener to the Loader's "contentLoaderInfo" property since you want to listen for the content to finish loading.
+• loader.contentLoaderInfo.addEventListener(ProgressEvent.PROGRESS, onProgress); - Adds a event handler that listens for the progress of the objects being loaded. This runs a onProgress function that can be used to create a progress counter.
+//NOTE: You must add the event listener to the Loader's "contentLoaderInfo" property since you want to listen for the content to finish loading.
+• loader.load(new URLRequest(path)); - Passes the URL for the images into the loader and loads those images.
+• addChild(loader) - This adds the loader to the stage. The loader is a display object that holds the loaded images.
+				</notes>
+				<resources>
+					<link href="#" />
+				</resources>
+		</snippet>
+		<snippet id="addLoaderToDisplay" course="fat">
+				<name>Adding loader object to stage</name>
+				<difficulty>Advanced</difficulty>
+				<keywords text="loader,adding,adding loader to stage,stage,fat" />
+				<code>
+					<![CDATA[var loader:Loader = new Loader();
+loader.load(new URLRequest("img1.jpg"));
+addChild(loader);]]>
+				</code>
+				<notes>
+• var loader:Loader = new Loader(); - Creates a new instance of the Loader class. The Loader class is used for loading graphics and images. 
+• loader.load(new URLRequest(path)); - Passes the URL for the images into the loader and loads those images.
+• addChild(loader) - This adds the loader to the stage. The loader is a display object that holds the loaded images.
+				</notes>
+				<resources>
+					<link href="#" />
+				</resources>
+		</snippet>
+		<snippet id="soundsClass" course="fat">
+				<name>Sound Class</name>
+				<difficulty>Advanced</difficulty>
+				<keywords text="sound,class,sound class,fat" />
+				<code>
+					<![CDATA[var snd:Sound = new Sound();
+snd.load(new URLRequest(path));
+snd.addEventListener(Event.COMPLETE, onSoundComplete);]]>
+				</code>
+				<notes>
+• var snd:Sound = new Sound(); - Creates a new variable data typed as a Sound and instantiates a new insatnce of the Sound class.
+• snd.load(new URLRequest(path)); - The sounds variable then loads a sound, the sound is passed to the loader with a new URLRequest that contains the path the sound file.
+• snd.addEventListener(Event.COMPLETE, onSoundComplete); - Adds an event listener to the sound variable that listens for the sound to finish loading. Once the sound has finished loading it runs a "onSoundComplete" function that then handles the sounds functionality.
+				</notes>
+				<resources>
+					<link href="#" />
+				</resources>
+		</snippet>
+		<snippet id="playingSound" course="fat">
+				<name>Playing a sound</name>
+				<difficulty>Advanced</difficulty>
+				<keywords text="sound,class,sound class,fat" />
+				<code>
+					<![CDATA[private var _snd:Sound = new Sound();
+_snd.load(new URLRequest(path));
+_snd.addEventListener(Event.COMPLETE, onSoundComplete);
+
+private function onSoundComplete(evt:Event):void
+{
+	_snd.play();
+	
+	//example of play method with arguments
+	_snd.play(0,0,st);
+}]]>
+				</code>
+				<notes>
+• private var _snd:Sound = new Sound(); - Creates a new variable data typed as a Sound and instantiates a new insatnce of the Sound class.
+• _snd.load(new URLRequest(path)); - The sounds variable then loads a sound, the sound is passed to the loader with a new URLRequest that contains the path the sound file.
+• _snd.addEventListener(Event.COMPLETE, onSoundComplete); - Adds an event listener to the sound variable that listens for the sound to finish loading. Once the sound has finished loading it runs a "onSoundComplete" function that then handles the sounds functionality.
+• private function onSoundComplete(evt:Event):void - Event handler that runs once the sound has finished loading.
+• _snd.play() - Plays the sound. It really is that simple.
+• _snd.play(0,0,st) - The first zero is the start position of the sound, the second zero represents how many time you would like the sound to loop. The last argument, st, represents the SoundTransform.
+				</notes>
+				<resources>
+					<link href="#" />
+				</resources>
+		</snippet>
+		<snippet id="pausingSound" course="fat">
+				<name>Pausing a sound</name>
+				<difficulty>Advanced</difficulty>
+				<keywords text="sound class,sound,pause,pausing a sound,pausing,fat" />
+				<code>
+					<![CDATA[private var _snd:Sound;
+private var _sc:SoundChannel = new SoundChannel();
+private var _st:SoundTransform;
+private var _pos:int;
+
+var playBtn:Button = new Button();
+var pauseBtn:Button = new Button();
+	
+playBtn.addEventListener(MouseEvent.CLICK, onPlayClick);
+pauseBtn.addEventListener(MouseEvent.CLICK, onPauseClick);
+		
+private function loadMP3(path:String):void
+{
+	_snd = new Sound();
+	_snd.load(new URLRequest(path));
+	_snd.addEventListener(Event.COMPLETE, playSound);
+}
+private function playSound(evt:Event):void
+{
+	_sc = _snd.play(_pos,0,_st);
+}
+private function onPlayClick(evt:MouseEvent):void
+{
+	_st = new SoundTransform(1);
+	playSound();
+}
+private function onPauseClick(evt:MouseEvent):void
+{
+	_pos = _sc.position;
+	_sc.stop();
+}]]>
+				</code>
+				<notes>
+• Start by creating any private class variables needed. You will need to create a new Sound class, SoundChannel class, and SoundTransform class. You also need to createa  position variable (_pos) that will keep track of the song position.
+• For this example we next create two buttons, one to control the Play function and once to control the Pause function.
+• Instantiate the sound variabe, load the song with the new URLRequest method and pass it the song's path (URL).
+• In the play function set the SoundChannel variable equal to the loaded sounds play method. Pass the current position (_pos), the number of loops (0), and the SoundTransform (_st). 
+•_pos = _sc.position; - When the user clicks the pause button, the song position is stored in the _pos variable.
+•_sc.stop(); - Stops the SoundChannel from playing the sound.
+•_sc = _snd.play(_pos,0,_st); - When use clicks the play button, the song resumes from the paused position by passing in _pos variable into the play() method of the sound.
+
+				</notes>
+				<resources>
+					<link href="#" />
+				</resources>
+		</snippet>
+		
+	</snippets> <!--end of snippet node-->
+	
+	
+	<!-- <snippet id="urlLoader" course="fat">
 				<name>URLLoader class</name>
 				<difficulty>Advanced</difficulty>
 				<keywords text="xxxx,fat" />
@@ -1326,7 +1589,5 @@ public class NewObject extends Object
 				<resources>
 					<link href="#" />
 				</resources>
-		</snippet>
-		
-	</snippets> <!--end of snippet node-->
+		</snippet> -->
 		
