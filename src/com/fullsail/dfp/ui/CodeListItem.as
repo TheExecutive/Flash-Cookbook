@@ -6,8 +6,6 @@ package com.fullsail.dfp.ui
 	
 	import libs.CodeListItemBase;
 	
-	import mx.utils.StringUtil;
-	
 	public class CodeListItem extends CodeListItemBase
 	{
 		

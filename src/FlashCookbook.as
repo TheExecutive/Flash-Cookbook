@@ -101,6 +101,9 @@ package
 		
 		private function createButtons():void
 		{
+			var all:ClassButton = new ClassButton();
+			all.label = "All";
+			
 			var ffm:ClassButton = new ClassButton();
 			ffm.label = "FFM";
 			
@@ -113,7 +116,7 @@ package
 			var dfp:ClassButton = new ClassButton();
 			dfp.label = "DFP"; 
 			
-			_buttonArray = [ffm, oop, fat, dfp];
+			_buttonArray = [all, ffm, oop, fat, dfp];
 			
 			//init layout box + add buttons to lb + add lb to stage
 			var lb:LayoutBoxFSC = new LayoutBoxFSC(5,true);
@@ -161,6 +164,13 @@ package
 			xmlService.search(event.query);
 			//event.query is whatever is in the search box at the time 
 			//the user hit the search button
+			
+			/* this may be needed for searches
+			for each (var cb:ClassBtn in _buttonArray)
+			{
+				cb.isSelected = false;	
+			}*/
+			
 			
 			//listeners for the XMLService
 			xmlService.addEventListener(XMLEvent.DATA_LOAD_COMPLETE,onDataComplete);
