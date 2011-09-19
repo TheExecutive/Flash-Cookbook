@@ -13,7 +13,7 @@ package com.fullsail.dfp.ui
 	
 	public class SearchBox extends NewSB
 	{
-		private static const SEARCH_PROMPT:String = "I want info on...";
+		private static const SEARCH_PROMPT:String = "Search for snippet...";
 
 		private var _selectedGlow:GlowFilter;
 

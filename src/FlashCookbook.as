@@ -46,6 +46,7 @@ package
 		
 		private function initUI():void
 		{
+			
 			//init background
 			var bg:Background = new Background();
 			addChild(bg);

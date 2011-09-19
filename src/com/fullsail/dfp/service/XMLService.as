@@ -8,6 +8,7 @@ package com.fullsail.dfp.service
 	import flash.events.EventDispatcher;
 	import flash.events.IEventDispatcher;
 	import flash.events.IOErrorEvent;
+	import flash.events.ProgressEvent;
 	import flash.net.URLLoader;
 	import flash.net.URLRequest;
 	
@@ -28,15 +29,24 @@ package com.fullsail.dfp.service
 			_searchedFor = ""; //clear this out by default
 			//the default value for search is an empty string
 			_searchedFor = query;
-			loadXML("MasterXMLSnippets.xml");
+			
+			loadXML("https://raw.github.com/gist/1227007/MasterSnippetXMList.xml");
+			//this is temporary until we figure out to properly utilize metadata
+			//within XML
 		}
 		
 		private function loadXML(url:String):void
 		{
 			var urlLoader:URLLoader = new URLLoader();
 			urlLoader.addEventListener(Event.COMPLETE,onLoad);
+			urlLoader.addEventListener(ProgressEvent.PROGRESS,onProgress);
 			urlLoader.addEventListener(IOErrorEvent.IO_ERROR,onError);
 			urlLoader.load(new URLRequest(url));
+		}
+		
+		protected function onProgress(event:ProgressEvent):void
+		{
+			trace(event.bytesLoaded + " out of " + event.bytesTotal); 
 		}
 		
 		protected function onError(event:IOErrorEvent):void
