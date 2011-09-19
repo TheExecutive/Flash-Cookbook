@@ -28,7 +28,7 @@ package com.fullsail.dfp.service
 			_searchedFor = ""; //clear this out by default
 			//the default value for search is an empty string
 			_searchedFor = query;
-			loadXML("ffmSnippetXML.xml");
+			loadXML("MasterXMLSnippets.xml");
 		}
 		
 		private function loadXML(url:String):void

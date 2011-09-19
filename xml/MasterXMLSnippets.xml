@@ -9,7 +9,7 @@
 				</code>
 				<notes>
 • var - Declares you are creating a new variable, and must be done before variable can be used.
-• tf - Is the variable name, it can not begin with a number and can not contain spaces. You can use camelCase or underscores in place of spaces.
+• tf - Is the variable name, it cannot begin with a number and cannot contain spaces. You can use camelCase or underscores in place of spaces.
 • TextField - Is the data type, it represents what kind of object the variable and what types of data can be stored in it - be specific with data types.
 				</notes>
 				<resources>
@@ -30,7 +30,7 @@
 				<notes>
 • function - Declares you are creating a new function
 • functionName() - Acts as a unique identifier for the function. 
-• () - The parenthatsis hold optional parameters, parameters are arguments you can pass with a function.
+• () - The parentheses hold optional parameters, parameters are arguments you can pass with a function.
 • ReturnType - If your function returns a value, this is where you define that type of value will be returned. If no value is returned use "void" for the ReturnType.
 				</notes>
 				<resources>
@@ -207,7 +207,7 @@ Executing this code would allow a movie clip to call the play() function, which 
 				</code>
 				<notes>
 • obj - The object you want to move.
-• buttonMode - Is a boolean value, by default set to false, setting the value true will cause the object to behave like a button.
+• buttonMode - Is a Boolean value, by default set to false, setting the value true will cause the object to behave like a button.
 • true - Sets the value to true, is set to false by default.
 				</notes>
 				<resources>
@@ -242,7 +242,7 @@ this.addChild(myTF);
 myTF.text = "Hello World";]]>
 				</code>
 				<notes>
-• var - Delcares a new variable is being created.
+• var - Declares a new variable is being created.
 • myTF - Unique identifier for the text field you are creating.
 • :TextField - Declares the data type for the variable, in this case it is a TextField.
 • = new TextField - Declares that this variable is a new text field, by default text fields have a height and width of 100.
@@ -311,7 +311,7 @@ myTF.text = "Hello World";]]>
 				<notes>
 • myTF - Unique identifier for the text field you are creating.
 • .embedFonts - Embedding fonts allows Flash to use the desired font you would like text to be displayed in.
-• = true; - Directs the TextField to use the font outlines embedded in the movies library, if correct font doesnt exist in library nothing is show. By default this is set to false and the TextField will pick a standard font to display the text in.
+• = true; - Directs the TextField to use the font outlines embedded in the movies library, if correct font doesn’t exist in library nothing is show. By default this is set to false and the TextField will pick a standard font to display the text in.
 				</notes>
 				<resources>
 					<link href="http://wddbs.com/FFM/slides/Day%202/FFM_TextFields.pdf" title="FFM Portal" />
@@ -397,9 +397,9 @@ myFormat.color = 0xFFFFFF;]]>
 				</code>
 				<notes>
 • item - the variable you want to attach the event listener to.
-• .addEventListner - Adds the event listner to the object it is attached to, is a property of the object.
+• .addEventListner - Adds the event listener to the object it is attached to, is a property of the object.
 • (Event.EVENT_TYPE, - Declares what event to listen for, there are many to choose from so make sure you choose to right event for the right task.
-Responder); - Is the function that will run once the event has occured, can be named anything but make sure function names are descriptive.
+Responder); - Is the function that will run once the event has occurred, can be named anything but make sure function names are descriptive.
 
 //See below example for more detail on writing event listeners.
 				</notes>
@@ -436,7 +436,7 @@ function doSomething(event:MouseEvent):void
 • .removeEventListner - Removes the event listener from the object it is attached to
 • (MouseEvent.CLICK, doSomething) - Parameters for removeEventListener, in this case the event being removed is a mouse click event. You must also include the function the event listener is attached to. 
 
-//You should always remove an event listener once it is not needed anymore, this will not only prevent memory leaks, but also keep the program running effeciently.
+//You should always remove an event listener once it is not needed anymore, this will not only prevent memory leaks, but also keep the program running efficiently.
 				</notes>
 				<resources>
 					<link href="http://wddbs.com/FFM/slides/Day%203/FFM_Events.pdf" title="FFM Portal" />
@@ -525,7 +525,7 @@ else
 • <![CDATA[ >=]]> - Same as saying "if value a is great than or equal to value b".
 
 // Other optional condition evaluators
-• <![CDATA[ &&]]> - "AND" - Same as saying "if condition 1 AND codition 2 are the same", if the same the condition would return true.
+• <![CDATA[ &&]]> - "AND" - Same as saying "if condition 1 AND condition 2 are the same", if the same the condition would return true.
 • <![CDATA[ ||]]> - "OR" - Same as saying "if condition 1 OR condition 2 are the same". If condition 1 returned true then condition 2 would not be evaluated, condition stops as soon as one returns a value of TRUE.
 				</notes>
 				<resources>
@@ -548,7 +548,7 @@ Math.random()]]>
 • round(num) - Rounds the num up or down to the nearest integer and returns the value.
 • ceil(num) - Rounds the parameter up to the next higher integer.
 • floor(num) - Rounds the num down to an integer, is effectively the same as casting to an integer.
-• random() - Returns a "psuedo-random" number between 0 and 1.
+• random() - Returns a "pseudo-random" number between 0 and 1.
 				</notes>
 				<resources>
 					<link href="http://wddbs.com/FFM/slides/Day%204/FFM_MathClass.key.pdf" title="FFM Portal" />
@@ -566,12 +566,12 @@ item.addEventListener(MouseEvent.MOUSE_DOWN, eventFunction);
 item.addEventListener(MouseEvent.MOUSE.UP, eventFunction);]]>
 				</code>
 				<notes>
-• item.addEventListner - Adds an event listner to an object named item
+• item.addEventListner - Adds an event listener to an object named item
 • MouseEvent.CLICK - Listens for the user to click a mouse button.
 • MouseEvent.ROLL_OVER - Listens for the mouse cursor to the roll over (on) the item.
 • MouseEvent.ROLL_OUT - Listens for the mouse cursor to roll out (off) the item.
-• MouseEvent.MOUSE_DOWN - Triggers while the mouse button is being pressed down, not the same as MouseEvent.CLICK. Use primarily for affordance effects.
-• MouseEvent.MOUSE_UP - Triggers after them mouse button has been released, notthe same as MouseEvent.CLICK. Use primarily for affordance effects.
+• MouseEvent.MOUSE_DOWN - Triggers while the mouse button is being pressed down, not the same as MouseEvent.CLICK. Use primarily for affordance effects.
+• MouseEvent.MOUSE_UP - Triggers after them mouse button has been released, not the same as MouseEvent.CLICK. Use primarily for affordance effects.
 • eventFunction - The function that will run once the mouseEvent has taken place.
 				</notes>
 				<resources>
@@ -586,7 +586,7 @@ item.addEventListener(MouseEvent.MOUSE.UP, eventFunction);]]>
 					<![CDATA[item.addEventListner(Event.ENTER_FRAME);]]>
 				</code>
 				<notes>
-• item.addEventListner - Adds an event listner to an object named item
+• item.addEventListner - Adds an event listener to an object named item
 • Event.ENTER_FRAME - This event is constantly running and updating when the program is launched. Best used for animations or for any object that is being updated frequently.
 				</notes>
 				<resources>
@@ -603,10 +603,10 @@ this.dispatchEvent(e);
 removeEventListener(Event.ENTER_FRAME, function);]]>
 				</code>
 				<notes>
-• var e:Event - Delcares a new variable named e and data types that variable as an Event.
+• var e:Event - Declares a new variable named e and data types that variable as an Event.
 • = new Event("string"); - Declares we are creating a new event, the event will hold a string that is equal to its action. So if this was a complete event, the string would be "complete".
 • this.dispatchEvent(e); - Tells the object (this) to dispatch the event (e). this line is required in order for the event to take place.
-• removeEventListner(Event.ENTER_FRAME, function) - Removes the event listner once it has finished running. This is good practice and prevents memory leaks.
+• removeEventListner(Event.ENTER_FRAME, function) - Removes the event listener once it has finished running. This is good practice and prevents memory leaks.
 				</notes>
 				<resources>
 					<link href="http://help.adobe.com/en_US/FlashPlatform/reference/actionscript/3/flash/events/Event.html" title="Adobe Docs" />
@@ -628,7 +628,7 @@ public function setLabel(value:String):void
 				</code>
 				<notes>
 • public function - Declares a new function and makes it public, this allows other classes to be access the function also.
-• getLabel():String - Where getLabel is the function name, this function returns a String value.
+• getLabel():String - Where getLabel is the function name, this function returns a String value.
 • return myTextfield.text - This action returns the text in the text field as a value, return is required for the value to be passed to the setter.
 
 • setLabel(value:String):void - This public function is the setter, it accepts a value that is a String and returns nothing (void).
@@ -652,7 +652,7 @@ public function setLabel(value:String):void
 • for() - Begins the for loop, all parameters for the loop go inside the brackets.
 • var i:int = 0; - Declares a new variable named i and sets that variable to an integer equal to zero. NOTE: "i" is commonly used for loop variables, however if using multiple loops you should change the variable to a different letter to prevent warnings. The variable can be any letter or combination thereof.
 • i <![CDATA[<]]> n; - Where "i" represents the variable and "n" represents a number, this loop will run until "i" is greater than the number set by "n".
-• i++; - This code incriments "i" by 1 everytime the loop runs until "i" is greater than "n".
+• i++; - This code increments "i" by 1 every time the loop runs until "i" is greater than "n".
 doSomething(i); - A function the loop calls for each time it runs, by passing the variable "i" into the parameters the function can change every time the loop runs based on the value of "i".
 				</notes>
 				<resources>
@@ -664,14 +664,14 @@ doSomething(i); - A function the loop calls for each time it runs, by passing th
 				<difficulty>Moderate</difficulty>
 				<keywords text="while,loop,while loop,ffm" />
 				<code>
-					<![CDATA[fwhile(a != b)
+					<![CDATA[while(a != b)
 {
 	doSomething();
 }]]>
 				</code>
 				<notes>
 • while - Begins the while loop, all parameters for the loop go inside the brackets.
-• (a != b) - Sets the condtion equal to saying "while a does not equal b". Various conditions and variables can be passed in to meet or test for any condition. 
+• (a != b) - Sets the condition equal to saying "while a does not equal b". Various conditions and variables can be passed in to meet or test for any condition. 
 • doSomething(); -  A function the loop calls for each time it runs, stops running once the desired conditions is met. 
 				</notes>
 				<resources>
@@ -692,7 +692,7 @@ for each(var item in _data)
 				</code>
 				<notes>
 • _data:Array = [] -  Is an array holding data, for this example 4 items.
-• for each() - Begins the for each loop, all paramters for the loop go inside the brackets
+• for each() - Begins the for each loop, all parameters for the loop go inside the brackets
 • var item - Creates a new variable named item, this has no relation to the name "item" in the Array data. The variable name can be anything but for this example it is item.
 • in _data - This loops through the data in the "_data" Array and pulls out each piece individually, it then stores that data in a variable called "item". This variable is then passed to the function inside the loop.
 • doSomething() - The function that accepts the variable "item". This function will run for each item in the Array.
@@ -714,9 +714,9 @@ for each(var item in _data)
 }]]>
 				</code>
 				<notes>
-• for(var i:uint = 0; i<![CDATA[<]]>5; i++) - Creates a new for loop that holds a variable "i" that is data typed as an unsigned integer equal to zero. The loop will run as long as "i" is less than 5, and incriments by 1 every time the loop runs.
+• for(var i:uint = 0; i<![CDATA[<]]>5; i++) - Creates a new for loop that holds a variable "i" that is data typed as an unsigned integer equal to zero. The loop will run as long as "i" is less than 5, and increments by 1 every time the loop runs.
 • addChild(s); - Adds the square to the stage.
-• var s:Square = new Square(); - Creates a new variabled named "s" and it is data typed as a Square (custom class) and is set equal to a new Square.
+• var s:Square = new Square(); - Creates a new variable named "s" and it is data typed as a Square (custom class) and is set equal to a new Square.
 • s.y = (s.height + 10) * i; - Sets the vertical position of the square equal to the height of the square plus 10 pixels of padding. This is then multiplied by "i" so the position of the square changes with each iteration.
 • s.x = s.width/2 + (s.width + 10) * i; - Sets the horizontal position of the square equal to half the width of the square plus the squares width and 10 pixels of padding. This is then multiplied by "i" so the position changes with each iteration.
 				</notes>
@@ -735,9 +735,9 @@ for each(var item in _data)
 				</code>
 				<notes>
 • while() - Begins a new while loop.
-• (numChildren > 1) - Checks the number of children (objects) on the stage and verfies if there is more than 1 on the stage
+• (numChildren > 1) - Checks the number of children (objects) on the stage and verifies if there is more than 1 on the stage
 • removeChildAt(1); - While there is more than 1 child on the stage this function will remove the child at 1 until there is less than 1 on the stage.
-//NOTE: Flash starts counting at zero (0) not 1, so this loop would remove all children except for the child at the zero index, this child would remain on the stage. To remove all items chagne 1 to 0.
+//NOTE: Flash starts counting at zero (0) not 1, so this loop would remove all children except for the child at the zero index, this child would remain on the stage. To remove all items change 1 to 0.
 				</notes>
 				<resources>
 				</resources>
@@ -761,7 +761,7 @@ private function onClick(event:MouseEvent):void
 }]]>
 				</code>
 				<notes>
-• item.addEventListener(MouseEvent.CLICK, onClick); - Adds and event listener to an item that listens for a mouse click event, once this event has occrued the event handler runs a function called "onClick".
+• item.addEventListener(MouseEvent.CLICK, onClick); - Adds and event listener to an item that listens for a mouse click event, once this event has occurred the event handler runs a function called "onClick".
 • private function onClick(event:MouseEvent):void - The event handler for the event listener, listens for a mouse event and returns nothing.
 • if(event.currentTarget.currentLabel == "off") - If statement that checks the currentTarget (item being clicked) to see if that current targets label is equal to the string "off". NOTE: This type of logic requires the use of frame labels, these can be applied to objects within the Flash IDE.
 • event.currentTarget.gotoAndStop("on"); - If the current target's label is set to "off" then the current target's timeline is moved to the frame holding the frame label equal to "on".
@@ -788,7 +788,7 @@ private function onClick(event:MouseEvent):void
 				<notes>
 • if() - Begins a new if loop.
 • item.hitTestObject(item2) - This argument will test to see if the first item ever comes in contact with the second item. If the argument returns true then the first function will run, else the second function will run.
-• doSomething() - This function runs if the "hitTestObject" returns a true value. This function would incriment a score, remove items from the stage, or other various tasks.
+• doSomething() - This function runs if the "hitTestObject" returns a true value. This function would increment a score, remove items from the stage, or other various tasks.
 • else - Notifies the function there is a second condition.
 • doSomethingElse() - This function runs if "hitTestObject" returns false.
 				</notes>
@@ -826,7 +826,7 @@ data = [item,item2,item3]]]>
 • = [] - Instantiates the Array and sets it equal to null, or empty.
 var item:String - Creates a new variable named "item" and data types this variable as a String holding the value "Hello".
 //Assume the same for variable items 2 and 3.
-• data = [item, item2, item3] - Takes the newly created item variables and stores these items into the data Array. The Array now holds 3 items that are composed of strings, these items can now be accessed by different classes thru the use of getter/setters.
+• data = [item, item2, item3] - Takes the newly created item variables and stores these items into the data Array. The Array now holds 3 items that are composed of strings, different classes thru the use of getter/setters can now access these items.
 				</notes>
 				<resources>
 				<link href = "http://wddbs.com/FFM/slides/Day%208/FFM_Arrays.key.pdf" Title = "FFM Portal"/>
@@ -846,7 +846,7 @@ for each(var item in _data)
 				</code>
 				<notes>
 • _data:Array = [] -  Is an array holding data, for this example 4 items.
-• for each() - Begins the for each loop, all paramters for the loop go inside the brackets
+• for each() - Begins the for each loop, all parameters for the loop go inside the brackets
 • var item - Creates a new variable named item, this has no relation to the name "item" in the Array data. The variable name can be anything but for this example it is item.
 • in _data - This loops through the data in the "_data" Array and pulls out each piece individually, it then stores that data in a variable called "item". This variable is then passed to the function inside the loop.
 • doSomething() - The function that accepts the variable "item". This function will run for each item in the Array.
@@ -871,7 +871,7 @@ while(counter < n)
 • while() - Begins a new while loop.
 • whileCounter <![CDATA[<]]> n - Checks the condition to see if the counter is less than a number specified by "n".
 • doSomething() - The function that runs while the condition returns true.
-• counter++; - Incriments the whileCounter variable by 1 each time the loop runs, once the loop reaches the desired number set by "n" the loop stops. 
+• counter++; - Increments the whileCounter variable by 1 each time the loop runs, once the loop reaches the desired number set by "n" the loop stops. 
 				</notes>
 				<resources>
 				</resources>
@@ -898,7 +898,7 @@ public function CodeVO()
 				</code>
 				<notes>
 • Creates a new class with an extension of "vo" (ex. com.fsu.vo), once created your value object can hold variables of various data types.
-• Next, create your public variables, these variables can be any data type depending on the data they need to store. While a default value is not required for  all the boolean data type does require a default value.
+• Next, create your public variables, these variables can be any data type depending on the data they need to store. While a default value is not required for  all the Boolean data type does require a default value.
 				</notes>
 				<resources>
 					<link href="http://wddbs.com/~jmadsen/oop/videos/" title="OOP ScreenCasts" />
@@ -937,7 +937,7 @@ public function CodeVO()
 // To generate your Getter/Setter highlight the "_book" variable, right click your mouse, under SOURCE click "Generate Getter/Setter", select your preferences then click OK.
 
 • public function get book():BookVO - Gets the information from the book Value Object and returns the information as a BookVO.
-• return _book; - returns the BookVO information to the _book variable.
+• return _book; - returns the BookVO information to the _book variable.
 • public function set book(value:BookVO):void - Setter for setting the book variables values to that of the BookVO. This function returns nothing.
 • _book = value  - Sets the "_book" variables data equal to the value of the BookVO.
 •tfLabel.text = book.title - Sets the button text equal to the title of the first book. Using a for each loop would create a button for each Value Object and set the text for each button equal to the title of each book in the VO.
@@ -977,8 +977,8 @@ for each(var show:ShowsVO in _shows)
 • addChild(btn) - Adds the button to the stage.
 • btn.ShowVO = show; - Takes the data from the show variable and stores that in the Value Object inside the button class. By doing this the button class now has access to the data stored in the ShowVO Value Object. 
 
-btn.y = yPos += btn.height + 10 - Sets the buttons vertical position. Starts with an itial value of 10 pixels, it then adds the button height plus 10 pixels of padding for each button that is created. This will allow the buttons to position themselves into a vertical stack
-btn.x = xPos - sets the buttons horizontol position equal to value of xPos, which is 10 pixels.
+btn.y = yPos += btn.height + 10 - Sets the buttons vertical position. Starts with an initial value of 10 pixels, it then adds the button height plus 10 pixels of padding for each button that is created. This will allow the buttons to position themselves into a vertical stack
+btn.x = xPos - sets the buttons horizontal position equal to value of xPos, which is 10 pixels.
 				</notes>
 				<resources>
 					<link href="http://wddbs.com/~jmadsen/oop/videos/" title="OOP ScreenCasts" />
@@ -1024,7 +1024,7 @@ override public function get name():String
 }]]>
 				</code>
 				<notes>
-//Begin by creating a new interface class, give the class a package and a file name then press OK, this will create your new interface class. Remeber to begin the name of your interface classes with a capital letter "i" (I).
+//Begin by creating a new interface class, give the class a package and a file name then press OK, this will create your new interface class. Remember to begin the name of your interface classes with a capital letter "i" (I).
 
 • public interface IAnimals - The constructor function for the Interface class.
 • function makeNoise():void - Creates a public function called "makeNoise" that returns nothing.
@@ -1039,16 +1039,16 @@ override public function get name():String
 				</resources>
 		</snippet>
 		<snippet id="implimentingAnInterface" course="oop">
-				<name>Implimenting an Interface</name>
+				<name>Implementing an Interface</name>
 				<difficulty>Easy</difficulty>
 				<keywords text="impliment,implimenting,interface,implimenting an interface,oop" />
 				<code>
 					<![CDATA[public class Duck extends DuckBase implements IAnimals]]>
 				</code>
 				<notes>
-• When creating a class that needs to impliment an Interface, simply click "Add.." in the class creation menu, this will display a search box. 
+• When creating a class that needs to implement an Interface, simply click "Add.." in the class creation menu, this will display a search box. 
 • Type the name of your interface into the search box, the list updates dynamically so your interface should appear after only typing a few letter.
-• Click the Interface you want to include and and click "OK".
+• Click the Interface you want to include and click "OK".
 • Click "Finish" in the class creation menu and your new class will be created and will extend the Interface you chose to include.
 				</notes>
 				<resources>
@@ -1063,9 +1063,9 @@ override public function get name():String
 					<![CDATA[private const CLASS_NAME:String = "OOP";]]>
 				</code>
 				<notes>
-• private const - Creates a new public static constant. Constants are variables who value does not change.
+• private const - Creates a new public static constant. Constants are variables thats value does not change.
 • CLASS_NAME:String - CLASS_NAME is the name of constant, notice it uses all uppercase letter and underscores in place of spaces or camelCase. Is data typed as a String.
-• = "OOP"; - Is the string value for the constant, this value will not change throughout the run of the program. However, if you need to chagne the value of the constant you can change it here.
+• = "OOP"; - Is the string value for the constant, this value will not change throughout the run of the program. However, if you need to change the value of the constant you can change it here.
 				</notes>
 				<resources>
 					<link href="http://wddbs.com/~jmadsen/oop/videos/" title="OOP ScreenCasts" />
@@ -1079,9 +1079,9 @@ override public function get name():String
 					<![CDATA[public static const CLASS_NAME:String = "OOP";]]>
 				</code>
 				<notes>
-• public static const - Creates a new public static constant. Static constants are variables who value does not change and can be accessed throughout the run of the program.
+• public static const - Creates a new public static constant. Static constants are variables that’s value do not change and can be accessed throughout the run of the program.
 • CLASS_NAME:String - CLASS_NAME is the name of constant, notice it uses all uppercase letter and underscores in place of spaces or camelCase. Is data typed as a String.
-• = "OOP"; - Is the string value for the constant, this value will not change throughout the run of the program. However, if you need to chagne the value of the constant you can change it here.
+• = "OOP"; - Is the string value for the constant, this value will not change throughout the run of the program. However, if you need to change the value of the constant you can change it here.
 				</notes>
 				<resources>
 					<link href="http://wddbs.com/~jmadsen/oop/videos/" title="OOP ScreenCasts" />
@@ -1179,15 +1179,15 @@ private function truncateText():void
 				<notes>
 • object.addEventListner - Adds an event listener to an object.
 • event.EVENT - The event the listener responds to, can be any event in the object event list.
-• doSomething - The function that would run once the event has taken place.
+• doSomething - The function that would run once the event has taken place.
 • useCapture - Indicates that the user wishes to initiate capture. After initiating capture, all events of the specified type will be dispatched to the registered listener before being dispatched to any EventTargets beneath it in the DOM tree.
 				</notes>
 				<resources>
 					<link href="http://wddbs.com/~jmadsen/oop/videos/" title="OOP ScreenCasts" />
 				</resources>
 		</snippet>
-		<snippet id="inheritence" course="oop">
-				<name>Inheritence: Extending another class</name>
+		<snippet id="inheritance" course="oop">
+				<name>Inheritance: Extending another class</name>
 				<difficulty>Advanced</difficulty>
 				<keywords text="inheritence,class,extend,extending,oop" />
 				<code>
@@ -1231,9 +1231,9 @@ public class NewObject extends Object
 • super() - Extends the parents functionality to this class.
 • public function doSomething() / doSomethingElse() - Functions the class performs, made public so that other classes can access these functions as well.
 
-• public class NewObject extends Object - Creates a new class named "NewObject" that extends the "Object" class created earlier. By allowing the new class to extend the previous class it gains all the functionality of the previous class through the concept of Inheritence.
-• public function doSomething():void -Public function inherited from the class the NewObject class is extending. These functions will performt he same actions for any class they extend.
-• public function doSomethingElse():void - Public function inherited from the class the NewObject class is extending. These functions will performt he same actions for any class they extend.
+• public class NewObject extends Object - Creates a new class named "NewObject" that extends the "Object" class created earlier. By allowing the new class to extend the previous class it gains all the functionality of the previous class through the concept of Inheritance.
+• public function doSomething():void -Public function inherited from the class the NewObject class is extending. These functions will perform he same actions for any class they extend.
+• public function doSomethingElse():void - Public function inherited from the class the NewObject class is extending. These functions will perform he same actions for any class they extend.
 				</notes>
 				<resources>
 					<link href="http://wddbs.com/~jmadsen/oop/videos/" title="OOP ScreenCasts" />
@@ -1284,7 +1284,7 @@ public class NewObject extends Object
 • super() - Extends the parents functionality to this class.
 • public function doSomething() / doSomethingElse() - Functions the class performs, made public so that other classes can access these functions as well.
 
-• public class NewObject extends Object - Creates a new class named "NewObject" that extends the "Object" class created earlier. By allowing the new class to extend the previous class it gains all the functionality of the previous class through the concept of Inheritence.
+• public class NewObject extends Object - Creates a new class named "NewObject" that extends the "Object" class created earlier. By allowing the new class to extend the previous class it gains all the functionality of the previous class through the concept of Inheritance.
 • override public function doSomething():void - Overrides the inherited function, this allows the function to work in the same manner but produce different results depending on the code inside of the function. (Polymorphism)
 • override public function doSomethingElse():void - Overrides the inherited function, this allows the function to work in the same manner but produce different results depending on the code inside of the function. (Polymorphism)
 				</notes>
@@ -1297,15 +1297,15 @@ public class NewObject extends Object
 				<difficulty>Easy</difficulty>
 				<keywords text="flex library,library,flex,adding,project,oop" />
 				<code>
-					<![CDATA[//By adding Flex LIbraries to your projects it allows you to utilize assets such a "Reusable code library" in any project you are working on. There is no code for this so just follow the steps below to add a library to your project.]]>
+					<![CDATA[//By adding Flex Libraries to your projects it allows you to utilize assets such a "Reusable code library" in any project you are working on. There is no code for this so just follow the steps below to add a library to your project.]]>
 				</code>
 				<notes>
-• Beging by right-clicking on the projects main container folder, at the bottom of the pop up menu you will see an option called "Properties" click on properties to open properties menu.
+• Begin by right clicking on the projects main container folder, at the bottom of the pop up menu you will see an option called "Properties" click on properties to open properties menu.
 • Next, click on the "Actionscript Build Path" option in the left side menu.
 • From here you can add projects, SWC folders, or single SWCs. To add a library such as a "Reusable code library" select the "Add Project" option.
 • If your code libraries are loaded into the Flash Builder the a box should pop up with all the Flex Projects Flex Builder can find. 
 • Select the library you would like to add to your project and click OK.
-• Lastly, click OK in the build path menu box. Thats it, your Flex Library has been added to your project and you may now utilize any reusable code you have in your library in the project you added it to.
+• Lastly, click OK in the build path menu box. That’s it, your Flex Library has been added to your project and you may now utilize any reusable code you have in your library in the project you added it to.
 				</notes>
 				<resources>
 					<link href="http://wddbs.com/~jmadsen/oop/videos/" title="OOP ScreenCasts" />
@@ -1379,8 +1379,8 @@ private function onXMLLoad(evt:Event):void
 }]]>
 				</code>
 				<notes>
-• private function loadXML():void - The loadXML function instantiates the loader, send the URL request, and listens for the data to finsh loading before running an onComplete function called "onXMLLoad".
-• private function onXMLLoad(evt:Event):void - The onComplete event that is fired once the URL data has finshed loading.
+• private function loadXML():void - The loadXML function instantiates the loader, send the URL request, and listens for the data to finish loading before running an onComplete function called "onXMLLoad".
+• private function onXMLLoad(evt:Event):void - The onComplete event that is fired once the URL data has finished loading.
 • var xmlData:XML = new XML() - Creates a new variable to hold the XML data that is loaded by the URLLoader.
 • new XML(evt.currentTarget.data) - Sets the XML data equal to the data of the object dispatching the event. In this case the xmlData is equal to the data loaded in by the URLLoader.
 
@@ -1389,7 +1389,7 @@ private function onXMLLoad(evt:Event):void
 • tVO.artist = track.artist - This sets the artist variable in TracksVO equal to the artist name located in the xmlData. The variable "track" acts as your base path so you only have to write "track" and then the node you want to target.
 • tVO.title = track.title - This sets the title variable in TracksVO equal to the title name located in the xmlData. The variable "track" acts as your base path so you only have to write "track" and then the node you want to target.
 
-• tracks.push(tVO); - This pushes the newly created Value Objects into the empty Array by using the push() method. This is placed inside the loop so everytime the loop runs the new Value Object is stored in the Array.
+• tracks.push(tVO); - This pushes the newly created Value Objects into the empty Array by using the push() method. This is placed inside the loop so every time the loop runs the new Value Object is stored in the Array.
 				</notes>
 				<!--<resources>
 					<link href="#" />
@@ -1405,7 +1405,7 @@ xmlData.length();]]>
 				</code>
 				<notes>
 • var xmlData:XML = new XML("data.xml"); - Creates a xmlData variable that holds data from an XML document.
-• xmlData.length() - Returns the number of elements in a XML object. This is a method and not a property so dont forget to put the method brackets (). 
+• xmlData.length() - Returns the number of elements in a XML object. This is a method and not a property so don’t forget to put the method brackets (). 
 				</notes>
 				<!--<resources>
 					<link href="#" />
@@ -1484,7 +1484,7 @@ snd.load(new URLRequest(path));
 snd.addEventListener(Event.COMPLETE, onSoundComplete);]]>
 				</code>
 				<notes>
-• var snd:Sound = new Sound(); - Creates a new variable data typed as a Sound and instantiates a new insatnce of the Sound class.
+• var snd:Sound = new Sound(); - Creates a new variable data typed as a Sound and instantiates a new instance of the Sound class.
 • snd.load(new URLRequest(path)); - The sounds variable then loads a sound, the sound is passed to the loader with a new URLRequest that contains the path the sound file.
 • snd.addEventListener(Event.COMPLETE, onSoundComplete); - Adds an event listener to the sound variable that listens for the sound to finish loading. Once the sound has finished loading it runs a "onSoundComplete" function that then handles the sounds functionality.
 				</notes>
@@ -1510,7 +1510,7 @@ private function onSoundComplete(evt:Event):void
 }]]>
 				</code>
 				<notes>
-• private var _snd:Sound = new Sound(); - Creates a new variable data typed as a Sound and instantiates a new insatnce of the Sound class.
+• private var _snd:Sound = new Sound(); - Creates a new variable data typed as a Sound and instantiates a new instance of the Sound class.
 • _snd.load(new URLRequest(path)); - The sounds variable then loads a sound, the sound is passed to the loader with a new URLRequest that contains the path the sound file.
 • _snd.addEventListener(Event.COMPLETE, onSoundComplete); - Adds an event listener to the sound variable that listens for the sound to finish loading. Once the sound has finished loading it runs a "onSoundComplete" function that then handles the sounds functionality.
 • private function onSoundComplete(evt:Event):void - Event handler that runs once the sound has finished loading.
@@ -1559,9 +1559,9 @@ private function onPauseClick(evt:MouseEvent):void
 }]]>
 				</code>
 				<notes>
-• Start by creating any private class variables needed. You will need to create a new Sound class, SoundChannel class, and SoundTransform class. You also need to createa  position variable (_pos) that will keep track of the song position.
+• Start by creating any private class variables needed. You will need to create a new Sound class, SoundChannel class, and SoundTransform class. You also need to create  position variable (_pos) that will keep track of the song position.
 • For this example we next create two buttons, one to control the Play function and once to control the Pause function.
-• Instantiate the sound variabe, load the song with the new URLRequest method and pass it the song's path (URL).
+• Instantiate the sound variable, load the song with the new URLRequest method and pass it the song's path (URL).
 • In the play function set the SoundChannel variable equal to the loaded sounds play method. Pass the current position (_pos), the number of loops (0), and the SoundTransform (_st). 
 •_pos = _sc.position; - When the user clicks the pause button, the song position is stored in the _pos variable.
 •_sc.stop(); - Stops the SoundChannel from playing the sound.
@@ -1572,7 +1572,7 @@ private function onPauseClick(evt:MouseEvent):void
 				</resources>-->
 		</snippet>
 		<snippet id="sinCosin" course="fat">
-				<name>Moving Objects with sin and cosin</name>
+				<name>Moving Objects with sin and cos</name>
 				<difficulty>Advanced</difficulty>
 				<keywords text="xxxx,fat" />
 				<code>
