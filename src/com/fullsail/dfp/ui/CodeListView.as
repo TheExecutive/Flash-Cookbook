@@ -47,14 +47,23 @@ package com.fullsail.dfp.ui
 		{
 			if(_lb)
 			{
-				var mouseScroll:Number = -(event.delta / 100);
-				if(mouseScroll >= 0 && mouseScroll <= 1)
+				trace(_sm.pct);
+				if(_sm.pct >= 0 && _sm.pct <= 1)
 				{
-					_sm.pct += mouseScroll;
+					var delta:Number = _sm.pct + (-event.delta / 100);
+					trace(delta)
+					if(delta > 1)
+					{
+						_sm.pct = 1
+					}else if(delta < 0){
+						_sm.pct = 0
+					}else{
+						_sm.pct = delta
+					}
+					
 					_lb.y = _sm.pct * -(_rangeOfMotion + 10 - listView.height);
 				}else{
-					trace(mouseScroll);
-					_sm.pct = Math.round(mouseScroll);
+					_sm.pct = Math.round(_sm.pct);
 				}
 				
 			}else{
