@@ -39,6 +39,28 @@ package com.fullsail.dfp.ui
 			setUpSliderManager();
 			
 			_codeItemListArray = []; //empty array to start.
+			
+			addEventListener(MouseEvent.MOUSE_WHEEL,onMouseWheel);
+		}
+		
+		protected function onMouseWheel(event:MouseEvent):void
+		{
+			if(_lb)
+			{
+				var mouseScroll:Number = -(event.delta / 100);
+				if(mouseScroll >= 0 && mouseScroll <= 1)
+				{
+					_sm.pct += mouseScroll;
+					_lb.y = _sm.pct * -(_rangeOfMotion + 10 - listView.height);
+				}else{
+					trace(mouseScroll);
+					_sm.pct = Math.round(mouseScroll);
+				}
+				
+			}else{
+				_sm.pct = 0; //if not, don't let the handle move
+			}
+			
 		}
 		
 		private function setUpSliderManager():void
@@ -47,7 +69,6 @@ package com.fullsail.dfp.ui
 			_sm.addEventListener(Event.CHANGE,onScroll);
 			_sm.setUpAssets(slider.track, slider.knob);
 			_sm.pct = 0;
-			
 			
 		}
 		

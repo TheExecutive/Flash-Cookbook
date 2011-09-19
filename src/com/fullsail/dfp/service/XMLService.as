@@ -30,9 +30,8 @@ package com.fullsail.dfp.service
 			//the default value for search is an empty string
 			_searchedFor = query;
 			
-			loadXML("https://raw.github.com/gist/1227007/MasterSnippetXMList.xml");
-			//this is temporary until we figure out to properly utilize metadata
-			//within XML
+			loadXML("https://gist.github.com/raw/1227007/MasterSnippetXMList.xml");
+			//API requirement
 		}
 		
 		private function loadXML(url:String):void
