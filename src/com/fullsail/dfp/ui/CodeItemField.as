@@ -64,9 +64,16 @@ package com.fullsail.dfp.ui
 		
 		private function updateItemField():void
 		{
-			if(_cVO.resourcesLink == "")
+			if(_cVO.resourcesLink.indexOf("videos") != -1)
 			{
-				//if there is no resource link, 
+				//if the resource link is to the videos
+				//change button label to screencasts
+				mc_pdf.tfListButton.text = "Screencasts";
+				
+			}
+			else if(_cVO.resourcesLink == "" || _cVO.resourcesLink == "#")
+			{
+				//if there is no resource link in the XML, 
 				//remove the button and listener
 				mc_pdf.removeEventListener(MouseEvent.CLICK,onViewPDF);
 				removeChild(mc_pdf);
