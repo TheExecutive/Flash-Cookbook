@@ -1328,9 +1328,9 @@ xmlLoader.load(new URLRequest("resources/xml/images.xml"));]]>
 • xmlLoader.laod() - Calls the laod() method connected to the URLLoader class. This loads the data.
 • new URLRequest("xxx"); - You must pass the URL you want to load data from into the load() function with a new URLRequest.
 				</notes>
-				<resources>
+				<!--<resources>
 					<link href="#" />
-				</resources>
+				</resources>-->
 		</snippet>
 		<snippet id="urlLoaderEvents" course="fat">
 				<name>URLLoader Events</name>
@@ -1346,9 +1346,9 @@ xmlLoader.load(new URLRequest("resources/xml/images.xml"));]]>
 • xmlLoader.addEventListener(Event.COMPLETE, onComplete); - This event is attached to the xmlLoader and listens for the data to finish loading. Once the data has finished loading it runs an "onComplete" function that manages the data.
 • xmlLoader.addEventListener(Event.IOErrorEvent.IO_ERROR, onError); - This event is attached to the xmlLoader and listens for load errors that occur while loading the data. If an error occurs it runs an "onError" function that would handle the error and alert the user of an error.
 				</notes>
-				<resources>
+				<!--<resources>
 					<link href="#" />
-				</resources>
+				</resources>-->
 		</snippet>
 		<snippet id="xmlParsing" course="fat">
 				<name>XML Parsing</name>
@@ -1391,9 +1391,9 @@ private function onXMLLoad(evt:Event):void
 
 • tracks.push(tVO); - This pushes the newly created Value Objects into the empty Array by using the push() method. This is placed inside the loop so everytime the loop runs the new Value Object is stored in the Array.
 				</notes>
-				<resources>
+				<!--<resources>
 					<link href="#" />
-				</resources>
+				</resources>-->
 		</snippet>
 		<snippet id="XMLelementLength" course="fat">
 				<name>Number of elements in XML object</name>
@@ -1407,9 +1407,9 @@ xmlData.length();]]>
 • var xmlData:XML = new XML("data.xml"); - Creates a xmlData variable that holds data from an XML document.
 • xmlData.length() - Returns the number of elements in a XML object. This is a method and not a property so dont forget to put the method brackets (). 
 				</notes>
-				<resources>
+				<!--<resources>
 					<link href="#" />
-				</resources>
+				</resources>-->
 		</snippet>
 		<snippet id="loaderClass" course="fat">
 				<name>Loader class - Image loading</name>
@@ -1428,9 +1428,9 @@ addChild(loader);]]>
 • loader.load(new URLRequest(files/src/imgs)); - Passes the URL for the images into the loader and loads those images.
 • addChild(loader) - This adds the loader to the stage. The loader is a display object that holds the loaded images.
 				</notes>
-				<resources>
+				<!--<resources>
 					<link href="#" />
-				</resources>
+				</resources>-->
 		</snippet>
 		<snippet id="loaderEvents" course="fat">
 				<name>Loader Events</name>
@@ -1452,9 +1452,9 @@ addChild(loader);]]>
 • loader.load(new URLRequest(path)); - Passes the URL for the images into the loader and loads those images.
 • addChild(loader) - This adds the loader to the stage. The loader is a display object that holds the loaded images.
 				</notes>
-				<resources>
+				<!--<resources>
 					<link href="#" />
-				</resources>
+				</resources>-->
 		</snippet>
 		<snippet id="addLoaderToDisplay" course="fat">
 				<name>Adding loader object to stage</name>
@@ -1470,9 +1470,9 @@ addChild(loader);]]>
 • loader.load(new URLRequest(path)); - Passes the URL for the images into the loader and loads those images.
 • addChild(loader) - This adds the loader to the stage. The loader is a display object that holds the loaded images.
 				</notes>
-				<resources>
+				<!--<resources>
 					<link href="#" />
-				</resources>
+				</resources>-->
 		</snippet>
 		<snippet id="soundsClass" course="fat">
 				<name>Sound Class</name>
@@ -1488,9 +1488,9 @@ snd.addEventListener(Event.COMPLETE, onSoundComplete);]]>
 • snd.load(new URLRequest(path)); - The sounds variable then loads a sound, the sound is passed to the loader with a new URLRequest that contains the path the sound file.
 • snd.addEventListener(Event.COMPLETE, onSoundComplete); - Adds an event listener to the sound variable that listens for the sound to finish loading. Once the sound has finished loading it runs a "onSoundComplete" function that then handles the sounds functionality.
 				</notes>
-				<resources>
+				<!--<resources>
 					<link href="#" />
-				</resources>
+				</resources>-->
 		</snippet>
 		<snippet id="playingSound" course="fat">
 				<name>Playing a sound</name>
@@ -1517,9 +1517,9 @@ private function onSoundComplete(evt:Event):void
 • _snd.play() - Plays the sound. It really is that simple.
 • _snd.play(0,0,st) - The first zero is the start position of the sound, the second zero represents how many time you would like the sound to loop. The last argument, st, represents the SoundTransform.
 				</notes>
-				<resources>
+				<!--<resources>
 					<link href="#" />
-				</resources>
+				</resources>-->
 		</snippet>
 		<snippet id="pausingSound" course="fat">
 				<name>Pausing a sound</name>
@@ -1566,7 +1566,114 @@ private function onPauseClick(evt:MouseEvent):void
 •_pos = _sc.position; - When the user clicks the pause button, the song position is stored in the _pos variable.
 •_sc.stop(); - Stops the SoundChannel from playing the sound.
 •_sc = _snd.play(_pos,0,_st); - When use clicks the play button, the song resumes from the paused position by passing in _pos variable into the play() method of the sound.
-
+				</notes>
+				<!--<resources>
+					<link href="#" />
+				</resources>-->
+		</snippet>
+		<snippet id="drawingCircle" course="fat">
+				<name>Drawing API: Circle</name>
+				<difficulty>Advanced</difficulty>
+				<keywords text="drawing,circle,drawing api,fat" />
+				<code>
+					<![CDATA[var canvas:Sprite = new Sprite;
+canvas.graphics.lineStyle(2,0x0000ff,1,true);
+canvas.graphics.beginFill(0xff0000,1);
+canvas.graphics.drawCircle(50,50,30);
+canvas.graphics.endFill();
+addChild(canvas);]]>
+				</code>
+				<notes>
+• var canvas:Sprite = new Sprite; - Creates a new Sprite variable that will hold the shape(s) drawn.
+• canvas.graphics.lineStyle(2,0x0000ff,1,true); - Sets the line style for the drawing API. The parameters are thickness (number), color (0xhex), alpha (0-1 - 1 by default), and line hinting (true/false - false by default).
+• canvas.graphics.beginFill(0xff0000,1); - Fills in the shape being drawn. Parameters are color (0xhex) and alpha (0-1 - 1 by default).
+• canvas.graphics.drawCircle(50,50,30); - Draws a circle to the canvas. Parameters are X position, Y position, and Radius.
+• canvas.graphics.endFill(); - Ends the fill process, also prevents memory leaks.
+• addChild(canvas); - Adds the canvas to the stage. If you forget to add the canvas your shape will not show up. 
+				</notes>
+				<resources>
+					<link href="#" />
+				</resources>
+		</snippet>
+		<snippet id="drawingRect" course="fat">
+				<name>Drawing API: Rectangle</name>
+				<difficulty>Advanced</difficulty>
+				<keywords text="drawing,circle,drawing api,fat" />
+				<code>
+					<![CDATA[var canvas:Sprite = new Sprite;
+canvas.graphics.lineStyle(2,0x0000ff,1,true);
+canvas.graphics.beginFill(0xff0000,1);
+canvas.graphics.drawRect(50,50,30,30);
+canvas.graphics.endFill();
+addChild(canvas);]]>
+				</code>
+				<notes>
+• var canvas:Sprite = new Sprite; - Creates a new Sprite variable that will hold the shape(s) drawn.
+• canvas.graphics.lineStyle(2,0x0000ff,1,true); - Sets the line style for the drawing API. The parameters are thickness (number), color (0xhex), alpha (0-1 - 1 by default), and line hinting (true/false - false by default).
+• canvas.graphics.beginFill(0xff0000,1); - Fills in the shape being drawn. Parameters are color (0xhex) and alpha (0-1 - 1 by default).
+• canvas.graphics.drawRect(50,50,30,30); - Draws a rectangle to the canvas. Parameters are X position, Y position, Width, and Height.
+• canvas.graphics.endFill(); - Ends the fill process, also prevents memory leaks.
+• addChild(canvas); - Adds the canvas to the stage. If you forget to add the canvas your shape will not show up. 
+				</notes>
+				<resources>
+					<link href="#" />
+				</resources>
+		</snippet>
+		<snippet id="drawingLines" course="fat">
+				<name>Drawing API: Round Rectangle</name>
+				<difficulty>Advanced</difficulty>
+				<keywords text="drawing,circle,drawing api,fat" />
+				<code>
+					<![CDATA[var canvas:Sprite = new Sprite;
+canvas.graphics.lineStyle(2,0x0000ff,1,true);
+canvas.graphics.beginFill(0xff0000,1);
+canvas.graphics.drawRoundRect(50,50,30,30,3,3);
+canvas.graphics.endFill();
+addChild(canvas);]]>
+				</code>
+				<notes>
+• var canvas:Sprite = new Sprite; - Creates a new Sprite variable that will hold the shape(s) drawn.
+• canvas.graphics.lineStyle(2,0x0000ff,1,true); - Sets the line style for the drawing API. The parameters are thickness (number), color (0xhex), alpha (0-1 - 1 by default), and line hinting (true/false - false by default).
+• canvas.graphics.beginFill(0xff0000,1); - Fills in the shape being drawn. Parameters are color (0xhex) and alpha (0-1 - 1 by default).
+• canvas.graphics.drawRoundRect(50,50,30,30,3,3); - Draws a rounded rectangle to the canvas. Parameters are X position, Y position, Width, Height, Ellipse Width, and Ellipse Height (null by default).
+• canvas.graphics.endFill(); - Ends the fill process, also prevents memory leaks.
+• addChild(canvas); - Adds the canvas to the stage. If you forget to add the canvas your shape will not show up. 
+				</notes>
+				<resources>
+					<link href="#" />
+				</resources>
+		</snippet>
+		<snippet id="drawingRect" course="fat">
+				<name>Drawing API: Lines</name>
+				<difficulty>Advanced</difficulty>
+				<keywords text="drawing,circle,drawing api,fat" />
+				<code>
+					<![CDATA[var canvas:Sprite = new Sprite;
+canvas.graphics.lineStyle(2,0x0000ff,1,true);
+canvas.graphics.moveTo(50,50);
+canvas.graphics.lineTo(200,200);
+addChild(canvas);]]>
+				</code>
+				<notes>
+• var canvas:Sprite = new Sprite; - Creates a new Sprite variable that will hold the shape(s) drawn.
+• canvas.graphics.lineStyle(2,0x0000ff,1,true); - Sets the line style for the drawing API. The parameters are thickness (number), color (0xhex), alpha (0-1 - 1 by default), and line hinting (true/false - false by default).
+• canvas.graphics.moveTo(50,50); - moveTo acts as the starting position for the line you want to draw. Its parameters are X position and Y position.
+• canvas.graphics.lineTo(200,200); - lineTo acts as the end point for the line you want to draw. Its parameters are X position and Y position.
+• addChild(canvas); - Adds the canvas to the stage. If you forget to add the canvas your shape will not show up. 
+				</notes>
+				<resources>
+					<link href="#" />
+				</resources>
+		</snippet>
+		<snippet id="sinCosin" course="fat">
+				<name>Moving Objects with sin and cosin</name>
+				<difficulty>Advanced</difficulty>
+				<keywords text="xxxx,fat" />
+				<code>
+					<![CDATA[xxxxxx]]>
+				</code>
+				<notes>
+• xxxxx
 				</notes>
 				<resources>
 					<link href="#" />
