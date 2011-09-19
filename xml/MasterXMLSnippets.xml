@@ -1027,7 +1027,7 @@ override public function get name():String
 //Begin by creating a new interface class, give the class a package and a file name then press OK, this will create your new interface class. Remember to begin the name of your interface classes with a capital letter "i" (I).
 
 • public interface IAnimals - The constructor function for the Interface class.
-• function makeNoise():void - Creates a public function called "makeNoise" that returns nothing.
+• function makeNoise():void - Creates a public function called "makeNoise" that 				 	 	 		 	returns nothing.
 • function sayHello():void - Creates a function call "sayHello" that returns nothing.
 • function set name(value:String):void - Creates a public implicit Setter that accepts a value equal to a string and returns nothing.
 • function get name():String - Creates a public implicit Getter that accepts nothing and returns a String.
