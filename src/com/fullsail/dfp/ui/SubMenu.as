@@ -3,6 +3,7 @@ package com.fullsail.dfp.ui
 	import flash.desktop.NativeApplication;
 	import flash.display.NativeMenu;
 	import flash.display.NativeMenuItem;
+	import flash.display.NativeWindow;
 	import flash.events.Event;
 	import flash.net.URLRequest;
 	import flash.net.navigateToURL;
@@ -19,9 +20,11 @@ package com.fullsail.dfp.ui
 		public function SubMenu()
 		{
 			var m:NativeMenu = NativeApplication.nativeApplication.menu;
+			//var w:NativeMenu = NativeWindow
 			
 			var linkMenu:NativeMenu = new NativeMenu();
 			m.addSubmenuAt(linkMenu,3,"Resource Links");
+			//w.addSubmenuAt(linkMenu,3,"Resource Links");
 			
 			for(var item1:String in _listItems)
 			{
