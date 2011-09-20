@@ -17,20 +17,15 @@ package com.fullsail.dfp.service
 	public class XMLService extends EventDispatcher
 	{
 		
-		private var _searchedFor:String;
-		
 		public function XMLService(target:IEventDispatcher=null)
 		{
 			super(target);
 		}
 		
-		public function search(query:String = ""):void
+		public function beginLoad():void
 		{
-			_searchedFor = ""; //clear this out by default
-			//the default value for search is an empty string
-			_searchedFor = query;
-			
-			loadXML("https://gist.github.com/raw/1227007/MasterSnippetXMList.xml");
+			loadXML("MasterXMLSnippets.xml");
+			//loadXML("https://gist.github.com/raw/1227007/MasterSnippetXMList.xml");
 			//API requirement
 		}
 		
@@ -50,7 +45,7 @@ package com.fullsail.dfp.service
 		
 		protected function onError(event:IOErrorEvent):void
 		{
-			trace("XML failed to load",event);
+			trace("XML failed to load", event);
 			var eEvent:ErrorEvent = new ErrorEvent(ErrorEvent.LOAD_ERROR);
 			dispatchEvent(eEvent); //dispatching an error event
 			//to let main know that an error has occured
@@ -99,16 +94,8 @@ package com.fullsail.dfp.service
 				cVO.resourcesLink = snippet.resources.link.@href;
 				cVO.resourcesTitle = snippet.resources.link.@title;
 				
-				//THIS IS THE SEARCH FILTER
-				if(cVO.keywords.indexOf(_searchedFor) != -1 && _searchedFor != ",")
-				{
-					//if the word searched for is one of the keywords and it is not a comma,
-					//push it into the array, if not, drop it
-					cVOArray.push(cVO);
-				}else if(_searchedFor == "")
-				{
-					cVOArray.push(cVO);
-				}
+				//pushing parsed XML into array
+				cVOArray.push(cVO);
 				
 			}
 			

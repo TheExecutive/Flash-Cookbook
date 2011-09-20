@@ -14,6 +14,7 @@ package
 	import com.fullsail.dfp.ui.SubMenu;
 	
 	import flash.display.Sprite;
+	import flash.events.Event;
 	import flash.events.MouseEvent;
 	
 	import libs.ClassBtn;
@@ -85,12 +86,17 @@ package
 			loadInitialData();
 		}
 		
+		protected function onSearch(event:SearchEvent):void
+		{
+			_cListView.currentSearch = event.query;
+		}
+		
 		private function loadInitialData():void
 		{
 			//this data loads in when the program first opens
 			
 			var xmlService:XMLService = new XMLService();
-			xmlService.search();
+			xmlService.beginLoad();
 			
 			//listeners for the XMLService
 			xmlService.addEventListener(XMLEvent.DATA_LOAD_COMPLETE,onDataComplete);
@@ -154,28 +160,6 @@ package
 			//on as the currentlyViewing value in the setter
 		}
 		
-		protected function onSearch(event:SearchEvent):void
-		{
-			// When the search button is clicked, this function runs
-			
-			var xmlService:XMLService = new XMLService();
-			xmlService.search(event.query);
-			//event.query is whatever is in the search box at the time 
-			//the user hit the search button
-			
-			/* this may be needed for searches
-			for each (var cb:ClassBtn in _buttonArray)
-			{
-				cb.isSelected = false;	
-			}*/
-			
-			
-			//listeners for the XMLService
-			xmlService.addEventListener(XMLEvent.DATA_LOAD_COMPLETE,onDataComplete);
-			xmlService.addEventListener(ErrorEvent.LOAD_ERROR,onDataError);
-			
-		}
-		
 		protected function onDataError(event:ErrorEvent):void
 		{
 			trace("Something's wrong with the XML");
@@ -185,7 +169,7 @@ package
 		{
 			//after the data has finished loading and being parsed,
 			//pass it to the setter in the codeListView
-			_cListView.searchResults = event.codeVOArray;
+			_cListView.loadedSnippets = event.codeVOArray;
 		}
 		
 		protected function onCloseClick(event:MouseEvent):void
