@@ -18,11 +18,11 @@ package com.fullsail.dfp.ui
 		{
 			super();
 			tfCode.autoSize = TextFieldAutoSize.LEFT;
-			tfCode.width = 502;
+			tfCode.width = 480;
 			tfNotes.autoSize = TextFieldAutoSize.LEFT;
 			tfNotes.width = 502;
 			
-			mc_codebg.width = tfCode.width + 5;
+			mc_codebg.width = tfCode.width + 27;
 			
 			//stop in the name of love
 			mc_copy.stop();

@@ -1,6 +1,7 @@
 package com.fullsail.dfp.ui
 {
 	import com.fullsail.dfp.events.DetailEvent;
+	import com.fullsail.dfp.events.SearchEvent;
 	import com.fullsail.dfp.vo.CodeVO;
 	
 	import flash.events.Event;
@@ -10,11 +11,13 @@ package com.fullsail.dfp.ui
 	
 	public class CodeListView extends CodeListViewBase
 	{
-		private var _searchResults:Array;
+		private var _loadedSnippets:Array;
 		private var _codeItemListArray:Array;
 		private var _removeThisIndex:int;
 		
 		private var _currentlyViewing:String = "";
+		private var _currentSearch:String;
+		private var _isSearching:Boolean = false;
 		
 		private var _lb:LayoutBoxFSC;
 		//FSC stands for full sail cookbook
@@ -30,6 +33,8 @@ package com.fullsail.dfp.ui
 
 		private var _itemFieldHeight:Number;
 		private var _listFieldOpen:Boolean = false;
+
+		private var _searchInd:SearchIndicator;
 		
 		public function CodeListView()
 		{
@@ -95,14 +100,14 @@ package com.fullsail.dfp.ui
 			}
 		}
 
-		public function get searchResults():Array
+		public function get loadedSnippets():Array
 		{
-			return _searchResults;
+			return _loadedSnippets;
 		}
 
-		public function set searchResults(value:Array):void
+		public function set loadedSnippets(value:Array):void
 		{
-			_searchResults = value;
+			_loadedSnippets = value;
 			clearListFieldsFromLB();
 			updateResultList();
 		}
@@ -138,7 +143,7 @@ package com.fullsail.dfp.ui
 			//on subsequent runs, make the array empty
 			//and repopulate it.
 			
-			for each(var cVO:CodeVO in _searchResults)
+			for each(var cVO:CodeVO in _loadedSnippets)
 			{
 				if(_currentlyViewing == cVO.course.toUpperCase()) 	
 				{
@@ -280,6 +285,32 @@ package com.fullsail.dfp.ui
 			
 		}
 
+		public function get currentSearch():String
+		{
+			return _currentSearch;
+		}
+
+		public function set currentSearch(value:String):void
+		{
+			_currentSearch = value;
+			updateResultList();
+			launchSearchIndicator();
+		}
+		
+		private function launchSearchIndicator():void
+		{
+			_searchInd = new SearchIndicator();
+			listViewWindow.addChild(_searchInd);
+			_searchInd.x = (listViewWindow.width - _searchInd.width) / 2;
+			_searchInd.searchLabel = _currentSearch;
+			_searchInd.addEventListener(SearchEvent.CLOSE_INDICATOR,onIndClose);
+		}
+		
+		protected function onIndClose(event:Event):void
+		{
+			_searchInd.removeEventListener(SearchEvent.CLOSE_INDICATOR,onIndClose);
+			listViewWindow.removeChild(_searchInd);
+		}
 		
 	}
 }
