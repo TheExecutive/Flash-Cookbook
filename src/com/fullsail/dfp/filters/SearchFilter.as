@@ -34,6 +34,7 @@ package com.fullsail.dfp.filters
 		}
 		private static function isSearched(element:*, index:int, arr:Array):Boolean
 		{
+			// if the keywords contains what you searched and what you searched is not just a comma
 			return element.keywords.indexOf(_search) != -1 && _search != ",";
 		}
 		
@@ -43,8 +44,8 @@ package com.fullsail.dfp.filters
 			if(_search == null)
 			{
 				//if there's no search yet
-				return array;
 				//just return the original array without filtering
+				return array;
 			}
 			
 			return array.filter(isSearched);

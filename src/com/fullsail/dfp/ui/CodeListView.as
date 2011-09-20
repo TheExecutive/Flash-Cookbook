@@ -279,31 +279,32 @@ package com.fullsail.dfp.ui
 		
 		private function launchSearchIndicator():void
 		{
-			if(listViewWindow._searchInd)
+			if(_isSearching)
 			{
 				//if a search has already been run, close that before doing another
 				_searchInd.removeEventListener(SearchEvent.CLOSE_INDICATOR,onIndClose);
-				listViewWindow.removeChild(_searchInd);
+				indicatorWindow.removeChild(_searchInd);
 			}
 			_searchInd = new SearchIndicator();
-			listViewWindow.addChild(_searchInd);
-			_searchInd.x = (listViewWindow.width - _searchInd.width) / 2;
+			indicatorWindow.addChild(_searchInd);
+			_searchInd.x = (indicatorWindow.width - _searchInd.width) / 2;
 			_searchInd.searchLabel = _currentSearch;
 			_searchInd.addEventListener(SearchEvent.CLOSE_INDICATOR,onIndClose);
+			_isSearching = true;
 		}
 		
-		protected function onIndClose(event:Event):void
+		protected function onIndClose(event:SearchEvent):void
 		{
 			//reset back to all after you're done with your search
-			_searchInd.removeEventListener(SearchEvent.CLOSE_INDICATOR,onIndClose);
 			
-			if(listViewWindow._searchInd)
+			if(_isSearching)
 			{
-				listViewWindow.removeChild(_searchInd);
+				_searchInd.removeEventListener(SearchEvent.CLOSE_INDICATOR,onIndClose);
+				indicatorWindow.removeChild(_searchInd);
+				var sEvent:SearchEvent = new SearchEvent(SearchEvent.RESET_TO_ALL);
+				dispatchEvent(sEvent);
+				_isSearching = false;
 			}
-			
-			var sEvent:SearchEvent = new SearchEvent(SearchEvent.RESET_TO_ALL);
-			dispatchEvent(sEvent);
 			
 		}
 		

@@ -17,6 +17,11 @@ package com.fullsail.dfp.service
 	public class XMLService extends EventDispatcher
 	{
 		
+		private const API_XML:String = "https://gist.github.com/raw/1227007/MasterSnippetXMList.xml";
+		private const BACKUP_XML:String = "MasterXMLSnippets.xml";
+		
+		private var _alreadyErrored:Boolean = false;
+		
 		public function XMLService(target:IEventDispatcher=null)
 		{
 			super(target);
@@ -24,8 +29,7 @@ package com.fullsail.dfp.service
 		
 		public function beginLoad():void
 		{
-			loadXML("MasterXMLSnippets.xml");
-			//loadXML("https://gist.github.com/raw/1227007/MasterSnippetXMList.xml");
+			loadXML(API_XML);
 			//API requirement
 		}
 		
@@ -46,9 +50,17 @@ package com.fullsail.dfp.service
 		protected function onError(event:IOErrorEvent):void
 		{
 			trace("XML failed to load", event);
-			var eEvent:ErrorEvent = new ErrorEvent(ErrorEvent.LOAD_ERROR);
-			dispatchEvent(eEvent); //dispatching an error event
-			//to let main know that an error has occured
+			if(!_alreadyErrored)
+			{
+				loadXML(BACKUP_XML);
+				_alreadyErrored = true;
+			}else{
+				trace("XML backup failed");
+				var eEvent:ErrorEvent = new ErrorEvent(ErrorEvent.LOAD_ERROR);
+				dispatchEvent(eEvent); //dispatching an error event
+				//to let main know that an error has occured
+			}
+			
 		}
 		
 		protected function onLoad(event:Event):void
@@ -99,10 +111,19 @@ package com.fullsail.dfp.service
 				
 			}
 			
-			//dispatching event when all this completes
-			var xmlEvent:XMLEvent = new XMLEvent(XMLEvent.DATA_LOAD_COMPLETE);
-			xmlEvent.codeVOArray = cVOArray; //passing the Array full of VOs along with the custom event
-			dispatchEvent(xmlEvent);
+			if(cVOArray.length < 1)
+			{
+				trace("Using Backup XML");
+				loadXML(BACKUP_XML);
+				_alreadyErrored = true;
+			}else{
+				//dispatching event when all this completes
+				var xmlEvent:XMLEvent = new XMLEvent(XMLEvent.DATA_LOAD_COMPLETE);
+				xmlEvent.codeVOArray = cVOArray; //passing the Array full of VOs along with the custom event
+				dispatchEvent(xmlEvent);
+			}
+			
 		}
+		
 	}
 }
