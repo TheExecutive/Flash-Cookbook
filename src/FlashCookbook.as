@@ -89,6 +89,15 @@ package
 		protected function onSearch(event:SearchEvent):void
 		{
 			_cListView.currentSearch = event.query;
+			
+			//On a new search, go back to ALL
+			_cListView.currentlyViewing = "All";
+			
+			for each (var cb:ClassBtn in _buttonArray)
+			{
+				cb.isSelected = (cb.label == "All");  
+				//turning the All button on and all others off
+			}
 		}
 		
 		private function loadInitialData():void
@@ -170,6 +179,15 @@ package
 			//after the data has finished loading and being parsed,
 			//pass it to the setter in the codeListView
 			_cListView.loadedSnippets = event.codeVOArray;
+			
+			//setting the All button as the default button on startup
+			_cListView.currentlyViewing = "All"; //this will cause an error if the data hasn't been loaded in
+			
+			for each (var cb:ClassBtn in _buttonArray)
+			{
+				cb.isSelected = (cb.label == "All");  
+				//turning the All button on and all others off
+			}
 		}
 		
 		protected function onCloseClick(event:MouseEvent):void

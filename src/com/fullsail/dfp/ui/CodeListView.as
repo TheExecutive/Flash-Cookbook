@@ -272,12 +272,19 @@ package com.fullsail.dfp.ui
 		public function set currentSearch(value:String):void
 		{
 			_currentSearch = value;
+			clearListFieldsFromLB();
 			updateResultList();
 			launchSearchIndicator();
 		}
 		
 		private function launchSearchIndicator():void
 		{
+			if(_searchInd)
+			{
+				//if a search has already been run, close that before doing another
+				_searchInd.removeEventListener(SearchEvent.CLOSE_INDICATOR,onIndClose);
+				listViewWindow.removeChild(_searchInd);
+			}
 			_searchInd = new SearchIndicator();
 			listViewWindow.addChild(_searchInd);
 			_searchInd.x = (listViewWindow.width - _searchInd.width) / 2;
@@ -287,8 +294,14 @@ package com.fullsail.dfp.ui
 		
 		protected function onIndClose(event:Event):void
 		{
+			//reset back to all after you're done with your search
 			_searchInd.removeEventListener(SearchEvent.CLOSE_INDICATOR,onIndClose);
-			listViewWindow.removeChild(_searchInd);
+			
+			if(_searchInd)
+			{
+				listViewWindow.removeChild(_searchInd);
+			}
+			
 		}
 		
 	}
