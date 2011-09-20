@@ -2,6 +2,7 @@ package com.fullsail.dfp.ui
 {
 	import com.fullsail.dfp.events.DetailEvent;
 	import com.fullsail.dfp.events.SearchEvent;
+	import com.fullsail.dfp.filters.SearchFilter;
 	import com.fullsail.dfp.vo.CodeVO;
 	
 	import flash.events.Event;
@@ -143,49 +144,27 @@ package com.fullsail.dfp.ui
 			//on subsequent runs, make the array empty
 			//and repopulate it.
 			
-			for each(var cVO:CodeVO in _loadedSnippets)
+			
+			//filtering the loadedSnippets into their respective arrays
+			var searchArr:Array = _loadedSnippets.filter(SearchFilter["is" +_currentlyViewing ]);
+			
+			searchArr = SearchFilter.searchFor(_currentSearch,searchArr);
+			
+			for each(var cVO:CodeVO in searchArr)
 			{
-				if(_currentlyViewing == cVO.course.toUpperCase()) 	
-				{
-					/* toUpperCase because the button labels are uppercase
-					but the xml might not be */
-					
-					//creating a code list tem for each cVO passed in
-					var listItem:CodeListItem = new CodeListItem();
-					
-					//pushing the vo into the vo setter for the code list item
-					listItem.codeVO = cVO;
-					
-					//adding it to the layout box
-					_lb.addChild(listItem);
-					
-					//setting up a listener and pushing into array
-					listItem.addEventListener(MouseEvent.CLICK,onItemClick);
-					_codeItemListArray.push(listItem);
-					/*
-					the reason I don't have just one listener on the layout box 
-					instead is because we eventually plan to have the layoutbox 
-					expand with content that will not be clickable, (indexOf) 
-					and that will cause errors if those items are clicked. 
-					This can possibly be fixed with IF statements. 
-					Something to look into later.
-					*/
-				}else if(_currentlyViewing == "" || _currentlyViewing == "All")
-				{
-					//this should only run on the first load or if the 
-					// all button is clicked
-					var listItemAll:CodeListItem = new CodeListItem();
-	
-					listItemAll.codeVO = cVO;
-					
-					_lb.addChild(listItemAll);
-					
-					listItemAll.addEventListener(MouseEvent.CLICK,onItemClick);
-					_codeItemListArray.push(listItemAll);
-				}
+				var listItem:CodeListItem = new CodeListItem();
+			
+				//pushing the vo into the vo setter for the code list item
+				listItem.codeVO = cVO;
 				
+				//adding it to the layout box
+				_lb.addChild(listItem);
 				
+				//setting up a listener and pushing into array
+				listItem.addEventListener(MouseEvent.CLICK,onItemClick);
+				_codeItemListArray.push(listItem);
 			}
+			
 			//updateScrolling data after list has been populated
 			updateScrollingData();
 		}

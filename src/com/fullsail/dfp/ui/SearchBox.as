@@ -29,11 +29,11 @@ package com.fullsail.dfp.ui
 			//search box attributes
 			this.scaleX = this.scaleY = .75;
 			this.x = 418;
-			this.y = 40;
+			this.y = 35;
 			
 			//search button attributes
 			var sbtn:SearchButton = new SearchButton();
-			sbtn.y = 35;  
+			sbtn.y = 40;  
 			sbtn.x = 220;
 			this.addChild(sbtn);
 			sbtn.filters = [_dropShadow];
