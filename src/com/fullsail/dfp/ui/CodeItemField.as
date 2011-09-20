@@ -24,6 +24,10 @@ package com.fullsail.dfp.ui
 			
 			mc_codebg.width = tfCode.width + 5;
 			
+			//stop in the name of love
+			mc_copy.stop();
+			mc_pdf.stop();
+			
 			//text in buttons
 			mc_copy.tfListButton.text = "Copy";
 			mc_pdf.tfListButton.text = "View PDF";
@@ -36,7 +40,37 @@ package com.fullsail.dfp.ui
 			
 			//listeners
 			mc_copy.addEventListener(MouseEvent.CLICK, onCopy);
+			mc_copy.addEventListener(MouseEvent.MOUSE_OVER,onCopyOver);
 			mc_pdf.addEventListener(MouseEvent.CLICK,onViewPDF);
+			mc_pdf.addEventListener(MouseEvent.MOUSE_OVER,onPDFOver);
+		}
+		
+		protected function onPDFOver(event:MouseEvent):void
+		{
+			mc_pdf.removeEventListener(MouseEvent.MOUSE_OVER,onPDFOver);
+			mc_pdf.gotoAndStop("over");
+			mc_pdf.addEventListener(MouseEvent.MOUSE_OUT,onPDFOut);
+		}
+		
+		protected function onPDFOut(event:MouseEvent):void
+		{
+			mc_pdf.removeEventListener(MouseEvent.MOUSE_OUT,onPDFOut);
+			mc_pdf.gotoAndStop("normal");
+			mc_pdf.addEventListener(MouseEvent.MOUSE_OVER,onPDFOver);
+		}
+		
+		protected function onCopyOver(event:MouseEvent):void
+		{
+			mc_copy.removeEventListener(MouseEvent.MOUSE_OVER,onCopyOver);
+			mc_copy.gotoAndStop("over");
+			mc_copy.addEventListener(MouseEvent.MOUSE_OUT,onCopyOut);
+		}
+		
+		protected function onCopyOut(event:MouseEvent):void
+		{
+			mc_copy.removeEventListener(MouseEvent.MOUSE_OUT,onCopyOut);
+			mc_copy.gotoAndStop("normal");
+			mc_copy.addEventListener(MouseEvent.MOUSE_OVER,onCopyOver);
 		}
 		
 		protected function onViewPDF(event:MouseEvent):void
