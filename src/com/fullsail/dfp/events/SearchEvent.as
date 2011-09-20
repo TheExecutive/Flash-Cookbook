@@ -6,6 +6,8 @@ package com.fullsail.dfp.events
 	{
 		public static const SEARCH_QUERY:String = "SearchEvent.SEARCH_QUERY";
 		public static const CLOSE_INDICATOR:String = "SearchEvent.CLOSE_INDICATOR";
+		public static const RESET_TO_ALL:String = "SearchEvent.RESET_TO_ALL";
+		
 		public var query:String;
 		
 		public function SearchEvent(type:String, bubbles:Boolean=false, cancelable:Boolean=false)

@@ -71,6 +71,7 @@ package
 			addChild(_cListView);
 			_cListView.x = (stage.stageWidth - _cListView.width) / 2;
 			_cListView.y = bg.y + 96;
+			_cListView.addEventListener(SearchEvent.RESET_TO_ALL,onReset);
 			
 			//init search
 			var sb:SearchBox = new SearchBox();
@@ -86,18 +87,17 @@ package
 			loadInitialData();
 		}
 		
+		protected function onReset(event:SearchEvent):void
+		{
+			resetToAll();
+		}
+		
 		protected function onSearch(event:SearchEvent):void
 		{
 			_cListView.currentSearch = event.query;
 			
 			//On a new search, go back to ALL
-			_cListView.currentlyViewing = "All";
-			
-			for each (var cb:ClassBtn in _buttonArray)
-			{
-				cb.isSelected = (cb.label == "All");  
-				//turning the All button on and all others off
-			}
+			resetToAll();
 		}
 		
 		private function loadInitialData():void
@@ -180,14 +180,7 @@ package
 			//pass it to the setter in the codeListView
 			_cListView.loadedSnippets = event.codeVOArray;
 			
-			//setting the All button as the default button on startup
-			_cListView.currentlyViewing = "All"; //this will cause an error if the data hasn't been loaded in
-			
-			for each (var cb:ClassBtn in _buttonArray)
-			{
-				cb.isSelected = (cb.label == "All");  
-				//turning the All button on and all others off
-			}
+			resetToAll();
 		}
 		
 		protected function onCloseClick(event:MouseEvent):void
@@ -202,7 +195,17 @@ package
 		{
 			stage.nativeWindow.minimize();
 		}
-		
+		private function resetToAll():void
+		{
+			//setting the All button as the default button on startup
+			_cListView.currentlyViewing = "All"; //this will cause an error if the data hasn't been loaded in
+			
+			for each (var cb:ClassBtn in _buttonArray)
+			{
+				cb.isSelected = (cb.label == "All");  
+				//turning the All button on and all others off
+			}
+		}
 		
 	}
 }

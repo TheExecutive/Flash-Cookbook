@@ -279,7 +279,7 @@ package com.fullsail.dfp.ui
 		
 		private function launchSearchIndicator():void
 		{
-			if(_searchInd)
+			if(listViewWindow._searchInd)
 			{
 				//if a search has already been run, close that before doing another
 				_searchInd.removeEventListener(SearchEvent.CLOSE_INDICATOR,onIndClose);
@@ -297,10 +297,13 @@ package com.fullsail.dfp.ui
 			//reset back to all after you're done with your search
 			_searchInd.removeEventListener(SearchEvent.CLOSE_INDICATOR,onIndClose);
 			
-			if(_searchInd)
+			if(listViewWindow._searchInd)
 			{
 				listViewWindow.removeChild(_searchInd);
 			}
+			
+			var sEvent:SearchEvent = new SearchEvent(SearchEvent.RESET_TO_ALL);
+			dispatchEvent(sEvent);
 			
 		}
 		
