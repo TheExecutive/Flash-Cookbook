@@ -11,6 +11,7 @@ package
 	import com.fullsail.dfp.ui.LayoutBoxFSC;
 	import com.fullsail.dfp.ui.RollOverManagerFSC;
 	import com.fullsail.dfp.ui.SearchBox;
+	import com.fullsail.dfp.ui.SubMenu;
 	
 	import flash.display.Sprite;
 	import flash.events.MouseEvent;
@@ -42,6 +43,8 @@ package
 		public function FlashCookbook()
 		{
 			initUI();
+			//adds custom sub menu & items
+			var sm:SubMenu = new SubMenu();
 		}
 		
 		private function initUI():void
