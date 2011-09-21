@@ -5,6 +5,7 @@ package
 	import com.fullsail.dfp.events.XMLEvent;
 	import com.fullsail.dfp.service.XMLService;
 	import com.fullsail.dfp.ui.Background;
+	import com.fullsail.dfp.ui.Basebar;
 	import com.fullsail.dfp.ui.ChromeControls;
 	import com.fullsail.dfp.ui.ClassButton;
 	import com.fullsail.dfp.ui.CodeListView;
@@ -40,6 +41,8 @@ package
 
 		private var _cListView:CodeListView;
 		private var _buttonArray:Array = [];
+
+		private var _baseBar:Basebar;
 		
 		public function FlashCookbook()
 		{
@@ -82,6 +85,12 @@ package
 			createButtons();
 			
 			//init basebar
+			_baseBar = new Basebar();
+			addChild(_baseBar);
+			_baseBar.x = bg.x + 15;
+			_baseBar.y = bg.height - 30;
+			_baseBar.clearNotifications();
+			//_baseBar.addEventListener(SearchEvent.
 			
 			//load in initial data
 			loadInitialData();
@@ -94,6 +103,8 @@ package
 		
 		protected function onSearch(event:SearchEvent):void
 		{
+			
+			_cListView.isSearching = true;
 			_cListView.currentSearch = event.query;
 			
 			//On a new search, go back to ALL
@@ -164,6 +175,8 @@ package
 				
 			}
 			var currentClass:String = event.target.label;
+			_cListView.isSearching = false;
+			//if you click on a button, you're not searching
 			_cListView.currentlyViewing = currentClass; 
 			//assigning the label of the button clicked 
 			//on as the currentlyViewing value in the setter

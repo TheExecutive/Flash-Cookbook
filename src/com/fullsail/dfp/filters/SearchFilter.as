@@ -34,8 +34,20 @@ package com.fullsail.dfp.filters
 		}
 		private static function isSearched(element:*, index:int, arr:Array):Boolean
 		{
+			if(_search != ",") //if the keyword is not a comma
+			{
+				if(element.keywords.toLowerCase().indexOf(_search.toLowerCase()) != -1 || element.notes.toLowerCase().indexOf(_search.toLowerCase()) != -1 || element.name.toLowerCase().indexOf(_search.toLowerCase) != -1 )
+				{
+					//if the search appears anywhere in keywords or notes or name
+					return true;
+				}else{
+					return false;
+				}
+			}
+			
+			return false;
+			
 			// if the keywords contains what you searched and what you searched is not just a comma
-			return element.keywords.indexOf(_search) != -1 && _search != ",";
 		}
 		
 		public static function searchFor(search:String,array:Array):Array

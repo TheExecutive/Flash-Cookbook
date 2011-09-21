@@ -52,6 +52,7 @@ package com.fullsail.dfp.service
 			trace("XML failed to load", event);
 			if(!_alreadyErrored)
 			{
+				//if it hasn't already errored out, load the backup xml here
 				loadXML(BACKUP_XML);
 				_alreadyErrored = true;
 			}else{
@@ -113,6 +114,7 @@ package com.fullsail.dfp.service
 			
 			if(cVOArray.length < 1)
 			{
+				//if the XML file has nothing in it, meaning there are no more API calls
 				trace("Using Backup XML");
 				loadXML(BACKUP_XML);
 				_alreadyErrored = true;

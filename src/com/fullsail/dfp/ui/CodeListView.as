@@ -35,7 +35,7 @@ package com.fullsail.dfp.ui
 		private var _itemFieldHeight:Number;
 		private var _listFieldOpen:Boolean = false;
 
-		private var _searchInd:SearchIndicator;
+		private var _searchInd:Basebar;
 		
 		public function CodeListView()
 		{
@@ -146,9 +146,14 @@ package com.fullsail.dfp.ui
 			
 			
 			//filtering the loadedSnippets into their respective arrays
-			var searchArr:Array = _loadedSnippets.filter(SearchFilter["is" +_currentlyViewing ]);
+			var searchArr:Array = _loadedSnippets.filter(SearchFilter["is" + _currentlyViewing ]);
 			
-			searchArr = SearchFilter.searchFor(_currentSearch,searchArr);
+			if(_isSearching)
+			{
+				//if you are searching, filter the search results by the query
+				searchArr = SearchFilter.searchFor(_currentSearch,searchArr);
+			}
+			
 			
 			for each(var cVO:CodeVO in searchArr)
 			{
@@ -274,39 +279,18 @@ package com.fullsail.dfp.ui
 			_currentSearch = value;
 			clearListFieldsFromLB();
 			updateResultList();
-			launchSearchIndicator();
+		}
+
+		public function get isSearching():Boolean
+		{
+			return _isSearching;
+		}
+
+		public function set isSearching(value:Boolean):void
+		{
+			_isSearching = value;
 		}
 		
-		private function launchSearchIndicator():void
-		{
-			if(_isSearching)
-			{
-				//if a search has already been run, close that before doing another
-				_searchInd.removeEventListener(SearchEvent.CLOSE_INDICATOR,onIndClose);
-				indicatorWindow.removeChild(_searchInd);
-			}
-			_searchInd = new SearchIndicator();
-			indicatorWindow.addChild(_searchInd);
-			_searchInd.x = (indicatorWindow.width - _searchInd.width) / 2;
-			_searchInd.searchLabel = _currentSearch;
-			_searchInd.addEventListener(SearchEvent.CLOSE_INDICATOR,onIndClose);
-			_isSearching = true;
-		}
-		
-		protected function onIndClose(event:SearchEvent):void
-		{
-			//reset back to all after you're done with your search
-			
-			if(_isSearching)
-			{
-				_searchInd.removeEventListener(SearchEvent.CLOSE_INDICATOR,onIndClose);
-				indicatorWindow.removeChild(_searchInd);
-				var sEvent:SearchEvent = new SearchEvent(SearchEvent.RESET_TO_ALL);
-				dispatchEvent(sEvent);
-				_isSearching = false;
-			}
-			
-		}
 		
 	}
 }
