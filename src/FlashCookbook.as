@@ -71,6 +71,9 @@ package
 		private function initUI():void
 		{
 			
+			//initial position
+			y = 15;
+			
 			//init background
 			var bg:Background = new Background();
 			addChild(bg);
