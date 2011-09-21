@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 	<snippets>
-		<snippet id="creatingVariables" course="ffm">
+		<snippet id = "creatingVariables" course="ffm">
 				<name>Creating Variables</name>
 				<difficulty>Very Easy</difficulty>
 				<keywords text="variables,text, field,textfield,ffm" />
@@ -64,14 +64,6 @@
 				<difficulty>Very Easy</difficulty>
 				<keywords text="function,call,calling,ffm" />
 				<code>
-					<![CDATA[MovieClip.play()]]>
-				</code>
-				<notes>
-• MovieClip - The object that will call the function
-• play() - The function being called.
-Executing this code would allow a movie clip to call the play() function, which would then play the movie clip. 
-				</notes>
-				<code>
 					<![CDATA[this.myFunction(var1, var2)]]>
 				</code>
 				<notes>
@@ -88,10 +80,10 @@ Executing this code would allow a movie clip to call the play() function, which 
 				<difficulty>Very Easy</difficulty>
 				<keywords text="convert,converting,data,type,data type, dataType,ffm" />
 				<code>
-					<![CDATA[var a:Number;]]>
-				</code>
-				<code>
-					<![CDATA[int(a); OR a as int;]]>
+					<![CDATA[var a:Number;
+int(a); 
+OR 
+a as int;]]>
 				</code>
 				<notes>
 • a:Number - Is a variable data typed as a Number.
@@ -348,10 +340,9 @@ myFormat.color = 0xFFFFFF;]]>
 				<difficulty>Very Easy</difficulty>
 				<keywords text="textfield,format,text,textformat,ffm" />
 				<code>
-					<![CDATA[myTF.setTextFormat = myFormat;]]>
-				</code>
-				<code>
-					<![CDATA[myTF.defaultTextFormat = myFormat;]]>
+					<![CDATA[myTF.setTextFormat = myFormat;
+//OR
+myTF.defaultTextFormat = myFormat;]]>
 				</code>
 				<notes>
 • myTF.setTextFormat - Applies the text formatting to the text field AFTER the text has been placed in the text field.
@@ -388,8 +379,25 @@ myFormat.color = 0xFFFFFF;]]>
 					<link href="http://wddbs.com/FFM/slides/Day%203/FFM_InputTextFields.pdf" title="FFM Portal" />
 				</resources>
 		</snippet>
+		<snippet id = "restrictTextField" course="ffm">
+				<name>Restricting Textfields</name>
+				<difficulty>Very Easy</difficulty>
+				<keywords text="textfields,textfield,restrict,restriction,restricting,ffm" />
+				<code>
+					<![CDATA[myTF.maxChars;
+myTF.restrict = "a-z,A-Z,0-9";]]>
+				</code>
+				<notes>
+• myTF - The text field variable name.
+• .maxChars - Sets the maximum amount of characters the text field can hold, must be a number.
+• .restrict - Sets restrictions on what types of characters can be put into the text field. The above example allows for all letters (upper and lower case) and numbers 0 through 9 to be inputted into the text field.
+				</notes>
+				<resources>
+					<link href="http://wddbs.com/FFM/slides/Day%203/FFM_InputTextFields.pdf" title="FFM Portal" />
+				</resources>
+		</snippet>
 		<snippet id = "eventBasics" course="ffm">
-				<name>Events - Basic Structure</name>
+				<name>Events - Structure</name>
 				<difficulty>Easy</difficulty>
 				<keywords text="event,listener,eventListener,ffm" />
 				<code>
@@ -400,10 +408,16 @@ myFormat.color = 0xFFFFFF;]]>
 • .addEventListner - Adds the event listener to the object it is attached to, is a property of the object.
 • (Event.EVENT_TYPE, - Declares what event to listen for, there are many to choose from so make sure you choose to right event for the right task.
 Responder); - Is the function that will run once the event has occurred, can be named anything but make sure function names are descriptive.
-
-//See below example for more detail on writing event listeners.
 				</notes>
-				<code>
+				<resources>
+					<link href="http://wddbs.com/FFM/slides/Day%203/FFM_Events.pdff" title="FFM Portal" />
+				</resources>
+		</snippet>
+		<snippet id = "eventBasicsExample" course="fat">
+				<name>Events - example</name>
+				<difficulty>Very Easy</difficulty>
+				<keywords text="events,event,example,fat" />
+						<code>
 					<![CDATA[myMovieClip.addEventListener(MouseEvent.CLICK, doSomething);
 function doSomething(event:MouseEvent):void
 {
@@ -1677,6 +1691,380 @@ addChild(canvas);]]>
 				</notes>
 				<resources>
 					<link href="#" />
+				</resources>
+		</snippet>
+		
+<!--             end FAT code snippets, begin DFP snippets                -->
+		<snippet id="handlingNamespaces" course="dfp">
+				<name>Namespaces</name>
+				<difficulty>Master</difficulty>
+				<keywords text="xxxx,dfp" />
+				<code>
+					<![CDATA[public class HandlingNamespaces extends Sprite
+{
+	private var xmlData:XML;
+		
+	//Set up Namespaces
+	private var googleNS:Namespace = new Namespace("http://base.google.com/ns/1.0");
+	private var searchNS:Namespace = new Namespace("http://a9.com/-/spec/opensearch/1.1/");
+	private var atomNS:Namespace = new Namespace("http://www.w3.org/2005/Atom");
+	private var twitterNS:Namespace = new Namespace("http://api.twitter.com/");
+		/**
+		 * Basic handling of E4X data and Namespaces
+		 * @see http://www.republicofcode.com/tutorials/flash/as3xml/
+		 * @see http://en.wikipedia.org/wiki/ECMAScript_for_XML
+		 * @author Oscar Cortez 
+		 * 
+		 */		
+	public function HandlingNamespaces()
+	{
+		var xmlLoader:URLLoader = new URLLoader();
+			
+		xmlLoader.addEventListener(Event.COMPLETE, parseXML);
+		xmlLoader.load(new URLRequest("../libs/search.xml"));
+	}
+		
+	private function parseXML(e:Event):void{
+		xmlData = new XML(e.target.data);
+//		trace(xmlData);
+//		trace(xmlData.*);
+//		trace(xmlData.preface);
+//		trace(xmlData.img[1]);
+//		trace(xmlData.img.@title);
+//		trace(xmlData.img.(@title == "Pony"));
+//		trace(xmlData.img.length());
+		trace(xmlData.atomNS::entry[0].atomNS::title);
+}]]>
+				</code>
+				<notes>
+				</notes>
+				<resources>
+					<link href="http://wddbs.com/dfp/resources" title="DFP Portal" />
+				</resources>
+		</snippet>
+		<snippet id="colorMatrix" course= "dfp">
+				<name>Color Matrix</name>
+				<difficulty>Master</difficulty>
+				<keywords text="xxxx,dfp" />
+				<code>
+					<![CDATA[public class SampleColorMatrix extends Sprite
+{
+	private var myCircle:Sprite = new Sprite();
+	private var colorMatrix:Array = new Array();
+	private var colorFilter:ColorMatrixFilter=new ColorMatrixFilter();
+		
+	/**
+	 * Basic usage of colorMatrix to change colors with code
+	 * @author Oscar Cortez 
+	 * 
+	 */	
+	public function SampleColorMatrix()
+	{
+		myCircle.graphics.beginFill(0x990101,1);
+		myCircle.graphics.drawCircle(100,100,40);
+		myCircle.buttonMode = true;
+		myCircle.addEventListener(MouseEvent.ROLL_OVER, overHandler);			myCircle.addEventListener(MouseEvent.ROLL_OUT, outHandler);
+			
+		addChild(myCircle);
+	}
+
+	private function overHandler(e:MouseEvent):void{
+		colorMatrix=[1.86,0,0,0,131.39,0,1.86,0,0,131.39,0,0,1.86,0,131.39,0,0,0,1,0];
+			
+		colorFilter.matrix = colorMatrix;
+		myCircle.filters=[colorFilter];
+	}
+		
+	private function outHandler(e:MouseEvent):void{			
+		/*
+		matrix=matrix.concat([0.5,0.5,0.5,0,0]);// red
+		matrix=matrix.concat([0.5,0.5,0.5,0,0]);// green
+		matrix=matrix.concat([0.5,0.5,0.5,0,0]);// blue
+		matrix=matrix.concat([0,0,0,1,0]);// alpha
+		*/
+		colorMatrix=[0.3086,0.6094,0.082,0,15,0.3086,0.6094,0.082,0,15,0.3086,0.6094,0.082,0,15,0,0,0,1,0];
+			
+		colorFilter.matrix = colorMatrix;
+		myCircle.filters=[colorFilter];
+		}
+}]]>
+				</code>
+				<notes>
+				</notes>
+				<resources>
+					<link href="http://wddbs.com/dfp/resources" title="DFP Portal" />
+				</resources>
+		</snippet>
+		<snippet id="usingFullScreen" course="dfp">
+				<name>Using Full Screen</name>
+				<difficulty>Master</difficulty>
+				<keywords text="xxxx,dfp" />
+				<code>
+					<![CDATA[public class SampleFullScreen extends Sprite
+{
+	private var _load:URLLoader = new URLLoader();
+	private var _text:TextField = new TextField();
+		
+	/**
+	 * Basic usage of Adobe's built-in Full Screen mode 
+	 * @see http://help.adobe.com/en_US/ActionScript/3.0_ProgrammingAS3/WS2E9C7F3B-6A7C-4c5d-8ADD-5B23446FBEEB.html
+	 * @author Oscar Cortez 
+	 * 
+	 */
+	public function SampleFullScreen()
+	{
+		_load.addEventListener(Event.COMPLETE, completeHandler);	
+		_load.load(new URLRequest("content.txt"));
+		stage.addEventListener(MouseEvent.CLICK, clickHandler);
+	}
+			
+	private function clickHandler(e:MouseEvent):void
+	{
+		stage.displayState = StageDisplayState.FULL_SCREEN;
+	}
+		
+	private function completeHandler(e:Event):void
+	{
+		var _array:Array = e.target.data.split("\r\r");
+		_text.text = _array[0];
+		_text.y = 50;
+		_text.width = 500;
+		_text.height = 300;
+			
+		addChild(_text);
+	}
+}]]>
+				</code>
+				<notes>
+				</notes>
+				<resources>
+					<link href="http://wddbs.com/dfp/resources" title="DFP Portal" />
+				</resources>
+		</snippet>
+		<snippet id="customMenu" course="dfp">
+				<name>Custom Menu</name>
+				<difficulty>Moderate</difficulty>
+				<keywords text="xxxx,dfp" />
+				<code>
+					<![CDATA[public class CustomMenu extends Sprite
+{	
+	/**
+	 * Clean up the Flash Player contextual menu and adds a simple © Copyright notice
+	 * @author Oscar Cortez
+	 * @see http://www.republicofcode.com/tutorials/flash/as3contextmenu/
+	 * 
+	 */		
+	public function CustomMenu()
+	{
+		//REMOVE THE BUILT-IN ITEMS
+		var cleanMenu:ContextMenu = new ContextMenu();
+		cleanMenu.hideBuiltInItems();
+			
+		//ADD GRAY COPYRIGHT STRING
+		var contextTitle:ContextMenuItem = new ContextMenuItem("© Copyright 2010 Oscar Cortez");
+		contextTitle.enabled = false;
+		cleanMenu.customItems.push(contextTitle);
+			
+		//SET IT UP
+		contextMenu = cleanMenu;
+	}
+}]]>
+				</code>
+				<notes>
+				</notes>
+				<resources>
+					<link href="http://wddbs.com/dfp/resources" title="DFP Portal" />
+				</resources>
+		</snippet>
+		<snippet id="keyboardEvents" course="dfp">
+				<name>Keyboard Events</name>
+				<difficulty>Moderate</difficulty>
+				<keywords text="xxxx,fat" />
+				<code>
+					<![CDATA[public class KeyboardDEMO extends Sprite
+{
+	private var _tf:TextField;
+	private var _output:TextField;
+		
+	public function KeyboardDEMO()
+	{
+		_tf = new TextField();
+		_tf.border = true;
+		_tf.width = 200;
+		_tf.height = 20;
+		_tf.type = TextFieldType.INPUT;
+		addChild(_tf);
+		_tf.addEventListener(KeyboardEvent.KEY_DOWN,onKeyDown);
+			
+		_output = new TextField();
+		_output.y = 50;
+		_output.width = stage.stageWidth;
+		_output.height = stage.stageHeight - 50;
+		addChild(_output);
+	}
+		
+	private function onKeyDown(evt:KeyboardEvent):void
+	{
+		if(evt.keyCode == Keyboard.ENTER){
+			var d:Date = new Date();
+			_output.appendText(d.toLocaleTimeString()+ " : " + evt.currentTarget.text + "\n");
+			_tf.text = '';
+		}
+	}
+}]]>
+				</code>
+				<notes>
+				</notes>
+				<resources>
+					<link href="http://wddbs.com/dfp/resources" title="DFP Portal" />
+				</resources>
+		</snippet>
+		<snippet id="updateFramework" course="dfp">
+				<name>Using Update Framework</name>
+				<difficulty>Master</difficulty>
+				<keywords text="framework, frameworks, update, updates, AIR,dfp" />
+				<code>
+					<![CDATA[public class UpdateDEMO extends Sprite
+{
+	private var _versionTf:TextField;
+	public function UpdateDEMO()
+	{
+		initDisplay();
+			
+		//Update Functionality.
+		var updater:ApplicationUpdaterUI = new ApplicationUpdaterUI();
+		updater.delay = 1; // Number of days between checks
+		updater.updateURL = "http://wddbs.com/dfp/activities/applicationUpdater/updates.xml"; //URL to your Update.XML on YOUR server.
+		updater.initialize();
+		updater.addEventListener(UpdateEvent.INITIALIZED,onUpdateInit);
+	}
+		
+	private function onUpdateInit(evt:UpdateEvent):void
+	{
+		//Update framework initialized.
+		evt.currentTarget.checkNow();
+	}
+		
+	//Displays the application name and current version.
+	//This functionality is for example purposes, and completely unnecessary for Updates.
+	private function initDisplay():void
+	{
+		_versionTf = new TextField();
+		_versionTf.width = stage.stageWidth;
+		_versionTf.height = stage.stageHeight;
+		addChild(_versionTf);
+		var fmt:TextFormat = new TextFormat(null,36);
+		fmt.align = TextFormatAlign.CENTER;
+		_versionTf.defaultTextFormat = fmt;
+			
+		var na:NativeApplication = NativeApplication.nativeApplication;
+		var ns:Namespace = new Namespace(null,"http://ns.adobe.com/air/application/2.0");
+		_versionTf.text = na.applicationDescriptor.ns::name + "\nVersion: " + na.applicationDescriptor.ns::version;
+	}
+}]]>
+				</code>
+				<notes>
+• You will also need to incorporate a XML document with this code in order for the updator to function properly.
+				</notes>
+				<resources>
+					<link href="http://wddbs.com/dfp/resources" title="DFP Portal" />
+				</resources>
+		</snippet>
+		<snippet id="multipleSwfs" course="dfp">
+				<name>Using Multiple SWFs</name>
+				<difficulty>Master</difficulty>
+				<keywords text="xxxx,dfp" />
+				<code>
+					<![CDATA[xxxxxx]]>
+				</code>
+				<notes>
+• xxxxx
+				</notes>
+				<resources>
+					<link href="#" />
+				</resources>
+		</snippet>
+		<snippet id="googleMap" course="dfp">
+				<name>Adding a Google Map</name>
+				<difficulty>Master</difficulty>
+				<keywords text="xxxx,fat" />
+				<code>
+					<![CDATA[xxxxxx]]>
+				</code>
+				<notes>
+• xxxxx
+				</notes>
+				<resources>
+					<link href="#" />
+				</resources>
+		</snippet>
+		<snippet id="airUpdater" course="dfp">
+				<name>AIR Updater</name>
+				<difficulty>Advanced</difficulty>
+				<keywords text="xxxx,dfp" />
+				<code>
+					<![CDATA[xxxxxx]]>
+				</code>
+				<notes>
+• xxxxx
+				</notes>
+				<resources>
+					<link href="#" />
+				</resources>
+		</snippet>
+		<snippet id="regEx" course="dfp">
+				<name>Regular Expressions</name>
+				<difficulty>Master</difficulty>
+				<keywords text="regular,expression,expressions,regex,fat" />
+				<code>
+					<![CDATA[public class SampleRegEx extends Sprite
+{
+	/**
+	 * Basic usage of AS3's RegularExpression (RegExp) language processor
+	 * @see http://help.adobe.com/en_US/as3/dev/WS5b3ccc516d4fbf351e63e3d118a9b90204-7fdb.html
+	 * @see http://www.adobe.com/livedocs/flash/9.0/ActionScriptLangRefV3/RegExp.html
+	 * @see http://www.regular-expressions.info/
+	 * @see http://gskinner.com/RegExr/desktop/
+	 * @author Oscar Cortez 
+	 * 
+	 */		
+	public function SampleRegEx()
+	{
+		//Simple Find and Replace Substring
+		var str:String = "Oscar Cortez";
+		var ptn:RegExp = /Oscar/;
+		trace(str.replace(ptn, "Jodie"));
+			
+		//Remove part of a String
+		var str2:String = "Mr. Oscar Cortez, Mr. Sean Bernath";
+		var ptn2:RegExp = /Mr\.\s/g;
+		trace(str2.replace(ptn2, ""));
+			
+		//Split a date String into an Array
+		var str3:String = "2011-12-01";
+		var ptn3:RegExp = /-/;
+		/* var newStr:Array = str3.split(ptn3); */
+		var newStr:Array = str3.split("-");
+		trace(newStr[0]);
+		trace(newStr[1]);
+		trace(newStr[2]);
+			
+		//Complex Find and Replace Substring
+		var str4:String = "Episode #201 - Spiderman's Return";
+		var ptn4:RegExp = /Episode\s#\d+\s-\s/g;
+		trace(str4.replace(ptn4, "Currently Playing: "));
+			
+		//Test for a valid Email Address
+		var str5:String = "ocortez@fullsail.com";
+		var ptn5:RegExp = /([\w-\.]+)@((?:[\w]+\.)+)([a-zA-Z]{2,4})/g;
+		trace(ptn5.test(str5));
+	}
+}]]>
+				</code>
+				<notes>
+				</notes>
+				<resources>
+					<link href="http://wddbs.com/dfp/resources" title="DFP Portal" />
 				</resources>
 		</snippet>
 		
