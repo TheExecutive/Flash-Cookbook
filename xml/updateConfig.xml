@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?> 
 <configuration xmlns="http://ns.adobe.com/air/framework/update/configuration/1.0"> 
      <url>https://raw.github.com/gist/1232127/8e83e15240a9c7aa2972e44ea8152ce30e4d178a/airUpdater.xml</url> 
-    <delay>0.000694444444444</delay> 
+    <delay>7</delay> <!-- Checks for an update every 7 days -->
 </configuration>
