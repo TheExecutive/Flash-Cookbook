@@ -165,6 +165,8 @@ package com.fullsail.dfp.ui
 			listViewWindow.addChild(_lb);
 			_lb.x = 5;
 			_lb.y = 10;
+			//_lb.addEventListener(MouseEvent.CLICK,onItemClick);
+			// ONE listener, listening for all items to be clicked.
 			
 			_codeItemListArray = [];
 			//on subsequent runs, make the array empty
@@ -187,6 +189,7 @@ package com.fullsail.dfp.ui
 			}
 			
 			
+			
 			for each(var cVO:CodeVO in searchArr)
 			{
 				var listItem:CodeListItem = new CodeListItem();
@@ -198,7 +201,8 @@ package com.fullsail.dfp.ui
 				_lb.addChild(listItem);
 				
 				//setting up a listener and pushing into array
-				listItem.addEventListener(MouseEvent.CLICK,onItemClick);
+				listItem.addEventListener(MouseEvent.CLICK,onItemClick); 
+				//commented out because it turns out I can use just one listener
 				_codeItemListArray.push(listItem);
 			}
 			
@@ -226,7 +230,11 @@ package com.fullsail.dfp.ui
 		{
 			for each(var listItem:CodeListItem in _codeItemListArray)
 			{
-				listItem.isSelected = (event.currentTarget == listItem);
+				listItem.isSelected = (event.currentTarget == listItem); 
+				//this is commented out because I am experimenting with having only one listener
+				//that listens for all the clicks.
+				
+				//listItem.isSelected = (event.target == listItem);
 				//again, this will make the one clicked true and 
 				//all the others false. Only one can be active at a time.
 				

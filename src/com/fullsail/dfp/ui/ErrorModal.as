@@ -10,8 +10,8 @@ package com.fullsail.dfp.ui
 		public function ErrorModal()
 		{
 			super();
-			tfError1.text = "Testing";
-			tfError2.text = "Testing";
+			tfError1.text = "";
+			tfError2.text = "";
 		}
 
 		public function set searchedFor(value:String):void
@@ -30,7 +30,7 @@ package com.fullsail.dfp.ui
 					tfError1.text = "Failure is an option, apparently.";
 					break;
 				case 2:
-					tfError1.text = "What is that, Dart?";
+					tfError1.text = "Nothing to see here.";
 					break;
 				case 3:
 					tfError1.text = "...new ErrorEvent();";
@@ -47,7 +47,7 @@ package com.fullsail.dfp.ui
 					tfError2.text = "We have no idea what that is. If you do, you're smarter than us. Good for you on that.";
 					break;
 				case 2:
-					tfError2.text = "Never heard of that one. If it's something we should know, click Report Bug and let us know.";
+					tfError2.text = "Never heard of that one. If it's something we should have, click Report Bug and let us know.";
 					break;
 				case 3:
 					tfError2.text = "I don't think you spelled it right. But don't worry, you have unlimited tries.";

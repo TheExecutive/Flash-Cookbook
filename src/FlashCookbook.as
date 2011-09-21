@@ -49,6 +49,8 @@ package
 
 		private var _baseBar:Basebar;
 		private var _errorModal:ErrorModal = new ErrorModal();
+
+		private var _lb:LayoutBoxFSC;
 		
 		public function FlashCookbook()
 		{
@@ -178,18 +180,15 @@ package
 			_buttonArray = [all, ffm, oop, fat, dfp];
 			
 			//init layout box + add buttons to lb + add lb to stage
-			var lb:LayoutBoxFSC = new LayoutBoxFSC(5,true);
-			addChild(lb);
-			lb.x = 127;
-			lb.y = 68;
-			lb.addEventListener(MouseEvent.CLICK,onButtonClick);
-			//a single listener on the layoutbox, listening for all buttons.
-			//saving memory for the win
+			_lb = new LayoutBoxFSC(5,true);
+			addChild(_lb);
+			_lb.x = 127;
+			_lb.y = 68;
 			
 			for each (var cb:ClassButton in _buttonArray)
 			{
 				var rm:RollOverManagerFSC = new RollOverManagerFSC(cb);
-				lb.addChild(cb);
+				_lb.addChild(cb);
 			}
 			
 		}
@@ -227,6 +226,10 @@ package
 		
 		protected function onDataComplete(event:XMLEvent):void
 		{
+			_lb.addEventListener(MouseEvent.CLICK,onButtonClick);
+			//a single listener on the layoutbox, listening for all buttons.
+			//Not adding the listener to the buttons until the data has been loaded.
+			
 			//after the data has finished loading and being parsed,
 			//pass it to the setter in the codeListView
 			_cListView.loadedSnippets = event.codeVOArray;

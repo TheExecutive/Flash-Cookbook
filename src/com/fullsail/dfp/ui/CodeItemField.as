@@ -19,8 +19,10 @@ package com.fullsail.dfp.ui
 			super();
 			tfCode.autoSize = TextFieldAutoSize.LEFT;
 			tfCode.width = 480;
+			tfCode.mouseEnabled = tfCode.mouseWheelEnabled = false; // stops the scrolling of the text
 			tfNotes.autoSize = TextFieldAutoSize.LEFT;
 			tfNotes.width = 502;
+			tfNotes.mouseEnabled = tfNotes.mouseWheelEnabled = false; // stops the scrolling of the text
 			
 			mc_codebg.width = tfCode.width + 27;
 			
