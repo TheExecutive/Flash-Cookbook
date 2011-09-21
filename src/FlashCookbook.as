@@ -1,5 +1,7 @@
 package
 {
+	import air.update.ApplicationUpdaterUI;
+	
 	import com.fullsail.dfp.events.ErrorEvent;
 	import com.fullsail.dfp.events.SearchEvent;
 	import com.fullsail.dfp.events.XMLEvent;
@@ -17,6 +19,7 @@ package
 	import flash.display.Sprite;
 	import flash.events.Event;
 	import flash.events.MouseEvent;
+	import flash.filesystem.File;
 	
 	import libs.ClassBtn;
 	
@@ -38,7 +41,8 @@ package
 				List Item expansion
 				List Item styling
 			*/
-
+		
+		private var _appUpdater:ApplicationUpdaterUI = new ApplicationUpdaterUI();
 		private var _cListView:CodeListView;
 		private var _buttonArray:Array = [];
 
@@ -46,9 +50,22 @@ package
 		
 		public function FlashCookbook()
 		{
+			//function to handle updates
+			updater();
+			
 			initUI();
+			
 			//adds custom sub menu & items
 			var sm:SubMenu = new SubMenu();
+		}
+		
+		private function updater():void
+		{
+			_appUpdater.configurationFile = new File("app:/updateConfig.xml");
+			_appUpdater.initialize();
+			
+			//the example xml path in the example xml file
+			//<url>http://wddbs.com/dfp/activities/sampleupdate/updateDescriptor.xml</url> 
 		}
 		
 		private function initUI():void
@@ -125,6 +142,9 @@ package
 			
 			var xmlService:XMLService = new XMLService();
 			xmlService.beginLoad();
+			
+			//loading
+			_baseBar.textField = "Welcome to the Essential Flash Cookbook! Loading..."
 			
 			//listeners for the XMLService
 			xmlService.addEventListener(XMLEvent.DATA_LOAD_COMPLETE,onDataComplete);

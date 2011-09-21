@@ -35,12 +35,14 @@ package com.fullsail.dfp.ui
 		private function updateBasebar():void
 		{
 			var numResults:String = String(_listArray.length);
+			var results:String = (numResults == "1") ? " result. ":" results.";
+			//if the number of results is 1, say result instead of results
 			
 			if(_isSearching)
 			{
-				tfNotificationBar.text = 'Searching: "' + _searchedFor + '." Showing ' + numResults + ' results.';
+				tfNotificationBar.text = 'Searching: "' + _searchedFor + '." Showing ' + numResults + results;
 			}else{
-				tfNotificationBar.text = "Showing " + numResults + " results.";
+				tfNotificationBar.text = "Showing " + numResults + results;
 			}
 			
 		}
@@ -70,7 +72,6 @@ package com.fullsail.dfp.ui
 		{
 			_textField = value;
 			tfNotificationBar.text = _textField;
-			updateBasebar();
 		}
 
 		
