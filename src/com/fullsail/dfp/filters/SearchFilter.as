@@ -36,7 +36,7 @@ package com.fullsail.dfp.filters
 		{
 			if(_search != ",") //if the keyword is not a comma
 			{
-				if(element.keywords.toLowerCase().indexOf(_search.toLowerCase()) != -1 || element.notes.toLowerCase().indexOf(_search.toLowerCase()) != -1 || element.name.toLowerCase().indexOf(_search.toLowerCase) != -1 )
+				if(element.keywords.toLowerCase().indexOf(_search.toLowerCase()) != -1 || element.notes.toLowerCase().indexOf(_search.toLowerCase()) != -1 || element.name.toLowerCase().indexOf(_search.toLowerCase()) != -1 )
 				{
 					//if the search appears anywhere in keywords or notes or name
 					return true;
