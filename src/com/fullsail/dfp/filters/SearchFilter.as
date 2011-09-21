@@ -58,6 +58,10 @@ package com.fullsail.dfp.filters
 				//if there's no search yet
 				//just return the original array without filtering
 				return array;
+			}else if(_search.charAt(_search.length - 1) == "s")
+			{
+				_search = _search.slice(0, _search.length - 1);
+				//if what is searched for is plural, cut off the s at the end and search for that
 			}
 			
 			return array.filter(isSearched);

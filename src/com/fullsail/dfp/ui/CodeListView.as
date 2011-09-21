@@ -1,6 +1,5 @@
 package com.fullsail.dfp.ui
 {
-	import com.fullsail.dfp.events.DetailEvent;
 	import com.fullsail.dfp.events.SearchEvent;
 	import com.fullsail.dfp.filters.SearchFilter;
 	import com.fullsail.dfp.vo.CodeVO;
@@ -147,10 +146,16 @@ package com.fullsail.dfp.ui
 			
 			//filtering the loadedSnippets into their respective arrays
 			var searchArr:Array = _loadedSnippets.filter(SearchFilter["is" + _currentlyViewing ]);
+			/* this will take the static functions in SearchFilter and add the currently viewing
+			string (label of the buttons) to the end. All of the statics in the SearchFilter
+			class begin with "is" and this will determine which function runs based on 
+			the label in the button clicked. This saves me from having to make five if statements
+			to determine which one is used. */
 			
 			if(_isSearching)
 			{
 				//if you are searching, filter the search results by the query
+				//if not, ignore this
 				searchArr = SearchFilter.searchFor(_currentSearch,searchArr);
 			}
 			
@@ -172,6 +177,13 @@ package com.fullsail.dfp.ui
 			
 			//updateScrolling data after list has been populated
 			updateScrollingData();
+			
+			var sEvent:SearchEvent = new SearchEvent(SearchEvent.UPDATE_NOTIFICATIONS);
+			sEvent.listArray = searchArr;
+			sEvent.query = _currentSearch;
+			sEvent.isSearching = _isSearching;
+			dispatchEvent(sEvent);
+			
 		}
 		
 		protected function onItemClick(event:MouseEvent):void
@@ -209,11 +221,6 @@ package com.fullsail.dfp.ui
 					//after an ItemField has been opened, update scrolling
 					updateScrollingData();
 					
-					//not sure if I need this event here yet
-					//but it can't hurt
-					var dEvent:DetailEvent = new DetailEvent(DetailEvent.CODE_DETAIL);
-					dEvent.cVO = listItem.codeVO;
-					dispatchEvent(dEvent);
 				}
 			}
 		}

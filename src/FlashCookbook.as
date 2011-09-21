@@ -75,6 +75,7 @@ package
 			_cListView.x = (stage.stageWidth - _cListView.width) / 2;
 			_cListView.y = bg.y + 96;
 			_cListView.addEventListener(SearchEvent.RESET_TO_ALL,onReset);
+			_cListView.addEventListener(SearchEvent.UPDATE_NOTIFICATIONS, onNotificationUpdate);
 			
 			//init search
 			var sb:SearchBox = new SearchBox();
@@ -90,7 +91,6 @@ package
 			_baseBar.x = bg.x + 15;
 			_baseBar.y = bg.height - 30;
 			_baseBar.clearNotifications();
-			//_baseBar.addEventListener(SearchEvent.
 			
 			//load in initial data
 			loadInitialData();
@@ -109,6 +109,14 @@ package
 			
 			//On a new search, go back to ALL
 			resetToAll();
+		}
+		
+		protected function onNotificationUpdate(event:SearchEvent):void
+		{
+			_baseBar.searchedFor = event.query;
+			_baseBar.isSearching = event.isSearching;
+			_baseBar.listArray = event.listArray;
+			
 		}
 		
 		private function loadInitialData():void
