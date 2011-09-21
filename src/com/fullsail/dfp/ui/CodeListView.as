@@ -1,6 +1,5 @@
 package com.fullsail.dfp.ui
 {
-	import com.fullsail.dfp.events.DetailEvent;
 	import com.fullsail.dfp.events.SearchEvent;
 	import com.fullsail.dfp.filters.SearchFilter;
 	import com.fullsail.dfp.vo.CodeVO;
@@ -35,7 +34,7 @@ package com.fullsail.dfp.ui
 		private var _itemFieldHeight:Number;
 		private var _listFieldOpen:Boolean = false;
 
-		private var _searchInd:SearchIndicator;
+		private var _searchInd:Basebar;
 		
 		public function CodeListView()
 		{
@@ -146,9 +145,20 @@ package com.fullsail.dfp.ui
 			
 			
 			//filtering the loadedSnippets into their respective arrays
-			var searchArr:Array = _loadedSnippets.filter(SearchFilter["is" +_currentlyViewing ]);
+			var searchArr:Array = _loadedSnippets.filter(SearchFilter["is" + _currentlyViewing ]);
+			/* this will take the static functions in SearchFilter and add the currently viewing
+			string (label of the buttons) to the end. All of the statics in the SearchFilter
+			class begin with "is" and this will determine which function runs based on 
+			the label in the button clicked. This saves me from having to make five if statements
+			to determine which one is used. */
 			
-			searchArr = SearchFilter.searchFor(_currentSearch,searchArr);
+			if(_isSearching)
+			{
+				//if you are searching, filter the search results by the query
+				//if not, ignore this
+				searchArr = SearchFilter.searchFor(_currentSearch,searchArr);
+			}
+			
 			
 			for each(var cVO:CodeVO in searchArr)
 			{
@@ -167,6 +177,13 @@ package com.fullsail.dfp.ui
 			
 			//updateScrolling data after list has been populated
 			updateScrollingData();
+			
+			var sEvent:SearchEvent = new SearchEvent(SearchEvent.UPDATE_NOTIFICATIONS);
+			sEvent.listArray = searchArr;
+			sEvent.query = _currentSearch;
+			sEvent.isSearching = _isSearching;
+			dispatchEvent(sEvent);
+			
 		}
 		
 		protected function onItemClick(event:MouseEvent):void
@@ -204,11 +221,6 @@ package com.fullsail.dfp.ui
 					//after an ItemField has been opened, update scrolling
 					updateScrollingData();
 					
-					//not sure if I need this event here yet
-					//but it can't hurt
-					var dEvent:DetailEvent = new DetailEvent(DetailEvent.CODE_DETAIL);
-					dEvent.cVO = listItem.codeVO;
-					dispatchEvent(dEvent);
 				}
 			}
 		}
@@ -274,38 +286,18 @@ package com.fullsail.dfp.ui
 			_currentSearch = value;
 			clearListFieldsFromLB();
 			updateResultList();
-			launchSearchIndicator();
+		}
+
+		public function get isSearching():Boolean
+		{
+			return _isSearching;
+		}
+
+		public function set isSearching(value:Boolean):void
+		{
+			_isSearching = value;
 		}
 		
-		private function launchSearchIndicator():void
-		{
-			if(listViewWindow._searchInd)
-			{
-				//if a search has already been run, close that before doing another
-				_searchInd.removeEventListener(SearchEvent.CLOSE_INDICATOR,onIndClose);
-				listViewWindow.removeChild(_searchInd);
-			}
-			_searchInd = new SearchIndicator();
-			listViewWindow.addChild(_searchInd);
-			_searchInd.x = (listViewWindow.width - _searchInd.width) / 2;
-			_searchInd.searchLabel = _currentSearch;
-			_searchInd.addEventListener(SearchEvent.CLOSE_INDICATOR,onIndClose);
-		}
-		
-		protected function onIndClose(event:Event):void
-		{
-			//reset back to all after you're done with your search
-			_searchInd.removeEventListener(SearchEvent.CLOSE_INDICATOR,onIndClose);
-			
-			if(listViewWindow._searchInd)
-			{
-				listViewWindow.removeChild(_searchInd);
-			}
-			
-			var sEvent:SearchEvent = new SearchEvent(SearchEvent.RESET_TO_ALL);
-			dispatchEvent(sEvent);
-			
-		}
 		
 	}
 }

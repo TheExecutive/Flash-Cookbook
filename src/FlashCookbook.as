@@ -5,6 +5,7 @@ package
 	import com.fullsail.dfp.events.XMLEvent;
 	import com.fullsail.dfp.service.XMLService;
 	import com.fullsail.dfp.ui.Background;
+	import com.fullsail.dfp.ui.Basebar;
 	import com.fullsail.dfp.ui.ChromeControls;
 	import com.fullsail.dfp.ui.ClassButton;
 	import com.fullsail.dfp.ui.CodeListView;
@@ -40,6 +41,8 @@ package
 
 		private var _cListView:CodeListView;
 		private var _buttonArray:Array = [];
+
+		private var _baseBar:Basebar;
 		
 		public function FlashCookbook()
 		{
@@ -72,6 +75,7 @@ package
 			_cListView.x = (stage.stageWidth - _cListView.width) / 2;
 			_cListView.y = bg.y + 96;
 			_cListView.addEventListener(SearchEvent.RESET_TO_ALL,onReset);
+			_cListView.addEventListener(SearchEvent.UPDATE_NOTIFICATIONS, onNotificationUpdate);
 			
 			//init search
 			var sb:SearchBox = new SearchBox();
@@ -82,6 +86,11 @@ package
 			createButtons();
 			
 			//init basebar
+			_baseBar = new Basebar();
+			addChild(_baseBar);
+			_baseBar.x = bg.x + 15;
+			_baseBar.y = bg.height - 30;
+			_baseBar.clearNotifications();
 			
 			//load in initial data
 			loadInitialData();
@@ -94,10 +103,20 @@ package
 		
 		protected function onSearch(event:SearchEvent):void
 		{
+			
+			_cListView.isSearching = true;
 			_cListView.currentSearch = event.query;
 			
 			//On a new search, go back to ALL
 			resetToAll();
+		}
+		
+		protected function onNotificationUpdate(event:SearchEvent):void
+		{
+			_baseBar.searchedFor = event.query;
+			_baseBar.isSearching = event.isSearching;
+			_baseBar.listArray = event.listArray;
+			
 		}
 		
 		private function loadInitialData():void
@@ -164,6 +183,8 @@ package
 				
 			}
 			var currentClass:String = event.target.label;
+			_cListView.isSearching = false;
+			//if you click on a button, you're not searching
 			_cListView.currentlyViewing = currentClass; 
 			//assigning the label of the button clicked 
 			//on as the currentlyViewing value in the setter
