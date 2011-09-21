@@ -11,6 +11,7 @@ package
 	import com.fullsail.dfp.ui.ChromeControls;
 	import com.fullsail.dfp.ui.ClassButton;
 	import com.fullsail.dfp.ui.CodeListView;
+	import com.fullsail.dfp.ui.ErrorModal;
 	import com.fullsail.dfp.ui.LayoutBoxFSC;
 	import com.fullsail.dfp.ui.RollOverManagerFSC;
 	import com.fullsail.dfp.ui.SearchBox;
@@ -47,6 +48,7 @@ package
 		private var _buttonArray:Array = [];
 
 		private var _baseBar:Basebar;
+		private var _errorModal:ErrorModal = new ErrorModal();
 		
 		public function FlashCookbook()
 		{
@@ -95,7 +97,8 @@ package
 			_cListView.x = (stage.stageWidth - _cListView.width) / 2;
 			_cListView.y = bg.y + 96;
 			_cListView.addEventListener(SearchEvent.RESET_TO_ALL,onReset);
-			_cListView.addEventListener(SearchEvent.UPDATE_NOTIFICATIONS, onNotificationUpdate);
+			_cListView.addEventListener(SearchEvent.UPDATE_NOTIFICATIONS,onNotificationUpdate);
+			_cListView.addEventListener(ErrorEvent.GENERAL_ERROR,launchError);
 			
 			//init search
 			var sb:SearchBox = new SearchBox();
@@ -128,6 +131,7 @@ package
 			_cListView.currentSearch = event.query;
 			
 			//On a new search, go back to ALL
+			clearErrorPanel();
 			resetToAll();
 		}
 		
@@ -211,6 +215,9 @@ package
 			_cListView.currentlyViewing = currentClass; 
 			//assigning the label of the button clicked 
 			//on as the currentlyViewing value in the setter
+			
+			
+			clearErrorPanel();
 		}
 		
 		protected function onDataError(event:ErrorEvent):void
@@ -249,7 +256,21 @@ package
 				cb.isSelected = (cb.label == "All");  
 				//turning the All button on and all others off
 			}
+			
 		}
-		
+		private function launchError(event:ErrorEvent):void
+		{
+			_errorModal.searchedFor = event.searchedQuery;
+			addChild(_errorModal);
+			_errorModal.x = (stage.stageWidth - _errorModal.width) / 2;
+			_errorModal.y = (stage.stageHeight - _errorModal.height) / 2;
+		}
+		private function clearErrorPanel():void
+		{
+			if(_errorModal.stage)
+			{
+				removeChild(_errorModal);
+			}
+		}
 	}
 }

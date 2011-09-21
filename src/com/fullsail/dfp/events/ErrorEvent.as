@@ -7,6 +7,8 @@ package com.fullsail.dfp.events
 		public static const LOAD_ERROR:String = "ErrorEvent.LOAD_ERROR";
 		public static const GENERAL_ERROR:String = "ErrorEvent.GENERAL_ERROR";
 		
+		public var searchedQuery:String;
+		
 		public function ErrorEvent(type:String, bubbles:Boolean=false, cancelable:Boolean=false)
 		{
 			super(type, bubbles, cancelable);

@@ -1,5 +1,6 @@
 package com.fullsail.dfp.ui
 {
+	import com.fullsail.dfp.events.ErrorEvent;
 	import com.fullsail.dfp.events.SearchEvent;
 	import com.fullsail.dfp.filters.SearchFilter;
 	import com.fullsail.dfp.vo.CodeVO;
@@ -99,19 +100,45 @@ package com.fullsail.dfp.ui
 				_sm.pct = 0; //if not, don't let the handle move
 			}
 		}
-
+		public function get isSearching():Boolean
+		{
+			return _isSearching;
+		}
+		
+		public function set isSearching(value:Boolean):void
+		{
+			_isSearching = value;
+		}
 		public function get loadedSnippets():Array
 		{
 			return _loadedSnippets;
 		}
-
 		public function set loadedSnippets(value:Array):void
 		{
 			_loadedSnippets = value;
 			clearListFieldsFromLB();
-			updateResultList();
+			//updateResultList(); //this is causing it to run twice on startup
 		}
-		
+		public function get currentSearch():String
+		{
+			return _currentSearch;
+		}
+		public function set currentSearch(value:String):void
+		{
+			_currentSearch = value;
+			clearListFieldsFromLB();
+			//updateResultList(); //this is causing it to run twice
+		}
+		public function get currentlyViewing():String
+		{
+			return _currentlyViewing;
+		}
+		public function set currentlyViewing(value:String):void
+		{
+			_currentlyViewing = value;
+			clearListFieldsFromLB();
+			updateResultList(); //this is what starts everything going
+		}
 		private function updateResultList():void
 		{
 			// This function will create list items upon getting
@@ -184,6 +211,15 @@ package com.fullsail.dfp.ui
 			sEvent.isSearching = _isSearching;
 			dispatchEvent(sEvent);
 			
+			trace("LENGTH: " + searchArr.length);
+			
+			//handling errors - if there is nothing in the array
+			if(searchArr.length < 1)
+			{
+				var eEvent:ErrorEvent = new ErrorEvent(ErrorEvent.GENERAL_ERROR);
+				eEvent.searchedQuery = _currentSearch;
+				dispatchEvent(eEvent);
+			}
 		}
 		
 		protected function onItemClick(event:MouseEvent):void
@@ -243,19 +279,6 @@ package com.fullsail.dfp.ui
 				//if there is an itemfield open
 			}
 			
-			
-		}
-
-		public function get currentlyViewing():String
-		{
-			return _currentlyViewing;
-		}
-
-		public function set currentlyViewing(value:String):void
-		{
-			_currentlyViewing = value;
-			clearListFieldsFromLB();
-			updateResultList();
 		}
 		private function clearListFieldsFromLB():void
 		{
@@ -275,29 +298,5 @@ package com.fullsail.dfp.ui
 			//resetting the index
 			
 		}
-
-		public function get currentSearch():String
-		{
-			return _currentSearch;
-		}
-
-		public function set currentSearch(value:String):void
-		{
-			_currentSearch = value;
-			clearListFieldsFromLB();
-			updateResultList();
-		}
-
-		public function get isSearching():Boolean
-		{
-			return _isSearching;
-		}
-
-		public function set isSearching(value:Boolean):void
-		{
-			_isSearching = value;
-		}
-		
-		
 	}
 }
