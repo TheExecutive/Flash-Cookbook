@@ -105,6 +105,13 @@ package com.fullsail.dfp.ui
 				mc_pdf.tfListButton.text = "Screencasts";
 				
 			}
+			else if(_cVO.resourcesTitle.indexOf("Portal") != -1)
+			{
+				//if the resource link is to the videos
+				//change button label to screencasts
+				mc_pdf.tfListButton.text = "Portal";
+				
+			}
 			else if(_cVO.resourcesLink == "" || _cVO.resourcesLink == "#")
 			{
 				//if there is no resource link in the XML, 
