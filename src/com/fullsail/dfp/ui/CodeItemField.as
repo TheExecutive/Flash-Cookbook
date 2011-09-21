@@ -105,7 +105,7 @@ package com.fullsail.dfp.ui
 				mc_pdf.tfListButton.text = "Screencasts";
 				
 			}
-			else if(_cVO.resourcesTitle.indexOf("Portal") != -1)
+			else if(_cVO.resourcesTitle.indexOf("DFP") != -1)
 			{
 				//if the resource link is to the videos
 				//change button label to screencasts
