@@ -35,6 +35,7 @@ package com.fullsail.dfp.ui
 			sbtn.x = 220;
 			this.addChild(sbtn);
 			sbtn.filters = [_dropShadow];
+			var rm:RollOverManagerFSC = new RollOverManagerFSC(sbtn);
 			
 			//search button event Listener
 			sbtn.addEventListener(MouseEvent.CLICK, onSearchClick);
@@ -56,9 +57,13 @@ package com.fullsail.dfp.ui
 		
 		private function onSearch():void
 		{
-			var se:SearchEvent = new SearchEvent(SearchEvent.SEARCH_QUERY);
-			se.query = tfSearchInput.text;
-			dispatchEvent(se);
+			if(tfSearchInput.text != SEARCH_PROMPT) //if the prompt isn't in there
+			{
+				var se:SearchEvent = new SearchEvent(SearchEvent.SEARCH_QUERY);
+				se.query = tfSearchInput.text;
+				dispatchEvent(se);
+			}
+			
 		}
 		private function onFocusIn(evt:FocusEvent):void
 		{
