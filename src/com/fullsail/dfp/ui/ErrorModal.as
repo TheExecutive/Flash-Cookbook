@@ -50,7 +50,7 @@ package com.fullsail.dfp.ui
 					tfError2.text = "Never heard of that one. If it's something we should have, click Report Bug and let us know.";
 					break;
 				case 3:
-					tfError2.text = "I don't think you spelled it right. But don't worry, you have unlimited tries.";
+					tfError2.text = "Don't think you spelled that right. But don't worry, you can try again, no charge. Aren't we nice?";
 					break;
 				case 4:
 					tfError2.text = "I'm sure we speak the same language. You should try typing it better, however.";

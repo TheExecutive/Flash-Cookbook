@@ -16,15 +16,16 @@ package
 	import com.fullsail.dfp.ui.RollOverManagerFSC;
 	import com.fullsail.dfp.ui.SearchBox;
 	import com.fullsail.dfp.ui.SubMenu;
+	import com.greensock.*;
+	import com.greensock.easing.*;
 	
 	import flash.display.Sprite;
-	import flash.events.Event;
 	import flash.events.MouseEvent;
 	import flash.filesystem.File;
 	
 	import libs.ClassBtn;
 	
-	[SWF(width="800", height="700", frameRate="60")]
+	[SWF(width="620", height="700", frameRate="60")]
 	public class FlashCookbook extends Sprite
 	{
 		
@@ -106,6 +107,8 @@ package
 			var sb:SearchBox = new SearchBox();
 			addChild(sb);
 			sb.addEventListener(SearchEvent.SEARCH_QUERY,onSearch);
+			sb.x = (bg.x + bg.width) - sb.width - 30;
+			sb.y = 35;
 			
 			//init buttons
 			createButtons();
@@ -182,7 +185,7 @@ package
 			//init layout box + add buttons to lb + add lb to stage
 			_lb = new LayoutBoxFSC(5,true);
 			addChild(_lb);
-			_lb.x = 127;
+			_lb.x = 38;
 			_lb.y = 68;
 			
 			for each (var cb:ClassButton in _buttonArray)
@@ -265,8 +268,10 @@ package
 		{
 			_errorModal.searchedFor = event.searchedQuery;
 			addChild(_errorModal);
-			_errorModal.x = (stage.stageWidth - _errorModal.width) / 2;
-			_errorModal.y = (stage.stageHeight - _errorModal.height) / 2;
+			_errorModal.x = stage.stageWidth/2;
+			_errorModal.y = stage.stageHeight/2;
+			_errorModal.scaleX = _errorModal.scaleY = 0.5;
+			TweenMax.to(_errorModal, 0.2, {scaleX:1, scaleY:1});
 		}
 		private function clearErrorPanel():void
 		{

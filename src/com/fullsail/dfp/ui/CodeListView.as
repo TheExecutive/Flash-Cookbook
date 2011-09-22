@@ -4,6 +4,7 @@ package com.fullsail.dfp.ui
 	import com.fullsail.dfp.events.SearchEvent;
 	import com.fullsail.dfp.filters.SearchFilter;
 	import com.fullsail.dfp.vo.CodeVO;
+	import com.greensock.TweenMax;
 	
 	import flash.events.Event;
 	import flash.events.MouseEvent;
@@ -261,6 +262,21 @@ package com.fullsail.dfp.ui
 					
 					_lb.addChildAt(cItemField, itemIndex + 1);
 					_listFieldOpen = true;
+					
+					//tweening
+					var tweenX:Number = cItemField.x;
+					var tweenY:Number = cItemField.y;
+					
+					var randomNumber:Number = Math.round(Math.random());
+					if(randomNumber > 0.5)
+					{
+						cItemField.x = cItemField.x - 250;
+						//cItemField.y = cItemField.y + 60;
+						TweenMax.to(cItemField, 0.3, {x:tweenX, y:tweenY});
+					}else{
+						cItemField.scaleY = 0.2;
+						TweenMax.to(cItemField, 0.25, {scaleX:1, scaleY:1});
+					}
 					
 					//after an ItemField has been opened, update scrolling
 					updateScrollingData();
