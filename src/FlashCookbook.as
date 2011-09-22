@@ -51,7 +51,7 @@ package
 
 		private var _baseBar:Basebar;
 		private var _errorModal:ErrorModal = new ErrorModal();
-		private var _aboutPage:AboutPage = new AboutPage();
+		private var _aboutPage:AboutPage;
 
 		private var _lb:LayoutBoxFSC;
 		
@@ -245,6 +245,7 @@ package
 		
 		protected function onAboutClick(event:MouseEvent):void
 		{
+			_aboutPage = new AboutPage();
 			addChild(_aboutPage);
 			_aboutPage.x = (stage.stageWidth - _aboutPage.width) / 2;
 		}
