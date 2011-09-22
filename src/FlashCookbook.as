@@ -159,7 +159,7 @@ package
 			xmlService.beginLoad();
 			
 			//loading
-			_baseBar.textField = "Welcome to the Essential Flash Cookbook! Loading..."
+			_baseBar.textField = "Welcome to the Essential Flash Cookbook! Loading...";
 			
 			//listeners for the XMLService
 			xmlService.addEventListener(XMLEvent.DATA_LOAD_COMPLETE,onDataComplete);
