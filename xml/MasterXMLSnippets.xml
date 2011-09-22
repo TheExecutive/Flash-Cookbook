@@ -1698,42 +1698,42 @@ addChild(canvas);]]>
 		<snippet id="handlingNamespaces" course="dfp">
 				<name>Namespaces</name>
 				<difficulty>Master</difficulty>
-				<keywords text="xxxx,dfp" />
+				<keywords text="namespace,namespaces,name,space,spaces,dfp" />
 				<code>
-					<![CDATA[public class HandlingNamespaces extends Sprite
+					<![CDATA[public class HandlingNamespaces extends Sprite {
+private var xmlData:XML;
+		
+//Set up Namespaces
+private var googleNS:Namespace = new Namespace("http://base.google.com/ns/1.0");
+private var searchNS:Namespace = new Namespace("http://a9.com/-/spec/opensearch/1.1/");
+private var atomNS:Namespace = new Namespace("http://www.w3.org/2005/Atom");
+private var twitterNS:Namespace = new Namespace("http://api.twitter.com/");
+	/**
+	 * Basic handling of E4X data and Namespaces
+	 * @see http://www.republicofcode.com/tutorials/flash/as3xml/
+	 * @see http://en.wikipedia.org/wiki/ECMAScript_for_XML
+	 * @author Oscar Cortez 
+	 * 
+	 */		
+public function HandlingNamespaces()
 {
-	private var xmlData:XML;
-		
-	//Set up Namespaces
-	private var googleNS:Namespace = new Namespace("http://base.google.com/ns/1.0");
-	private var searchNS:Namespace = new Namespace("http://a9.com/-/spec/opensearch/1.1/");
-	private var atomNS:Namespace = new Namespace("http://www.w3.org/2005/Atom");
-	private var twitterNS:Namespace = new Namespace("http://api.twitter.com/");
-		/**
-		 * Basic handling of E4X data and Namespaces
-		 * @see http://www.republicofcode.com/tutorials/flash/as3xml/
-		 * @see http://en.wikipedia.org/wiki/ECMAScript_for_XML
-		 * @author Oscar Cortez 
-		 * 
-		 */		
-	public function HandlingNamespaces()
-	{
-		var xmlLoader:URLLoader = new URLLoader();
+	var xmlLoader:URLLoader = new URLLoader();
 			
-		xmlLoader.addEventListener(Event.COMPLETE, parseXML);
-		xmlLoader.load(new URLRequest("../libs/search.xml"));
-	}
+	xmlLoader.addEventListener(Event.COMPLETE, parseXML);
+	xmlLoader.load(new URLRequest("../libs/search.xml"));
+}
 		
-	private function parseXML(e:Event):void{
-		xmlData = new XML(e.target.data);
-//		trace(xmlData);
-//		trace(xmlData.*);
-//		trace(xmlData.preface);
-//		trace(xmlData.img[1]);
-//		trace(xmlData.img.@title);
-//		trace(xmlData.img.(@title == "Pony"));
-//		trace(xmlData.img.length());
-		trace(xmlData.atomNS::entry[0].atomNS::title);
+private function parseXML(e:Event):void
+{
+	xmlData = new XML(e.target.data);
+	//		trace(xmlData);
+	//		trace(xmlData.*);
+	//		trace(xmlData.preface);
+	//		trace(xmlData.img[1]);
+	//		trace(xmlData.img.@title);
+	//		trace(xmlData.img.(@title == "Pony"));
+	//		trace(xmlData.img.length());
+	trace(xmlData.atomNS::entry[0].atomNS::title);
 }]]>
 				</code>
 				<notes>
@@ -1745,7 +1745,7 @@ addChild(canvas);]]>
 		<snippet id="colorMatrix" course= "dfp">
 				<name>Color Matrix</name>
 				<difficulty>Master</difficulty>
-				<keywords text="xxxx,dfp" />
+				<keywords text="color,matrix,picker,color matrix,color picker,dfp" />
 				<code>
 					<![CDATA[public class SampleColorMatrix extends Sprite
 {
@@ -1763,19 +1763,22 @@ addChild(canvas);]]>
 		myCircle.graphics.beginFill(0x990101,1);
 		myCircle.graphics.drawCircle(100,100,40);
 		myCircle.buttonMode = true;
-		myCircle.addEventListener(MouseEvent.ROLL_OVER, overHandler);			myCircle.addEventListener(MouseEvent.ROLL_OUT, outHandler);
+		myCircle.addEventListener(MouseEvent.ROLL_OVER, overHandler);
+		myCircle.addEventListener(MouseEvent.ROLL_OUT, outHandler);
 			
 		addChild(myCircle);
 	}
 
-	private function overHandler(e:MouseEvent):void{
-		colorMatrix=[1.86,0,0,0,131.39,0,1.86,0,0,131.39,0,0,1.86,0,131.39,0,0,0,1,0];
-			
+	private function overHandler(e:MouseEvent):void
+	{
+		colorMatrix=[1.86,0,0,0,131.39,0,1.86,0,0,131.39,0,0,1.86,0,131.39,0,0,0,1,;
+		
 		colorFilter.matrix = colorMatrix;
 		myCircle.filters=[colorFilter];
 	}
 		
-	private function outHandler(e:MouseEvent):void{			
+	private function outHandler(e:MouseEvent):void
+	{			
 		/*
 		matrix=matrix.concat([0.5,0.5,0.5,0,0]);// red
 		matrix=matrix.concat([0.5,0.5,0.5,0,0]);// green
@@ -1786,7 +1789,7 @@ addChild(canvas);]]>
 			
 		colorFilter.matrix = colorMatrix;
 		myCircle.filters=[colorFilter];
-		}
+	}
 }]]>
 				</code>
 				<notes>
@@ -1798,7 +1801,7 @@ addChild(canvas);]]>
 		<snippet id="usingFullScreen" course="dfp">
 				<name>Using Full Screen</name>
 				<difficulty>Master</difficulty>
-				<keywords text="xxxx,dfp" />
+				<keywords text="full,screen,fullscreen,full screen,dfp" />
 				<code>
 					<![CDATA[public class SampleFullScreen extends Sprite
 {
@@ -1844,7 +1847,7 @@ addChild(canvas);]]>
 		<snippet id="customMenu" course="dfp">
 				<name>Custom Menu</name>
 				<difficulty>Moderate</difficulty>
-				<keywords text="xxxx,dfp" />
+				<keywords text="custom,menu,custom menu,custom menus,dfp" />
 				<code>
 					<![CDATA[public class CustomMenu extends Sprite
 {	
@@ -1879,7 +1882,7 @@ addChild(canvas);]]>
 		<snippet id="keyboardEvents" course="dfp">
 				<name>Keyboard Events</name>
 				<difficulty>Moderate</difficulty>
-				<keywords text="xxxx,fat" />
+				<keywords text="key,keyboard,keyboard event,keyboard events,events,fat" />
 				<code>
 					<![CDATA[public class KeyboardDEMO extends Sprite
 {
@@ -1973,7 +1976,7 @@ addChild(canvas);]]>
 		<snippet id="multipleSwfs" course="dfp">
 				<name>Using Multiple SWFs</name>
 				<difficulty>Master</difficulty>
-				<keywords text="xxxx,dfp" />
+				<keywords text="multiple swf,multiple swfs,swfs,swf,multiple,dfp" />
 				<code>
 					<![CDATA[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
@@ -2043,7 +2046,7 @@ addChild(canvas);]]>
 		<snippet id="googleMap" course="dfp">
 				<name>Adding a Google Map</name>
 				<difficulty>Master</difficulty>
-				<keywords text="xxxx,fat" />
+				<keywords text="map,adding map,google,google map,google maps,fat" />
 				<code>
 					<![CDATA[public class SampleMap extends Sprite
 {
