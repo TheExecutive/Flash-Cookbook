@@ -6,6 +6,7 @@ package
 	import com.fullsail.dfp.events.SearchEvent;
 	import com.fullsail.dfp.events.XMLEvent;
 	import com.fullsail.dfp.service.XMLService;
+	import com.fullsail.dfp.ui.AboutPage;
 	import com.fullsail.dfp.ui.Background;
 	import com.fullsail.dfp.ui.Basebar;
 	import com.fullsail.dfp.ui.ChromeControls;
@@ -50,6 +51,7 @@ package
 
 		private var _baseBar:Basebar;
 		private var _errorModal:ErrorModal = new ErrorModal();
+		private var _aboutPage:AboutPage = new AboutPage();
 
 		private var _lb:LayoutBoxFSC;
 		
@@ -93,6 +95,7 @@ package
 			cntrls.y = bg.y + 5;
 			cntrls.closeButton.addEventListener(MouseEvent.CLICK,onCloseClick);
 			cntrls.minimizeButton.addEventListener(MouseEvent.CLICK,onMinClick);
+			cntrls.aboutButton.addEventListener(MouseEvent.CLICK,onAboutClick);
 			
 			//init list view
 			_cListView = new CodeListView();
@@ -240,6 +243,11 @@ package
 			resetToAll();
 		}
 		
+		protected function onAboutClick(event:MouseEvent):void
+		{
+			addChild(_aboutPage);
+			_aboutPage.x = (stage.stageWidth - _aboutPage.width) / 2;
+		}
 		protected function onCloseClick(event:MouseEvent):void
 		{
 			stage.nativeWindow.close(); // this closes the window
