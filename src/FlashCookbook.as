@@ -55,6 +55,10 @@ package
 
 		private var _lb:LayoutBoxFSC;
 		
+		/**  Welcome to the Essential Flash Cookbook!
+		 * 
+		 * */
+		
 		public function FlashCookbook()
 		{
 			//function to handle updates

@@ -7,6 +7,11 @@ package com.fullsail.dfp.filters
 	{
 		private static var _search:String
 		
+		/**  The Search Filter class filters out the mastter array by
+		 * 	Class and returns a boolean if it fits the parameters.
+		 * 
+		 * */
+		
 		public function SearchFilter(target:IEventDispatcher=null)
 		{
 			super(target);
