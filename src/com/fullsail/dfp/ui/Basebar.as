@@ -25,6 +25,21 @@ package com.fullsail.dfp.ui
 			mc_bugButton.buttonMode = true;
 			mc_bugButton.mouseChildren = false;
 			mc_bugButton.addEventListener(MouseEvent.CLICK,onBugClick);
+			mc_bugButton.addEventListener(MouseEvent.MOUSE_OVER, onMouseOver);
+		}
+		
+		protected function onMouseOver(event:MouseEvent):void
+		{
+			mc_bugButton.removeEventListener(MouseEvent.MOUSE_OVER,onMouseOver);
+			mc_bugButton.gotoAndStop("over");
+			mc_bugButton.addEventListener(MouseEvent.MOUSE_OUT,onMouseOut);
+		}
+		
+		protected function onMouseOut(event:MouseEvent):void
+		{
+			mc_bugButton.removeEventListener(MouseEvent.MOUSE_OUT,onMouseOut);
+			mc_bugButton.gotoAndStop("normal");
+			mc_bugButton.addEventListener(MouseEvent.MOUSE_OVER,onMouseOver);
 		}
 		
 		protected function onBugClick(event:MouseEvent):void
